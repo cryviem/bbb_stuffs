@@ -1,0 +1,1 @@
+dtc -@ -I dts -O dtb -o disable_builtin_leds.dtbo disable_builtin_leds.dts

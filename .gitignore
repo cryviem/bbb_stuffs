@@ -44,9 +44,15 @@
 
 # Kernel Module Compile Results
 *.mod*
-*.cmd
 .tmp_versions/
 modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Device tree bin
+*.dtb
+*.dtbo
+
+#PRU bin
+am335x-pru[0:1]-fw
