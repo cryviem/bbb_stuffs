@@ -1,0 +1,30 @@
+#Custom uEnv.txt for beagebone black
+
+#Host ip
+remote_ip=192.168.1.23
+
+#Target ip
+bbb_ip=192.168.1.20
+
+#Remote root path
+nfs_root_path=/mnt/nfs_box
+
+#NFS option
+nfs_opt=nolock,v3,tcp,rsize=4096,wsize=4096
+
+#Load address of kernel image
+loadaddr=0x82000000
+
+#Load address of device tree binary
+fdtaddr=0x88000000
+
+#Load address of ramdisk / initramfs
+ol_addr=0x88080000
+
+#File to overlay
+overlay_dt=exported_overlay.dtbo
+
+bootarg_cmd=setenv bootargs console=ttyO0,115200n8 root=/dev/nfs rw rootfstype=${nfsrootfstype} nfsroot=${remote_ip}:${nfs_root_path},${nfs_opt} ip=${bbb_ip}:${remote_ip}:${gw_ip}:${netmask}:${hostname}:${device}:${autoconf}
+loadkernel_cmd=echo Load uImage from TFTP server to ${loadaddr} ...; tftp ${loadaddr} ${remote_ip}:bbb/uImage
+loaddtb_cmd=echo Load ${fdtfile} from TFTP server to ${fdtaddr} ...; tftp ${fdtaddr} ${remote_ip}:bbb/${fdtfile}; echo Load ${overlay_dt} from TFTP server to ${ol_addr} ...; tftp ${ol_addr} ${remote_ip}:bbb/${overlay_dt}; echo Do overlay ${overlay_dt} to ${fdtfile} ...; fdt addr ${fdtaddr}; fdt resize 0x60000; fdt apply ${ol_addr}
+uenvcmd=echo Booting from Host ${remote_ip}...; setenv autoload no;setenv serverip ${remote_ip}; setenv ipaddr ${bbb_ip}; run loadkernel_cmd; run loaddtb_cmd; run bootarg_cmd; bootm ${loadaddr} - ${fdtaddr}

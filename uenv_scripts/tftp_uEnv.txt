@@ -1,0 +1,24 @@
+#Custom uEnv.txt for beagebone black
+
+#Partition storing kernel image
+#sdkernel_if=mmc 0:1
+
+#Partition storing device tree binary
+#sdstb_if=mmc 0:1
+
+#TFTP server ip
+remote_ip=192.168.1.23
+
+#Location to root file system
+rootfs_loc=/dev/mmcblk0p2
+
+#Load address of kernel image
+loadaddr=0x82000000
+
+#Load address of device tree binary
+fdtaddr=0x88000000
+
+bootarg_cmd=setenv bootargs console=ttyO0,115200n8 root=${rootfs_loc} rw rootfstype=ext4 rootwait
+loadkernel_cmd=echo Load uImage from TFTP server to ${loadaddr} ...; tftp ${loadaddr} ${remote_ip}:bbb/boot/uImage
+loaddtb_cmd=run findfdt; echo Load ${fdtfile} from TFTP server to ${fdtaddr} ...; tftp ${fdtaddr} ${remote_ip}:bbb/boot/${fdtfile}
+uenvcmd=echo Booting ...; run loadkernel_cmd; run loaddtb_cmd; run bootarg_cmd; bootm ${loadaddr} - ${fdtaddr}
