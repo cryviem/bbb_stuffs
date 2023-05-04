@@ -1,0 +1,19 @@
+
+/dts-v1/;
+/plugin/;
+#include <dt-bindings/pinctrl/am33xx.h>
+
+
+&am33xx_pinmux {
+
+	choen_static_pincfg: choen_static_pincfg {
+		pinctrl-single,pins = <
+			AM33XX_PADCONF(AM335X_PIN_GPMC_A5, PIN_OUTPUT_PULLDOWN, MUX_MODE7)	/* gpmc_a5.gpio1_21 */
+		>;
+	};
+
+
+	/* make static pin config init at boot */
+	pinctrl-names = "default";
+	pinctrl-0 = <&choen_static_pincfg>;
+}
