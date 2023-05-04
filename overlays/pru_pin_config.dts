@@ -12,7 +12,7 @@
 
 	choen_static_pincfg: choen_static_pincfg {
 		pinctrl-single,pins = <
-			AM33XX_PADCONF(AM335X_PIN_MCASP0_AXR0, PIN_OUTPUT_PULLUP, MUX_MODE5)   /*P9_30-pr1_pru0_pru_r30_2*/
+			AM33XX_PADCONF(AM335X_PIN_MCASP0_AXR0, PIN_OUTPUT_PULLUP, MUX_MODE5)   /*P9_30-102-pr1_pru0_pru_r30_2*/
 		>;
 	};
 };
