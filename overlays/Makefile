@@ -4,9 +4,10 @@
 # amd64.deb
 
 DTS_FILES=$(wildcard *.dts)
-DTBO_FILES=$(patsubst %.dts, %.dtbo, $(DTS_FILES))
 WO_EXT=$(strip $(patsubst %.dts, %, $(DTS_FILES)))
 BUILD_CMD=dtc -@ -I dts -O dtb -o
+PREPRC_CMD=cpp -nostdinc -I . -undef -x assembler-with-cpp
+
 all: print_start main print_end
 
 print_start:
@@ -19,13 +20,23 @@ print_end:
 	@echo "---- END BUILD OVERLAY ----"
 	@echo ""
 
-main:
-	@for MTAR in $(WO_EXT); do \
-		echo "building $$MTAR ..."; \
-		cpp -nostdinc -I . -undef -x assembler-with-cpp $$MTAR.dts > $$MTAR.tmp.dts; \
-		$(BUILD_CMD) $$MTAR.dtbo $$MTAR.tmp.dts; \
-	done
+# main:
+# 	@for MTAR in $(WO_EXT); do \
+# 		echo "building $$MTAR ..."; \
+# 		$(PREPRC_CMD) $$MTAR.dts > $$MTAR.tmp.dts; \
+# 		$(BUILD_CMD) $$MTAR.dtbo $$MTAR.tmp.dts; \
+# 	done
 	 
+main: $(WO_EXT)
+
+$(WO_EXT):
+	@echo "building $@.dtbo ...";
+	@$(PREPRC_CMD) $@.dts > $@.tmp.dts
+	@$(BUILD_CMD) $@.dtbo $@.tmp.dts
+
+
 clear:
 	rm -rf $(wildcard *.tmp.*)
 	rm -rf $(wildcard *.dtbo)
+
+.PHONY: all clean print_start print_end main $(WO_EXT)
