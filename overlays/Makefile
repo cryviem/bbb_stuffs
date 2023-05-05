@@ -1,3 +1,8 @@
+
+# Need dtc version 1.5.0 or newer
+# Manual update here: https://launchpad.net/ubuntu/+source/device-tree-compiler/
+# amd64.deb
+
 DTS_FILES=$(wildcard *.dts)
 DTBO_FILES=$(patsubst %.dts, %.dtbo, $(DTS_FILES))
 WO_EXT=$(strip $(patsubst %.dts, %, $(DTS_FILES)))
