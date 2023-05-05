@@ -1,0 +1,1286 @@
+
+U-Boot SPL 2019.04-00002-g31a8ae0206 (May 13 2020 - 09:26:17 -0500)
+Trying to boot from MMC2
+Loading Environment from EXT4...
+** Unable to use mmc 0:1 for loading the env **
+
+
+U-Boot 2019.04-00002-g31a8ae0206 (May 13 2020 - 09:26:17 -0500), Build: jenkins-github_Bootloader-Builder-139
+
+CPU  : AM335X-GP rev 2.1
+I2C:   ready
+DRAM:  512 MiB
+No match for driver 'omap_hsmmc'
+No match for driver 'omap_hsmmc'
+Some drivers were not found
+Reset Source: Power-on reset has occurred.
+RTC 32KCLK Source: External.
+MMC:   OMAP SD/MMC: 0, OMAP SD/MMC: 1
+Loading Environment from EXT4...
+** Unable to use mmc 0:1 for loading the env **
+Board: BeagleBone Black
+<ethaddr> not set. Validating first E-fuse MAC
+BeagleBone Black:
+Model: BeagleBone Black Industrial:
+BeagleBone: cape eeprom: i2c_probe: 0x54:
+BeagleBone: cape eeprom: i2c_probe: 0x55:
+BeagleBone: cape eeprom: i2c_probe: 0x56:
+BeagleBone: cape eeprom: i2c_probe: 0x57:
+Net:   eth0: MII MODE
+cpsw, usb_ether
+Press SPACE to abort autoboot in 0 seconds
+board_name=[A335BNLT] ...
+board_rev=[EIA0] ...
+switch to partitions #0, OK
+mmc0 is current device
+SD/MMC found on device 0
+switch to partitions #0, OK
+mmc0 is current device
+Scanning mmc 0:1...
+93357 bytes read in 9 ms (9.9 MiB/s)
+gpio: pin 56 (gpio 56) value is 0
+gpio: pin 55 (gpio 55) value is 0
+gpio: pin 54 (gpio 54) value is 0
+gpio: pin 53 (gpio 53) value is 1
+switch to partitions #0, OK
+mmc0 is current device
+gpio: pin 54 (gpio 54) value is 1
+Checking for: /uEnv.txt ...
+765 bytes read in 3 ms (249 KiB/s)
+gpio: pin 55 (gpio 55) value is 1
+Loaded environment from /uEnv.txt
+Importing environment from mmc ...
+Checking if uenvcmd is set ...
+gpio: pin 56 (gpio 56) value is 1
+Running uenvcmd ...
+Booting from microSD ...
+Load uImage from mmc 0:1 to 0x82000000 ...
+10650176 bytes read in 667 ms (15.2 MiB/s)
+board_name=[A335BNLT] ...
+board_rev=[EIA0] ...
+Load am335x-boneblack.dtb from mmc 0:1 to 0x88000000 ...
+93357 bytes read in 9 ms (9.9 MiB/s)
+## Booting kernel from Legacy Image at 82000000 ...
+   Image Name:   Linux-5.10.145
+   Created:      2022-12-26  16:13:23 UTC
+   Image Type:   ARM Linux Kernel Image (uncompressed)
+   Data Size:    10650112 Bytes = 10.2 MiB
+   Load Address: 80008000
+   Entry Point:  80008000
+   Verifying Checksum ... OK
+## Flattened Device Tree blob at 88000000
+   Booting using the fdt blob at 0x88000000
+   Loading Kernel Image ... OK
+   Loading Device Tree to 8ffe6000, end 8ffffcac ... OK
+
+Starting kernel ...
+
+[    0.000000] Booting Linux on physical CPU 0x0
+[    0.000000] Linux version 5.10.145 (an@vm0) (arm-linux-gnueabihf-gcc (Linaro GCC 7.5-2019.12) 7.5.0, GNU ld (                                              Linaro_Binutils-2019.12) 2.28.2.20170706) #1 SMP PREEMPT Mon Dec 26 22:53:16 +07 2022
+[    0.000000] CPU: ARMv7 Processor [413fc082] revision 2 (ARMv7), cr=10c5387d
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+[    0.000000] OF: fdt: Machine model: TI AM335x BeagleBone Black
+[    0.000000] Memory policy: Data cache writeback
+[    0.000000] efi: UEFI not found.
+[    0.000000] cma: Reserved 48 MiB at 0x9c800000
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x0000000080000000-0x000000009fdfffff]
+[    0.000000]   HighMem  empty
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000080000000-0x000000009fdfffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000080000000-0x000000009fdfffff]
+[    0.000000] CPU: All CPU(s) started in SVC mode.
+[    0.000000] AM335X ES2.1 (sgx neon)
+[    0.000000] percpu: Embedded 21 pages/cpu s54732 r8192 d23092 u86016
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 129412
+[    0.000000] Kernel command line: console=ttyO0,115200n8 root=/dev/mmcblk0p2 rw rootfstype=ext4 rootwait
+[    0.000000] Dentry cache hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 32768 (order: 5, 131072 bytes, linear)
+[    0.000000] mem auto-init: stack:off, heap alloc:on, heap free:off
+[    0.000000] Memory: 445212K/522240K available (14336K kernel code, 1443K rwdata, 3968K rodata, 1024K init, 45                                              2K bss, 27876K reserved, 49152K cma-reserved, 0K highmem)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] rcu: Preemptible hierarchical RCU implementation.
+[    0.000000] rcu:     RCU event tracing is enabled.
+[    0.000000] rcu:     RCU restricting CPUs from NR_CPUS=2 to nr_cpu_ids=1.
+[    0.000000]  Trampoline variant of Tasks RCU enabled.
+[    0.000000]  Tracing variant of Tasks RCU enabled.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
+[    0.000000] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1
+[    0.000000] NR_IRQS: 16, nr_irqs: 16, preallocated irqs: 16
+[    0.000000] IRQ: Found an INTC at 0x(ptrval) (revision 5.0) with 128 interrupts
+[    0.000000] TI gptimer clocksource: always-on /ocp/interconnect@44c00000/segment@200000/target-module@31000
+[    0.000010] sched_clock: 32 bits at 24MHz, resolution 41ns, wraps every 89478484971ns
+[    0.000029] clocksource: dmtimer: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 79635851949 ns
+[    0.000394] TI gptimer clockevent: 24000000 Hz at /ocp/interconnect@48000000/segment@0/target-module@40000
+[    0.001657] Console: colour dummy device 80x30
+[    0.001698] WARNING: Your 'console=ttyO0' has been replaced by 'ttyS0'
+[    0.001708] This ensures that you still see kernel messages. Please
+[    0.001717] update your kernel commandline.
+[    0.001776] Calibrating delay loop... 995.32 BogoMIPS (lpj=1990656)
+[    0.048453] pid_max: default: 32768 minimum: 301
+[    0.049106] LSM: Security Framework initializing
+[    0.049231] Yama: becoming mindful.
+[    0.049540] AppArmor: AppArmor initialized
+[    0.049562] TOMOYO Linux initialized
+[    0.049767] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.049785] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.051501] CPU: Testing write buffer coherency: ok
+[    0.051594] CPU0: Spectre v2: using BPIALL workaround
+[    0.072887] Setting up static identity map for 0x80100000 - 0x80100060
+[    0.080473] rcu: Hierarchical SRCU implementation.
+[    0.089753] EFI services will not be available.
+[    0.100481] smp: Bringing up secondary CPUs ...
+[    0.100505] smp: Brought up 1 node, 1 CPU
+[    0.100518] SMP: Total of 1 processors activated (995.32 BogoMIPS).
+[    0.100529] CPU: All CPU(s) started in SVC mode.
+[    0.101453] devtmpfs: initialized
+[    0.124720] VFP support v0.3: implementor 41 architecture 3 part 30 variant c rev 3
+[    0.125192] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+[    0.125236] futex hash table entries: 256 (order: 2, 16384 bytes, linear)
+[    0.129049] pinctrl core: initialized pinctrl subsystem
+[    0.130232] DMI not present or invalid.
+[    0.131243] NET: Registered protocol family 16
+[    0.134370] DMA: preallocated 256 KiB pool for atomic coherent allocations
+[    0.156504] l3-aon-clkctrl:0000:0: failed to disable
+[    0.157263] audit: initializing netlink subsys (disabled)
+[    0.158747] thermal_sys: Registered thermal governor 'fair_share'
+[    0.158764] thermal_sys: Registered thermal governor 'bang_bang'
+[    0.158781] thermal_sys: Registered thermal governor 'step_wise'
+[    0.158792] thermal_sys: Registered thermal governor 'user_space'
+[    0.158802] thermal_sys: Registered thermal governor 'power_allocator'
+[    0.159208] cpuidle: using governor ladder
+[    0.159268] cpuidle: using governor menu
+[    0.164554] audit: type=2000 audit(0.144:1): state=initialized audit_enabled=0 res=1
+[    1.443184] hw-breakpoint: debug architecture 0x4 unsupported.
+[    1.470369] Kprobes globally optimized
+[    1.492862] raid6: skip pq benchmark and using algorithm neonx8
+[    1.492896] raid6: using neon recovery algorithm
+[    1.496620] iommu: Default domain type: Translated
+[    1.498990] SCSI subsystem initialized
+[    1.499843] usbcore: registered new interface driver usbfs
+[    1.499909] usbcore: registered new interface driver hub
+[    1.499995] usbcore: registered new device driver usb
+[    1.501017] mc: Linux media interface: v0.10
+[    1.501072] videodev: Linux video capture interface: v2.00
+[    1.501243] pps_core: LinuxPPS API ver. 1 registered
+[    1.501258] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    1.501286] PTP clock support registered
+[    1.503596] NetLabel: Initializing
+[    1.503623] NetLabel:  domain hash size = 128
+[    1.503633] NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+[    1.503731] NetLabel:  unlabeled traffic allowed by default
+[    1.504912] clocksource: Switched to clocksource dmtimer
+[    2.562451] VFS: Disk quotas dquot_6.6.0
+[    2.562609] VFS: Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+[    2.562923] FS-Cache: Loaded
+[    2.563370] CacheFiles: Loaded
+[    2.564412] AppArmor: AppArmor Filesystem Enabled
+[    2.577697] NET: Registered protocol family 2
+[    2.577996] IP idents hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    2.579821] tcp_listen_portaddr_hash hash table entries: 512 (order: 0, 6144 bytes, linear)
+[    2.580149] TCP established hash table entries: 4096 (order: 2, 16384 bytes, linear)
+[    2.580222] TCP bind hash table entries: 4096 (order: 3, 32768 bytes, linear)
+[    2.580285] TCP: Hash tables configured (established 4096 bind 4096)
+[    2.580578] MPTCP token hash table entries: 512 (order: 1, 8192 bytes, linear)
+[    2.580686] UDP hash table entries: 256 (order: 1, 8192 bytes, linear)
+[    2.580722] UDP-Lite hash table entries: 256 (order: 1, 8192 bytes, linear)
+[    2.581108] NET: Registered protocol family 1
+[    2.594580] RPC: Registered named UNIX socket transport module.
+[    2.594608] RPC: Registered udp transport module.
+[    2.594619] RPC: Registered tcp transport module.
+[    2.594629] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    2.594645] NET: Registered protocol family 44
+[    2.596213] hw perfevents: enabled with armv7_cortex_a8 PMU driver, 5 counters available
+[    2.601969] Initialise system trusted keyrings
+[    2.602529] workingset: timestamp_bits=14 max_order=17 bucket_order=3
+[    2.610911] zbud: loaded
+[    2.619176] NFS: Registering the id_resolver key type
+[    2.619265] Key type id_resolver registered
+[    2.619279] Key type id_legacy registered
+[    2.619503] nfs4filelayout_init: NFSv4 File Layout Driver Registering...
+[    2.619521] nfs4flexfilelayout_init: NFSv4 Flexfile Layout Driver Registering...
+[    2.619570] jffs2: version 2.2. (NAND) (SUMMARY)  © 2001-2006 Red Hat, Inc.
+[    2.620731] fuse: init (API version 7.32)
+[    2.710385] xor: automatically using best checksumming function   neon
+[    2.710421] Key type asymmetric registered
+[    2.710434] Asymmetric key parser 'x509' registered
+[    2.710515] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 244)
+[    2.714907] io scheduler mq-deadline registered
+[    3.017952] ti-sysc: probe of 44e31000.target-module failed with error -16
+[    3.060785] ti-sysc: probe of 48040000.target-module failed with error -16
+[    3.168984] omap-mailbox 480c8000.mailbox: omap mailbox rev 0x400
+[    3.293144] debugfs: Directory '49000000.dma' with parent 'dmaengine' already present!
+[    3.293195] edma 49000000.dma: TI EDMA DMA engine driver
+[    3.323414] pinctrl-single 44e10800.pinmux: 142 pins, size 568
+[    3.339249] Serial: 8250/16550 driver, 6 ports, IRQ sharing disabled
+[    3.343923] 44e09000.serial: ttyS0 at MMIO 0x44e09000 (irq = 20, base_baud = 3000000) is a 8250
+[    4.166033] printk: console [ttyS0] enabled
+[    4.174654] omap_rng 48310000.rng: Random Number Generator ver. 20
+[    4.181301] random: crng init done
+[    4.245027] davinci_mdio 4a101000.mdio: davinci mdio revision 1.6, bus freq 1000000
+[    4.253075] mdio_bus 4a101000.mdio: MDIO device at address 0 is missing.
+[    4.260524] cpsw 4a100000.ethernet: initialized cpsw ale version 1.4
+[    4.266984] cpsw 4a100000.ethernet: ALE Table size 1024
+[    4.272365] cpsw 4a100000.ethernet: cpts: overflow check period 1250 (jiffies)
+[    4.279750] cpsw 4a100000.ethernet: Detected MACID = 64:33:db:42:d7:0b
+[    4.289365] usbcore: registered new interface driver smsc95xx
+[    4.297074] am335x-phy-driver 47401300.usb-phy: supply vcc not found, using dummy regulator
+[    4.305836] am335x-phy-driver 47401300.usb-phy: dummy supplies not allowed for exclusive requests
+[    4.321950] am335x-phy-driver 47401b00.usb-phy: supply vcc not found, using dummy regulator
+[    4.330892] am335x-phy-driver 47401b00.usb-phy: dummy supplies not allowed for exclusive requests
+[    4.346609] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    4.353411] ehci-platform: EHCI generic platform driver
+[    4.359171] ehci-omap: OMAP-EHCI Host Controller driver
+[    4.375640] musb-hdrc musb-hdrc.1: MUSB HDRC host driver
+[    4.381350] musb-hdrc musb-hdrc.1: new USB bus registered, assigned bus number 1
+[    4.389180] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 5.10
+[    4.397521] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    4.404841] usb usb1: Product: MUSB HDRC host driver
+[    4.409856] usb usb1: Manufacturer: Linux 5.10.145 musb-hcd
+[    4.415474] usb usb1: SerialNumber: musb-hdrc.1
+[    4.421031] hub 1-0:1.0: USB hub found
+[    4.424870] hub 1-0:1.0: 1 port detected
+[    4.438859] omap_rtc 44e3e000.rtc: registered as rtc0
+[    4.444255] omap_rtc 44e3e000.rtc: setting system clock to 2000-01-01T00:00:00 UTC (946684800)
+[    4.454657] i2c /dev entries driver
+[    4.462152] omap_wdt: OMAP Watchdog Timer Rev 0x01: initial timeout 60 sec
+[    4.469861] softdog: initialized. soft_noboot=0 soft_margin=60 sec soft_panic=0 (nowayout=0)
+[    4.478382] softdog:              soft_reboot_cmd=<not set> soft_active_on_boot=0
+[    4.487479] cpuidle: enable-method property 'ti,am3352' found operations
+[    4.495676] sdhci: Secure Digital Host Controller Interface driver
+[    4.501966] sdhci: Copyright(c) Pierre Ossman
+[    4.506365] sdhci-pltfm: SDHCI platform and OF driver helper
+[    4.514022] sdhci-omap 481d8000.mmc: supply vqmmc not found, using dummy regulator
+[    4.522968] ledtrig-cpu: registered to indicate activity on CPUs
+[    4.531145] omap-aes 53500000.aes: OMAP AES hw accel rev: 3.2
+[    4.537529] omap-aes 53500000.aes: will run requests pump with realtime priority
+[    4.548861] omap-sham 53100000.sham: hw accel on OMAP rev 4.3
+[    4.555336] omap-sham 53100000.sham: will run requests pump with realtime priority
+[    4.567628] hid: raw HID events driver (C) Jiri Kosina
+[    4.574140] usbcore: registered new interface driver usbhid
+[    4.579985] mmc1: SDHCI controller on 481d8000.mmc [481d8000.mmc] using External DMA
+[    4.588009] usbhid: USB HID core driver
+[    4.592784] remoteproc remoteproc0: wkup_m3 is available
+[    4.604373] drop_monitor: Initializing network drop monitor service
+[    4.612101] NET: Registered protocol family 10
+[    4.626439] Segment Routing with IPv6
+[    4.630565] mip6: Mobile IPv6
+[    4.633907] NET: Registered protocol family 17
+[    4.642926] Key type dns_resolver registered
+[    4.647366] mpls_gso: MPLS GSO support
+[    4.651448] ThumbEE CPU extension supported.
+[    4.655876] Registering SWP/SWPB emulation handler
+[    4.660781] omap_voltage_late_init: Voltage driver support not added
+[    4.668412] registered taskstats version 1
+[    4.672624] Loading compiled-in X.509 certificates
+[    4.677621] zswap: loaded using pool lzo/zbud
+[    4.687191] Key type ._fscrypt registered
+[    4.691368] Key type .fscrypt registered
+[    4.695454] Key type fscrypt-provisioning registered
+[    4.700539] mmc1: new high speed MMC card at address 0001
+[    4.713993] Btrfs loaded, crc32c=crc32c-generic
+[    4.719322] mmcblk1: mmc1:0001 M62704 3.56 GiB
+[    4.724138] AppArmor: AppArmor sha1 policy hashing enabled
+[    4.730382] mmcblk1boot0: mmc1:0001 M62704 partition 1 2.00 MiB
+[    4.741682] mmcblk1boot1: mmc1:0001 M62704 partition 2 2.00 MiB
+[    4.757436] mmcblk1rpmb: mmc1:0001 M62704 partition 3 512 KiB, chardev (241:0)
+[    4.774150] OMAP GPIO hardware version 0.1
+[    4.778436]  mmcblk1: p1
+[    4.809866] tps65217-pmic: Failed to locate of_node [id: -1]
+[    4.827106] tps65217-bl: Failed to locate of_node [id: -1]
+[    4.835752] tps6521x_pwrbutton tps65217-pwrbutton: DMA mask not set
+[    4.843085] input: tps65217_pwr_but as /devices/platform/ocp/44c00000.interconnect/44c00000.interconnect:segm                                              ent@200000/44e0b000.target-module/44e0b000.i2c/i2c-0/0-0024/tps65217-pwrbutton/input/input0
+[    4.861714] tps65217 0-0024: TPS65217 ID 0xe version 1.2
+[    4.867636] at24 0-0050: supply vcc not found, using dummy regulator
+[    4.874890] at24 0-0050: 32768 byte 24c256 EEPROM, writable, 1 bytes/write
+[    4.882968] omap_i2c 44e0b000.i2c: bus 0 rev0.11 at 400 kHz
+[    4.892146] at24 2-0054: supply vcc not found, using dummy regulator
+[    4.928677] at24 2-0055: supply vcc not found, using dummy regulator
+[    4.964618] at24 2-0056: supply vcc not found, using dummy regulator
+[    4.999554] at24 2-0057: supply vcc not found, using dummy regulator
+[    5.036165] omap_i2c 4819c000.i2c: bus 2 rev0.11 at 100 kHz
+[    5.055084] omap_gpio 44e07000.gpio: Could not set line 6 debounce to 200000 microseconds (-22)
+[    5.066268] sdhci-omap 48060000.mmc: Got CD GPIO
+[    5.071722] sdhci-omap 48060000.mmc: supply vqmmc not found, using dummy regulator
+[    5.109399] mmc0: SDHCI controller on 48060000.mmc [48060000.mmc] using External DMA
+[    5.150861] mmc0: new high speed SDHC card at address 1234
+[    5.161738] mmcblk0: mmc0:1234 SA16G 14.4 GiB
+[    5.169546]  mmcblk0: p1 p2
+[    5.191843] tda998x 0-0070: found TDA19988
+[    5.200222] tilcdc 4830e000.lcdc: bound 0-0070 (ops 0xc0f98a24)
+[    5.207637] [drm] Initialized tilcdc 1.0.0 20121205 for 4830e000.lcdc on minor 0
+[    5.215571] tilcdc 4830e000.lcdc: [drm] Cannot find any crtc or sizes
+[    5.223731] of_cfs_init
+[    5.226795] tilcdc 4830e000.lcdc: [drm] Cannot find any crtc or sizes
+[    5.233394] of_cfs_init: OK
+[    9.016615] systemd[1]: System time before build time, advancing clock.
+[    9.191031] systemd[1]: systemd 247.3-7+deb11u1 running in system mode. (+PAM +AUDIT +SELINUX +IMA +APPARMOR                                               +SMACK +SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ +LZ4 +ZSTD +SECCOMP +BLKID +ELFUTILS +KMOD +IDN2                                               -IDN +PCRE2 default-hierarchy=unified)
+[    9.215416] systemd[1]: Detected architecture arm.
+
+Welcome to Debian GNU/Linux 11 (bullseye)!
+
+[    9.243570] systemd[1]: Set hostname to <arm>.
+[   10.669473] systemd[1]: Queued start job for default target Graphical Interface.
+[   10.686575] systemd[1]: Created slice system-getty.slice.
+[  OK  ] Created slice system-getty.slice.
+[   10.712046] systemd[1]: Created slice system-modprobe.slice.
+[  OK  ] Created slice system-modprobe.slice.
+[   10.736201] systemd[1]: Created slice system-serial\x2dgetty.slice.
+[  OK  ] Created slice system-serial\x2dgetty.slice.
+[   10.759645] systemd[1]: Created slice User and Session Slice.
+[  OK  ] Created slice User and Session Slice.
+[   10.782073] systemd[1]: Started Dispatch Password Requests to Console Directory Watch.
+[  OK  ] Started Dispatch Password …ts to Console Directory Watch.
+[   10.805860] systemd[1]: Started Forward Password Requests to Wall Directory Watch.
+[  OK  ] Started Forward Password R…uests to Wall Directory Watch.
+[   10.830851] systemd[1]: Set up automount Arbitrary Executable File Formats File System Automount Point.
+[  OK  ] Set up automount Arbitrary…s File System Automount Point.
+[   10.857613] systemd[1]: Reached target Local Encrypted Volumes.
+[  OK  ] Reached target Local Encrypted Volumes.
+[   10.881578] systemd[1]: Reached target Paths.
+[  OK  ] Reached target Paths.
+[   10.901353] systemd[1]: Reached target Remote File Systems.
+[  OK  ] Reached target Remote File Systems.
+[   10.925260] systemd[1]: Reached target Slices.
+[  OK  ] Reached target Slices.
+[   10.945432] systemd[1]: Reached target Swap.
+[  OK  ] Reached target Swap.
+[   10.969136] systemd[1]: Listening on Syslog Socket.
+[  OK  ] Listening on Syslog Socket.
+[   10.990068] systemd[1]: Listening on initctl Compatibility Named Pipe.
+[  OK  ] Listening on initctl Compatibility Named Pipe.
+[   11.014979] systemd[1]: Listening on Journal Audit Socket.
+[  OK  ] Listening on Journal Audit Socket.
+[   11.038408] systemd[1]: Listening on Journal Socket (/dev/log).
+[  OK  ] Listening on Journal Socket (/dev/log).
+[   11.062610] systemd[1]: Listening on Journal Socket.
+[  OK  ] Listening on Journal Socket.
+[   11.086968] systemd[1]: Listening on udev Control Socket.
+[  OK  ] Listening on udev Control Socket.
+[   11.110283] systemd[1]: Listening on udev Kernel Socket.
+[  OK  ] Listening on udev Kernel Socket.
+[   11.134518] systemd[1]: Condition check resulted in Huge Pages File System being skipped.
+[   11.150728] systemd[1]: Mounting POSIX Message Queue File System...
+         Mounting POSIX Message Queue File System...
+[   11.185876] systemd[1]: Mounting Kernel Debug File System...
+         Mounting Kernel Debug File System...
+[   11.230710] systemd[1]: Mounting Kernel Trace File System...
+         Mounting Kernel Trace File System...
+[   11.284141] systemd[1]: Starting Restore / save the current clock...
+         Starting Restore / save the current clock...
+[   11.358525] systemd[1]: Starting Create list of static device nodes for the current kernel...
+         Starting Create list of st…odes for the current kernel...
+[   11.429943] systemd[1]: Starting Load Kernel Module configfs...
+         Starting Load Kernel Module configfs...
+[   11.470335] systemd[1]: Starting Load Kernel Module drm...
+         Starting Load Kernel Module drm...
+[   11.508673] systemd[1]: Starting Load Kernel Module fuse...
+         Starting Load Kernel Module fuse...
+[   11.542630] systemd[1]: Condition check resulted in Set Up Additional Binary Formats being skipped.
+[   11.567679] systemd[1]: Starting Journal Service...
+         Starting Journal Service...
+[   11.619965] systemd[1]: Starting Load Kernel Modules...
+         Starting Load Kernel Modules...
+[   11.670516] systemd[1]: Starting Remount Root and Kernel File Systems...
+         Starting Remount Root and Kernel File Systems...
+[   11.746589] systemd[1]: Starting Coldplug All udev Devices...
+         Starting Coldplug All udev Devices...
+[   11.874110] systemd[1]: Mounted POSIX Message Queue File System.
+[  OK  ] Mounted POSIX Message Queue File System.
+[   11.927295] systemd[1]: Mounted Kernel Debug File System.
+[  OK  ] Mounted Kernel Debug File System.
+[   11.974847] systemd[1]: Mounted Kernel Trace File System.
+[  OK  ] Mounted Kernel Trace File System.
+[   12.011577] systemd[1]: Finished Restore / save the current clock.
+[  OK  ] Finished Restore / save the current clock.
+[   12.062579] systemd[1]: Finished Create list of static device nodes for the current kernel.
+[  OK  ] Finished Create list of st… nodes for the current kernel.
+[   12.108407] systemd[1]: modprobe@configfs.service: Succeeded.
+[   12.137691] systemd[1]: Finished Load Kernel Module configfs.
+[  OK  ] Finished Load Kernel Module configfs.
+[   12.180512] systemd[1]: modprobe@drm.service: Succeeded.
+[   12.213686] systemd[1]: Finished Load Kernel Module drm.
+[  OK  ] Finished Load Kernel Module drm.
+[   12.248532] systemd[1]: modprobe@fuse.service: Succeeded.
+[   12.277884] systemd[1]: Finished Load Kernel Module fuse.
+[  OK  ] Finished Load Kernel Module fuse.
+[   12.318088] systemd[1]: Finished Load Kernel Modules.
+[  OK  ] Finished Load Kernel Modules.
+[   12.358157] systemd[1]: Finished Remount Root and Kernel File Systems.
+[  OK  ] Finished Remount Root and Kernel File Systems.
+[   12.421865] systemd[1]: Mounting FUSE Control File System...
+         Mounting FUSE Control File System...
+[   12.521793] systemd[1]: Mounting Kernel Configuration File System...
+         Mounting Kernel Configuration File System...
+[   12.596242] systemd[1]: Condition check resulted in Rebuild Hardware Database being skipped.
+[   12.641909] systemd[1]: Condition check resulted in Platform Persistent Storage Archival being skipped.
+[   12.681956] systemd[1]: Starting Load/Save Random Seed...
+         Starting Load/Save Random Seed...
+[   12.730029] systemd[1]: Starting Apply Kernel Variables...
+         Starting Apply Kernel Variables...
+[   12.786538] systemd[1]: Starting Create System Users...
+         Starting Create System Users...
+[   12.844374] systemd[1]: Started Journal Service.
+[  OK  ] Started Journal Service.
+[  OK  ] Mounted FUSE Control File System.
+[  OK  ] Mounted Kernel Configuration File System.
+         Starting Flush Journal to Persistent Storage...
+[  OK  ] Finished Load/Save Random Seed.
+[  OK  ] Finished Apply Kernel Variables.
+[  OK  ] Finished Create System Users.
+         Starting Create Static Device Nodes in /dev...
+[   13.542501] systemd-journald[164]: Received client request to flush runtime journal.
+[   13.603018] systemd-journald[164]: File /var/log/journal/5d7acfce99624d61b2b259cb6c0cf8a2/system.journal corr                                              upted or uncleanly shut down, renaming and replacing.
+[  OK  ] Finished Create Static Device Nodes in /dev.
+[  OK  ] Reached target Local File Systems (Pre).
+[  OK  ] Reached target Local File Systems.
+         Starting Rule-based Manage…for Device Events and Files...
+[  OK  ] Finished Coldplug All udev Devices.
+         Starting Helper to synchronize boot up for ifupdown...
+[  OK  ] Finished Flush Journal to Persistent Storage.
+[  OK  ] Finished Helper to synchronize boot up for ifupdown.
+         Starting Raise network interfaces...
+         Starting Create Volatile Files and Directories...
+[  OK  ] Started Rule-based Manager for Device Events and Files.
+[  OK  ] Finished Create Volatile Files and Directories.
+         Starting Network Time Synchronization...
+         Starting Update UTMP about System Boot/Shutdown...
+[  OK  ] Finished Raise network interfaces.
+[  OK  ] Finished Update UTMP about System Boot/Shutdown.
+[  OK  ] Started Network Time Synchronization.
+[  OK  ] Reached target System Initialization.
+[  OK  ] Started Daily Cleanup of Temporary Directories.
+[  OK  ] Reached target System Time Set.
+[  OK  ] Reached target System Time Synchronized.
+[  OK  ] Started Periodic ext4 Onli…ata Check for All Filesystems.
+[  OK  ] Started Discard unused blocks once a week.
+[  OK  ] Started Daily rotation of log files.
+[  OK  ] Reached target Timers.
+[  OK  ] Listening on Avahi mDNS/DNS-SD Stack Activation Socket.
+[  OK  ] Listening on D-Bus System Message Bus Socket.
+[  OK  ] Reached target Sockets.
+[  OK  ] Reached target Basic System.
+         Starting Avahi mDNS/DNS-SD Stack...
+[  OK  ] Started Regular background program processing daemon.
+[  OK  ] Started D-Bus System Message Bus.
+         Starting Network Manager...
+         Starting Remove Stale Onli…t4 Metadata Check Snapshots...
+         Starting Authorization Manager...
+         Starting System Logging Service...
+         Starting User Login Management...
+         Starting WPA supplicant...
+[  OK  ] Started System Logging Service.
+[  OK  ] Started Avahi mDNS/DNS-SD Stack.
+[  OK  ] Started WPA supplicant.
+[  OK  ] Started Authorization Manager.
+         Starting Modem Manager...
+[  OK  ] Finished Remove Stale Onli…ext4 Metadata Check Snapshots.
+[  OK  ] Started Network Manager.
+[  OK  ] Reached target Network.
+         Starting A high performanc… and a reverse proxy server...
+         Starting OpenBSD Secure Shell server...
+         Starting Permit User Sessions...
+         Starting Hostname Service...
+[  OK  ] Started User Login Management.
+[  OK  ] Finished Permit User Sessions.
+[  OK  ] Started Getty on tty1.
+[  OK  ] Started Modem Manager.
+[  OK  ] Started OpenBSD Secure Shell server.
+[  OK  ] Started A high performance…er and a reverse proxy server.
+[  OK  ] Started Hostname Service.
+         Starting Network Manager Script Dispatcher Service...
+[  OK  ] Started Network Manager Script Dispatcher Service.
+[  OK  ] Found device /dev/ttyS0.
+[  OK  ] Started Serial Getty on ttyS0.
+[  OK  ] Reached target Login Prompts.
+[  OK  ] Reached target Multi-User System.
+[  OK  ] Reached target Graphical Interface.
+         Starting Update UTMP about System Runlevel Changes...
+[  OK  ] Finished Update UTMP about System Runlevel Changes.
+[   24.301413] remoteproc remoteproc0: powering up wkup_m3
+[   24.310339] remoteproc remoteproc0: Booting fw image am335x-pm-firmware.elf, size 217148
+[   24.329779] remoteproc remoteproc0: remote processor wkup_m3 is now up
+[   24.329803] wkup_m3_ipc 44e11324.wkup_m3_ipc: CM3 Firmware Version = 0x192
+
+Debian GNU/Linux 11 arm ttyS0
+
+default username:password is [debian:temppwd]
+
+arm login: [   27.160128] davinci-mcasp 48038000.mcasp: IRQ common not found
+[   28.183079] PM: bootloader does not support rtc-only!
+[   29.858750] cpsw 4a100000.ethernet: initializing cpsw version 1.12 (0)
+[   29.881112] cpsw 4a100000.ethernet: phy "/ocp/interconnect@4a000000/segment@0/target-module@100000/ethernet@0                                              /mdio@1000/ethernet-phy@0" not found on slave 0
+[   30.620833] remoteproc remoteproc1: 4a334000.pru is available
+[   30.685582] remoteproc remoteproc2: 4a338000.pru is available
+
+U-Boot SPL 2019.04-00002-g31a8ae0206 (May 13 2020 - 09:26:17 -0500)
+Trying to boot from MMC2
+Loading Environment from EXT4...
+** Unable to use mmc 0:1 for loading the env **
+
+
+U-Boot 2019.04-00002-g31a8ae0206 (May 13 2020 - 09:26:17 -0500), Build: jenkins-github_Bootloader-Builder-139
+
+CPU  : AM335X-GP rev 2.1
+I2C:   ready
+DRAM:  512 MiB
+No match for driver 'omap_hsmmc'
+No match for driver 'omap_hsmmc'
+Some drivers were not found
+Reset Source: Global external warm reset has occurred.
+Reset Source: Power-on reset has occurred.
+RTC 32KCLK Source: External.
+MMC:   OMAP SD/MMC: 0, OMAP SD/MMC: 1
+Loading Environment from EXT4...
+** Unable to use mmc 0:1 for loading the env **
+Board: BeagleBone Black
+<ethaddr> not set. Validating first E-fuse MAC
+BeagleBone Black:
+Model: BeagleBone Black Industrial:
+BeagleBone: cape eeprom: i2c_probe: 0x54:
+BeagleBone: cape eeprom: i2c_probe: 0x55:
+BeagleBone: cape eeprom: i2c_probe: 0x56:
+BeagleBone: cape eeprom: i2c_probe: 0x57:
+Net:   eth0: MII MODE
+cpsw, usb_ether
+Press SPACE to abort autoboot in 0 seconds
+=>
+=>
+=>
+=>
+=> ping 192.168.1.23
+link up on port 0, speed 100, full duplex
+Using cpsw device
+host 192.168.1.23 is alive
+=>
+link up on port 0, speed 100, full duplex
+Using cpsw device
+host 192.168.1.23 is alive
+=>
+link up on port 0, speed 100, full duplex
+Using cpsw device
+host 192.168.1.23 is alive
+=> help
+?         - alias for 'help'
+askenv    - get environment variables from stdin
+base      - print or set address offset
+bdinfo    - print Board Info structure
+boot      - boot default, i.e., run 'bootcmd'
+bootd     - boot default, i.e., run 'bootcmd'
+bootefi   - Boots an EFI payload from memory
+bootelf   - Boot from an ELF image in memory
+bootm     - boot application image from memory
+bootp     - boot image via network using BOOTP/TFTP protocol
+bootvx    - Boot vxWorks from an ELF image
+bootz     - boot Linux zImage image from memory
+btrsubvol - list subvolumes of a BTRFS filesystem
+cmp       - memory compare
+coninfo   - print console devices and information
+cp        - memory copy
+crc32     - checksum calculation
+dfu       - Device Firmware Upgrade
+dhcp      - boot image via network using DHCP/TFTP protocol
+dm        - Driver model low level access
+echo      - echo args to console
+editenv   - edit environment variable
+eeprom    - EEPROM sub-system
+env       - environment handling commands
+exit      - exit script
+ext2load  - load binary file from a Ext2 filesystem
+ext2ls    - list files in a directory (default /)
+ext4load  - load binary file from a Ext4 filesystem
+ext4ls    - list files in a directory (default /)
+ext4size  - determine a file's size
+ext4write - create a file in the root directory
+false     - do nothing, unsuccessfully
+fastboot  - run as a fastboot usb or udp device
+fatinfo   - print information about filesystem
+fatload   - load binary file from a dos filesystem
+fatls     - list files in a directory (default /)
+fatmkdir  - create a directory
+fatrm     - delete a file
+fatsize   - determine a file's size
+fatwrite  - write file into a dos filesystem
+fdt       - flattened device tree utility commands
+fstype    - Look up a filesystem type
+go        - start application at address 'addr'
+gpio      - query and control gpio pins
+gpt       - GUID Partition Table
+help      - print command description/usage
+i2c       - I2C sub-system
+iminfo    - print header information for application image
+imxtract  - extract a part of a multi-image
+itest     - return true/false on integer compare
+load      - load binary file from a filesystem
+loadb     - load binary file over serial line (kermit mode)
+loads     - load S-Record file over serial line
+loadx     - load binary file over serial line (xmodem mode)
+loady     - load binary file over serial line (ymodem mode)
+loop      - infinite loop on address range
+ls        - list files in a directory (default /)
+md        - memory display
+mdio      - MDIO utility commands
+mii       - MII utility commands
+mm        - memory modify (auto-incrementing address)
+mmc       - MMC sub system
+mmcinfo   - display MMC info
+mw        - memory write (fill)
+nfs       - boot image via network using NFS protocol
+nm        - memory modify (constant address)
+part      - disk partition related commands
+ping      - send ICMP ECHO_REQUEST to network host
+printenv  - print environment variables
+pxe       - commands to get and boot from pxe files
+reset     - Perform RESET of the CPU
+run       - run commands in an environment variable
+save      - save file to a filesystem
+saveenv   - save environment variables to persistent storage
+setenv    - set environment variables
+setexpr   - set environment variable as the result of eval expression
+sf        - SPI flash sub-system
+showvar   - print local hushshell variables
+size      - determine a file's size
+sleep     - delay execution for some time
+source    - run script from memory
+spl       - SPL configuration
+sspi      - SPI utility command
+sysboot   - command to get and boot from syslinux files
+test      - minimal test like /bin/sh
+tftpboot  - boot image via network using TFTP protocol
+time      - run commands and summarize execution time
+true      - do nothing, successfully
+usb       - USB sub-system
+usbboot   - boot from USB device
+version   - print monitor, compiler and linker version
+=> ¦¦
+Unknown command '¦' - try 'help'
+=> printenv
+arch=arm
+args_mmc=run finduuid;setenv bootargs console=${console} ${cape_disable} ${cape_enable} ${cape_uboot} root=PARTU                                              UID=${uuid} ro rootfstype=${mmcrootfstype} ${uboot_detected_capes} ${cmdline}
+args_mmc_old=setenv bootargs console=${console} ${optargs} ${cape_disable} ${cape_enable} ${cape_uboot} root=${o                                              ldroot} ro rootfstype=${mmcrootfstype} ${uboot_detected_capes} ${cmdline}
+args_mmc_uuid=setenv bootargs console=${console} ${optargs} ${cape_disable} ${cape_enable} ${cape_uboot} root=UU                                              ID=${uuid} ro rootfstype=${mmcrootfstype} ${uboot_detected_capes} ${cmdline}
+args_netinstall=setenv bootargs ${netinstall_bootargs} ${optargs} ${cape_disable} ${cape_enable} ${cape_uboot} r                                              oot=/dev/ram rw ${uboot_detected_capes} ${cmdline}
+args_uenv_root=setenv bootargs console=${console} ${optargs} ${cape_disable} ${cape_enable} ${cape_uboot} root=$                                              {uenv_root} ro rootfstype=${mmcrootfstype} ${uboot_detected_capes} ${cmdline}
+autoconf=off
+baudrate=115200
+board=am335x
+board_eeprom_header=undefined
+board_name=A335BNLT
+board_rev=EIA0
+board_serial=2119SBB12320
+boot=${devtype} dev ${mmcdev}; if ${devtype} rescan; then gpio set 54;setenv bootpart ${mmcdev}:1; if test -e ${                                              devtype} ${bootpart} /etc/fstab; then setenv mmcpart 1;fi; echo Checking for: /uEnv.txt ...;if test -e ${devtype                                              } ${bootpart} /uEnv.txt; then if run loadbootenv; then gpio set 55;echo Loaded environment from /uEnv.txt;run im                                              portbootenv;fi;echo Checking if uenvcmd is set ...;if test -n ${uenvcmd}; then gpio set 56; echo Running uenvcmd                                               ...;run uenvcmd;fi;echo Checking if client_ip is set ...;if test -n ${client_ip}; then if test -n ${dtb}; then                                               setenv fdtfile ${dtb};echo using ${fdtfile} ...;fi;gpio set 56; if test -n ${uname_r}; then echo Running nfsboot                                              _uname_r ...;run nfsboot_uname_r;fi;echo Running nfsboot ...;run nfsboot;fi;fi; echo Checking for: /${script} ..                                              .;if test -e ${devtype} ${bootpart} /${script}; then gpio set 55;setenv scriptfile ${script};run loadbootscript;                                              echo Loaded script from ${scriptfile};gpio set 56; run bootscript;fi; echo Checking for: /boot/${script} ...;if                                               test -e ${devtype} ${bootpart} /boot/${script}; then gpio set 55;setenv scriptfile /boot/${script};run loadboots                                              cript;echo Loaded script from ${scriptfile};gpio set 56; run bootscript;fi; echo Checking for: /boot/uEnv.txt ..                                              .;for i in 1 2 3 4 5 6 7 ; do setenv mmcpart ${i};setenv bootpart ${mmcdev}:${mmcpart};if test -e ${devtype} ${b                                              ootpart} /boot/uEnv.txt; then gpio set 55;load ${devtype} ${bootpart} ${loadaddr} /boot/uEnv.txt;env import -t $                                              {loadaddr} ${filesize};echo Loaded environment from /boot/uEnv.txt;if test -n ${dtb}; then echo debug: [dtb=${dt                                              b}] ... ;setenv fdtfile ${dtb};echo Using: dtb=${fdtfile} ...;fi;echo Checking if uname_r is set in /boot/uEnv.t                                              xt...;if test -n ${uname_r}; then gpio set 56; setenv oldroot /dev/mmcblk${mmcdev}p${mmcpart};echo Running uname                                              _boot ...;run uname_boot;fi;fi;done;fi;
+boot_a_script=load ${devtype} ${devnum}:${distro_bootpart} ${scriptaddr} ${prefix}${script}; source ${scriptaddr                                              }
+boot_efi_binary=if fdt addr ${fdt_addr_r}; then bootefi bootmgr ${fdt_addr_r};else bootefi bootmgr ${fdtcontrola                                              ddr};fi;load ${devtype} ${devnum}:${distro_bootpart} ${kernel_addr_r} efi/boot/bootarm.efi; if fdt addr ${fdt_ad                                              dr_r}; then bootefi ${kernel_addr_r} ${fdt_addr_r};else bootefi ${kernel_addr_r} ${fdtcontroladdr};fi
+boot_extlinux=sysboot ${devtype} ${devnum}:${distro_bootpart} any ${scriptaddr} ${prefix}${boot_syslinux_conf}
+boot_fdt=try
+boot_fit=0
+boot_net_usb_start=usb start
+boot_prefixes=/ /boot/
+boot_script_dhcp=boot.scr.uimg
+boot_scripts=boot.scr.uimg boot.scr
+boot_syslinux_conf=extlinux/extlinux.conf
+boot_targets=mmc0 legacy_mmc0 mmc1 legacy_mmc1 pxe dhcp
+bootcmd=if test ${boot_fit} -eq 1; then run update_to_fit; fi; run findfdt; run init_console; run envboot; run d                                              istro_bootcmd
+bootcmd_dhcp=run boot_net_usb_start; if dhcp ${scriptaddr} ${boot_script_dhcp}; then source ${scriptaddr}; fi;se                                              tenv efi_fdtfile ${fdtfile}; if test -z "${fdtfile}" -a -n "${soc}"; then setenv efi_fdtfile ${soc}-${board}${bo                                              ardver}.dtb; fi; setenv efi_old_vci ${bootp_vci};setenv efi_old_arch ${bootp_arch};setenv bootp_vci PXEClient:Ar                                              ch:00010:UNDI:003000;setenv bootp_arch 0xa;if dhcp ${kernel_addr_r}; then tftpboot ${fdt_addr_r} dtb/${efi_fdtfi                                              le};if fdt addr ${fdt_addr_r}; then bootefi ${kernel_addr_r} ${fdt_addr_r}; else bootefi ${kernel_addr_r} ${fdtc                                              ontroladdr};fi;fi;setenv bootp_vci ${efi_old_vci};setenv bootp_arch ${efi_old_arch};setenv efi_fdtfile;setenv ef                                              i_old_arch;setenv efi_old_vci;
+bootcmd_legacy_mmc0=gpio clear 56; gpio clear 55; gpio clear 54; gpio set 53; setenv devtype mmc; setenv mmcdev                                               0; setenv bootpart 0:1 ; run boot
+bootcmd_legacy_mmc1=gpio clear 56; gpio clear 55; gpio clear 54; gpio set 53; setenv devtype mmc; setenv mmcdev                                               1; setenv bootpart 1:1 ; run boot
+bootcmd_mmc0=devnum=0; run mmc_boot
+bootcmd_mmc1=devnum=1; run mmc_boot
+bootcmd_pxe=run boot_net_usb_start; dhcp; if pxe get; then pxe boot; fi
+bootcount=2
+bootdelay=0
+bootdir=/boot
+bootenv=uEnv.txt
+bootenvfile=uEnv.txt
+bootfile=zImage
+bootm_size=0x10000000
+bootpart=0:2
+bootscript=echo Running bootscript from mmc${bootpart} ...; source ${loadaddr}
+capeloadoverlay=if test -e ${devtype} ${bootpart} ${uboot_overlay}; then run loadoverlay;setenv cape_uboot bone_                                              capemgr.uboot_capemgr_enabled=1; else echo uboot_overlays: unable to find [${devtype} ${bootpart} ${uboot_overla                                              y}]...;fi;
+console=ttyO0,115200n8
+cpu=armv7
+device=eth0
+dfu_alt_info_emmc=rawemmc raw 0 3751936;boot part 1 1;rootfs part 1 2;MLO fat 1 1;MLO.raw raw 0x100 0x100;u-boot                                              .img.raw raw 0x300 0x1000;u-env.raw raw 0x1300 0x200;spl-os-args.raw raw 0x1500 0x200;spl-os-image.raw raw 0x170                                              0 0x6900;spl-os-args fat 1 1;spl-os-image fat 1 1;u-boot.img fat 1 1;uEnv.txt fat 1 1
+dfu_alt_info_mmc=boot part 0 1;rootfs part 0 2;MLO fat 0 1;MLO.raw raw 0x100 0x100;u-boot.img.raw raw 0x300 0x10                                              00;u-env.raw raw 0x1300 0x200;spl-os-args.raw raw 0x1500 0x200;spl-os-image.raw raw 0x1700 0x6900;spl-os-args fa                                              t 0 1;spl-os-image fat 0 1;u-boot.img fat 0 1;uEnv.txt fat 0 1
+dfu_alt_info_ram=kernel ram 0x80200000 0x4000000;fdt ram 0x80f80000 0x80000;ramdisk ram 0x81000000 0x4000000
+distro_bootcmd=for target in ${boot_targets}; do run bootcmd_${target}; done
+eeprom_bbb_header=i2c dev 0; i2c mw 0x50 0x00.2 aa; i2c mw 0x50 0x01.2 55; i2c mw 0x50 0x02.2 33; i2c mw 0x50 0x                                              03.2 ee; i2c mw 0x50 0x04.2 41; i2c mw 0x50 0x05.2 33; i2c mw 0x50 0x06.2 33; i2c mw 0x50 0x07.2 35; i2c mw 0x50                                               0x08.2 42; i2c mw 0x50 0x09.2 4e; i2c mw 0x50 0x0a.2 4c; i2c mw 0x50 0x0b.2 54;
+eeprom_bbbl_footer= i2c mw 0x50 0x0c.2 42; i2c mw 0x50 0x0d.2 4c; i2c mw 0x50 0x0e.2 41; i2c mw 0x50 0x0f.2 32;
+eeprom_bbbw_footer= i2c mw 0x50 0x0c.2 42; i2c mw 0x50 0x0d.2 57; i2c mw 0x50 0x0e.2 41; i2c mw 0x50 0x0f.2 35;
+eeprom_bbgg_footer= i2c mw 0x50 0x0c.2 47; i2c mw 0x50 0x0d.2 47; i2c mw 0x50 0x0e.2 31; i2c mw 0x50 0x0f.2 41;
+eeprom_beaglelogic= i2c mw 0x50 0x00.2 aa; i2c mw 0x50 0x01.2 55; i2c mw 0x50 0x02.2 33; i2c mw 0x50 0x03.2 ee;                                               i2c mw 0x50 0x04.2 41; i2c mw 0x50 0x05.2 33; i2c mw 0x50 0x06.2 33; i2c mw 0x50 0x07.2 35; i2c mw 0x50 0x08.2 4                                              2; i2c mw 0x50 0x09.2 4c; i2c mw 0x50 0x0a.2 47; i2c mw 0x50 0x0b.2 43; i2c mw 0x50 0x0c.2 30; i2c mw 0x50 0x0d.                                              2 30; i2c mw 0x50 0x0e.2 30; i2c mw 0x50 0x0f.2 41;
+eeprom_blank=i2c dev 0; i2c mw 0x50 0x00.2 ff; i2c mw 0x50 0x01.2 ff; i2c mw 0x50 0x02.2 ff; i2c mw 0x50 0x03.2                                               ff; i2c mw 0x50 0x04.2 ff; i2c mw 0x50 0x05.2 ff; i2c mw 0x50 0x06.2 ff; i2c mw 0x50 0x07.2 ff; i2c mw 0x50 0x08                                              .2 ff; i2c mw 0x50 0x09.2 ff; i2c mw 0x50 0x0a.2 ff; i2c mw 0x50 0x0b.2 ff; i2c mw 0x50 0x0c.2 ff; i2c mw 0x50 0                                              x0d.2 ff; i2c mw 0x50 0x0e.2 ff; i2c mw 0x50 0x0f.2 ff; i2c mw 0x50 0x10.2 ff; i2c mw 0x50 0x11.2 ff; i2c mw 0x5                                              0 0x12.2 ff; i2c mw 0x50 0x13.2 ff; i2c mw 0x50 0x14.2 ff; i2c mw 0x50 0x15.2 ff; i2c mw 0x50 0x16.2 ff; i2c mw                                               0x50 0x17.2 ff; i2c mw 0x50 0x18.2 ff; i2c mw 0x50 0x19.2 ff; i2c mw 0x50 0x1a.2 ff; i2c mw 0x50 0x1b.2 ff; i2c                                               mw 0x50 0x1c.2 ff; i2c mw 0x50 0x1d.2 ff; i2c mw 0x50 0x1e.2 ff; i2c mw 0x50 0x1f.2 ff;
+eeprom_dump=i2c dev 0; i2c md 0x50 0x00.2 20;
+eeprom_pocketbeagle= i2c mw 0x50 0x00.2 aa; i2c mw 0x50 0x01.2 55; i2c mw 0x50 0x02.2 33; i2c mw 0x50 0x03.2 ee;                                               i2c mw 0x50 0x04.2 41; i2c mw 0x50 0x05.2 33; i2c mw 0x50 0x06.2 33; i2c mw 0x50 0x07.2 35; i2c mw 0x50 0x08.2                                               50; i2c mw 0x50 0x09.2 42; i2c mw 0x50 0x0a.2 47; i2c mw 0x50 0x0b.2 4c; i2c mw 0x50 0x0c.2 30; i2c mw 0x50 0x0d                                              .2 30; i2c mw 0x50 0x0e.2 41; i2c mw 0x50 0x0f.2 32;
+eeprom_program=if test $board_eeprom_header = bbb_blank; then run eeprom_dump; run eeprom_blank; run eeprom_bbb_                                              header; run eeprom_dump; reset; fi; if test $board_eeprom_header = bbbl_blank; then run eeprom_dump; run eeprom_                                              blank; run eeprom_bbb_header; run eeprom_bbbl_footer; run eeprom_dump; reset; fi; if test $board_eeprom_header =                                               bbbw_blank; then run eeprom_dump; run eeprom_blank; run eeprom_bbb_header; run eeprom_bbbw_footer; run eeprom_d                                              ump; reset; fi; if test $board_eeprom_header = pocketbeagle_blank; then run eeprom_dump; run eeprom_blank; run e                                              eprom_pocketbeagle; run eeprom_dump; reset; fi; if test $board_eeprom_header = bbgg_blank; then run eeprom_dump;                                               run eeprom_blank; run eeprom_bbb_header; run eeprom_bbgg_footer; run eeprom_dump; reset; fi; if test $board_eep                                              rom_header = beaglelogic_blank; then run eeprom_dump; run eeprom_blank; run eeprom_beaglelogic; run eeprom_dump;                                               reset; fi;
+efi_dtb_prefixes=/ /dtb/ /dtb/current/
+envboot=mmc dev ${mmcdev}; if mmc rescan; then echo SD/MMC found on device ${mmcdev};if run loadbootscript; then                                               run bootscript;else if run loadbootenv; then echo Loaded env from ${bootenvfile};run importbootenv;fi;if test -                                              n $uenvcmd; then echo Running uenvcmd ...;run uenvcmd;fi;fi;fi;
+eth1addr=64:33:db:42:d7:0d
+ethact=cpsw
+ethaddr=64:33:db:42:d7:0b
+failumsboot=echo; echo FAILSAFE: U-Boot UMS (USB Mass Storage) enabled, media now available over the usb slave p                                              ort ...; ums 0 ${devtype} 1;
+fdt_addr_r=0x88000000
+fdtaddr=0x88000000
+fdtfile=undefined
+findfdt=echo board_name=[$board_name] ...; if test $board_name = A335BLGC; then setenv fdtfile am335x-beaglelogi                                              c.dtb; fi; if test $board_name = A335BONE; then setenv fdtfile am335x-bone.dtb; fi; if test $board_name = A335BN                                              LT; then echo board_rev=[$board_rev] ...; if test $board_rev = GH01; then setenv fdtfile am335x-boneblack.dtb; e                                              lif test $board_rev = BBG1; then setenv fdtfile am335x-bonegreen.dtb; elif test $board_rev = BP00; then setenv f                                              dtfile am335x-pocketbone.dtb; elif test $board_rev = GW1A; then setenv fdtfile am335x-bonegreen-wireless.dtb; el                                              if test $board_rev = GG1A; then setenv fdtfile am335x-bonegreen-gateway.dtb; elif test $board_rev = AIA0; then s                                              etenv fdtfile am335x-abbbi.dtb; elif test $board_rev = EIA0; then setenv fdtfile am335x-boneblack.dtb; elif test                                               $board_rev = ME06; then setenv fdtfile am335x-bonegreen.dtb; elif test $board_rev = OS00; then setenv fdtfile a                                              m335x-osd3358-sm-red.dtb; else setenv fdtfile am335x-boneblack.dtb; fi; fi; if test $board_name = A335PBGL; then                                               setenv fdtfile am335x-pocketbeagle.dtb; fi; if test $board_name = BBBW; then setenv fdtfile am335x-boneblack-wi                                              reless.dtb; fi; if test $board_name = BBG1; then setenv fdtfile am335x-bonegreen.dtb; fi; if test $board_name =                                               BBGW; then setenv fdtfile am335x-bonegreen-wireless.dtb; fi; if test $board_name = BBGG; then setenv fdtfile am3                                              35x-bonegreen-gateway.dtb; fi; if test $board_name = BBBL; then setenv fdtfile am335x-boneblue.dtb; fi; if test                                               $board_name = BBEN; then setenv fdtfile am335x-sancloud-bbe.dtb; fi; if test $board_name = OS00; then setenv fdt                                              file am335x-osd3358-sm-red.dtb; fi; if test $board_name = A33515BB; then setenv fdtfile am335x-evm.dtb; fi; if t                                              est $board_name = A335X_SK; then setenv fdtfile am335x-evmsk.dtb; fi; if test $board_name = A335_ICE; then seten                                              v fdtfile am335x-icev2.dtb; fi; if test $fdtfile = undefined; then setenv board_name A335BNLT; setenv board_rev                                               EMMC; setenv fdtfile am335x-bonegreen.dtb; fi;
+finduuid=part uuid ${devtype} ${bootpart} uuid
+fit_bootfile=fitImage
+fit_loadaddr=0x90000000
+gw_ip=192.168.1.1
+if_netconsole=ping $serverip
+importbootenv=echo Importing environment from ${devtype} ...; env import -t ${loadaddr} ${filesize}
+init_console=if test $board_name = A335_ICE; then setenv console ttyO3,115200n8;elif test $board_name = A335BLGC                                              ; then setenv console ttyO4,115200n8;else setenv console ttyO0,115200n8;fi;
+ipaddr=192.168.1.2
+kernel_addr_r=0x82000000
+load_efi_dtb=load ${devtype} ${devnum}:${distro_bootpart} ${fdt_addr_r} ${prefix}${efi_fdtfile}
+loadaddr=0x82000000
+loadbootenv=load ${devtype} ${bootpart} ${loadaddr} ${bootenvfile}
+loadbootscript=load ${devtype} ${bootpart} ${loadaddr} ${scriptfile};
+loadfdt=echo loading ${fdtdir}/${fdtfile} ...; load ${devtype} ${bootpart} ${fdtaddr} ${fdtdir}/${fdtfile}
+loadfit=run args_mmc; bootm ${loadaddr}#${fdtfile};
+loadimage=load ${devtype} ${bootpart} ${loadaddr} ${bootdir}/${bootfile}
+loadoverlay=echo uboot_overlays: loading ${uboot_overlay} ...; load ${devtype} ${bootpart} ${rdaddr} ${uboot_ove                                              rlay}; fdt addr ${fdtaddr}; fdt resize ${fdt_buffer}; fdt apply ${rdaddr}; fdt resize ${fdt_buffer};
+loadramdisk=load mmc ${mmcdev} ${rdaddr} ramdisk.gz
+loadrd=load ${devtype} ${bootpart} ${rdaddr} ${bootdir}/${rdfile}; setenv rdsize ${filesize}
+mmc_boot=if mmc dev ${devnum}; then devtype=mmc; run scan_dev_for_boot_part; fi
+mmcboot=mmc dev ${mmcdev}; setenv devnum ${mmcdev}; setenv devtype mmc; if mmc rescan; then echo SD/MMC found on                                               device ${mmcdev};if run loadimage; then if test ${boot_fit} -eq 1; then run loadfit; else run mmcloados;fi;fi;f                                              i;
+mmcdev=0
+mmcloados=run args_mmc; if test ${boot_fdt} = yes || test ${boot_fdt} = try; then if run loadfdt; then if test -                                              n ${uname_r}; then bootz ${loadaddr} ${rdaddr}:${rdsize} ${fdtaddr}; else bootz ${loadaddr} - ${fdtaddr}; fi; el                                              se if test ${boot_fdt} = try; then bootz; else echo WARN: Cannot load the DT; fi; fi; else bootz; fi;
+mmcrootfstype=ext4 rootwait
+netargs=setenv bootargs console=${console} ${optargs} root=/dev/nfs nfsroot=${serverip}:${rootpath},${nfsopts} r                                              w ip=dhcp
+netboot=echo Booting from network ...; setenv autoload no; dhcp; run netloadimage; run netloadfdt; run netargs;                                               bootz ${loadaddr} - ${fdtaddr}
+netloadfdt=tftp ${fdtaddr} ${fdtfile}
+netloadimage=tftp ${loadaddr} ${bootfile}
+netmask=255.255.255.0
+nfs_options=,vers=3
+nfsargs=setenv bootargs console=${console} ${optargs} ${cape_disable} ${cape_enable} ${cape_uboot} root=/dev/nfs                                               rw rootfstype=${nfsrootfstype} nfsroot=${nfsroot} ip=${ip} ${cmdline}
+nfsboot=echo Booting from ${server_ip} ...; setenv nfsroot ${server_ip}:${root_dir}${nfs_options}; setenv ip ${c                                              lient_ip}:${server_ip}:${gw_ip}:${netmask}:${hostname}:${device}:${autoconf}; setenv autoload no; setenv serveri                                              p ${server_ip}; setenv ipaddr ${client_ip}; tftp ${loadaddr} ${tftp_dir}${bootfile}; tftp ${fdtaddr} ${tftp_dir}                                              dtbs/${fdtfile}; run nfsargs; bootz ${loadaddr} - ${fdtaddr}
+nfsboot_uname_r=echo Booting from ${server_ip} ...; setenv nfsroot ${server_ip}:${root_dir}${nfs_options}; seten                                              v ip ${client_ip}:${server_ip}:${gw_ip}:${netmask}:${hostname}:${device}:${autoconf}; setenv autoload no; setenv                                               serverip ${server_ip}; setenv ipaddr ${client_ip}; tftp ${loadaddr} ${tftp_dir}vmlinuz-${uname_r}; tftp ${fdtad                                              dr} ${tftp_dir}dtbs/${uname_r}/${fdtfile}; run nfsargs; bootz ${loadaddr} - ${fdtaddr}
+nfsopts=nolock
+nfsrootfstype=ext4 rootwait fixrtc
+partitions=uuid_disk=${uuid_gpt_disk};name=bootloader,start=384K,size=1792K,uuid=${uuid_gpt_bootloader};name=roo                                              tfs,start=2688K,size=-,uuid=${uuid_gpt_rootfs}
+pb_eeprom_hdr=mw 82001000 ee3355aa; mw 82001004 35333341; mw 82001008 4c474250
+preboot=run if_netconsole start_netconsole
+pxefile_addr_r=0x80100000
+ramargs=setenv bootargs console=${console} ${optargs} root=${ramroot} rootfstype=${ramrootfstype}
+ramboot=echo Booting from ramdisk ...; run ramargs; bootz ${loadaddr} ${rdaddr} ${fdtaddr}
+ramdisk_addr_r=0x88080000
+ramroot=/dev/ram0 rw
+ramrootfstype=ext2
+rdaddr=0x88080000
+root_dir=/home/userid/targetNFS
+rootpath=/export/rootfs
+scan_dev_for_boot=echo Scanning ${devtype} ${devnum}:${distro_bootpart}...; for prefix in ${boot_prefixes}; do r                                              un scan_dev_for_extlinux; run scan_dev_for_scripts; done;run scan_dev_for_efi;
+scan_dev_for_boot_part=part list ${devtype} ${devnum} -bootable devplist; env exists devplist || setenv devplist                                               1; for distro_bootpart in ${devplist}; do if fstype ${devtype} ${devnum}:${distro_bootpart} bootfstype; then ru                                              n scan_dev_for_boot; fi; done; setenv devplist
+scan_dev_for_efi=setenv efi_fdtfile ${fdtfile}; if test -z "${fdtfile}" -a -n "${soc}"; then setenv efi_fdtfile                                               ${soc}-${board}${boardver}.dtb; fi; for prefix in ${efi_dtb_prefixes}; do if test -e ${devtype} ${devnum}:${dist                                              ro_bootpart} ${prefix}${efi_fdtfile}; then run load_efi_dtb; fi;done;if test -e ${devtype} ${devnum}:${distro_bo                                              otpart} efi/boot/bootarm.efi; then echo Found EFI removable media binary efi/boot/bootarm.efi; run boot_efi_bina                                              ry; echo EFI LOAD FAILED: continuing...; fi; setenv efi_fdtfile
+scan_dev_for_extlinux=if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${boot_syslinux_conf}; then ec                                              ho Found ${prefix}${boot_syslinux_conf}; run boot_extlinux; echo SCRIPT FAILED: continuing...; fi
+scan_dev_for_scripts=for script in ${boot_scripts}; do if test -e ${devtype} ${devnum}:${distro_bootpart} ${pref                                              ix}${script}; then echo Found U-Boot script ${prefix}${script}; run boot_a_script; echo SCRIPT FAILED: continuin                                              g...; fi; done
+script=boot.scr
+scriptaddr=0x80000000
+scriptfile=${script}
+serial#=2119SBB12320
+server_ip=192.168.1.100
+serverip=192.168.1.1
+soc=am33xx
+spiargs=setenv bootargs console=${console} ${optargs} root=${spiroot} rootfstype=${spirootfstype}
+spiboot=echo Booting from spi ...; run spiargs; sf probe ${spibusno}:0; sf read ${loadaddr} ${spisrcaddr} ${spii                                              mgsize}; bootz ${loadaddr}
+spibusno=0
+spiimgsize=0x362000
+spiroot=/dev/mtdblock4 rw
+spirootfstype=jffs2
+spisrcaddr=0xe0000
+start_netconsole=setenv ncip $serverip; setenv bootdelay 10; setenv stdin serial,nc; setenv stdout serial,nc; se                                              tenv stderr serial,nc; version
+static_ip=${ipaddr}:${serverip}:${gatewayip}:${netmask}:${hostname}::off
+stderr=ns16550_serial
+stdin=ns16550_serial
+stdout=ns16550_serial
+uboot_base_dtb=am335x-boneblack-uboot.dtb
+uboot_base_dtb_univ=am335x-boneblack-uboot-univ.dtb
+uboot_emmc=/lib/firmware/BB-BONE-eMMC1-01-00A0.dtbo
+uboot_video=/lib/firmware/BB-HDMI-TDA998x-00A0.dtbo
+uboot_video_naudio=/lib/firmware/BB-NHDMI-TDA998x-00A0.dtbo
+uname_boot=setenv bootdir /boot; setenv bootfile vmlinuz-${uname_r}; if test -e ${devtype} ${bootpart} ${bootdir                                              }/${bootfile}; then echo loading ${bootdir}/${bootfile} ...; run loadimage;setenv fdtdir /boot/dtbs/${uname_r};                                               echo debug: [enable_uboot_overlays=${enable_uboot_overlays}] ... ;if test -n ${enable_uboot_overlays}; then echo                                               debug: [enable_uboot_cape_universal=${enable_uboot_cape_universal}] ... ;if test -n ${enable_uboot_cape_univers                                              al}; then echo debug: [uboot_base_dtb_univ=${uboot_base_dtb_univ}] ... ;if test -n ${uboot_base_dtb_univ}; then                                               echo uboot_overlays: [uboot_base_dtb=${uboot_base_dtb_univ}] ... ;if test -e ${devtype} ${bootpart} ${fdtdir}/${                                              uboot_base_dtb_univ}; then setenv fdtfile ${uboot_base_dtb_univ};echo uboot_overlays: Switching too: dtb=${fdtfi                                              le} ...;setenv cape_uboot bone_capemgr.uboot_capemgr_enabled=1; else echo debug: unable to find [${uboot_base_dt                                              b_univ}] using [${uboot_base_dtb}] instead ... ;echo debug: [uboot_base_dtb_univ=${uboot_base_dtb}] ... ;if test                                               -n ${uboot_base_dtb}; then echo uboot_overlays: [uboot_base_dtb=${uboot_base_dtb}] ... ;if test -e ${devtype} $                                              {bootpart} ${fdtdir}/${uboot_base_dtb}; then setenv fdtfile ${uboot_base_dtb};echo uboot_overlays: Switching too                                              : dtb=${fdtfile} ...;fi;fi;fi;fi;else echo debug: [uboot_base_dtb_univ=${uboot_base_dtb}] ... ;if test -n ${uboo                                              t_base_dtb}; then echo uboot_overlays: [uboot_base_dtb=${uboot_base_dtb}] ... ;if test -e ${devtype} ${bootpart}                                               ${fdtdir}/${uboot_base_dtb}; then setenv fdtfile ${uboot_base_dtb};echo uboot_overlays: Switching too: dtb=${fd                                              tfile} ...;fi;fi;fi;fi;if test -e ${devtype} ${bootpart} ${fdtdir}/${fdtfile}; then run loadfdt;else setenv fdtd                                              ir /usr/lib/linux-image-${uname_r}; if test -e ${devtype} ${bootpart} ${fdtdir}/${fdtfile}; then run loadfdt;els                                              e setenv fdtdir /lib/firmware/${uname_r}/device-tree; if test -e ${devtype} ${bootpart} ${fdtdir}/${fdtfile}; th                                              en run loadfdt;else setenv fdtdir /boot/dtb-${uname_r}; if test -e ${devtype} ${bootpart} ${fdtdir}/${fdtfile};                                               then run loadfdt;else setenv fdtdir /boot/dtbs; if test -e ${devtype} ${bootpart} ${fdtdir}/${fdtfile}; then run                                               loadfdt;else setenv fdtdir /boot/dtb; if test -e ${devtype} ${bootpart} ${fdtdir}/${fdtfile}; then run loadfdt;                                              else setenv fdtdir /boot; if test -e ${devtype} ${bootpart} ${fdtdir}/${fdtfile}; then run loadfdt;else if test                                               -e ${devtype} ${bootpart} ${fdtfile}; then run loadfdt;else echo; echo unable to find [dtb=${fdtfile}] did you n                                              ame it correctly? ...; run failumsboot;fi;fi;fi;fi;fi;fi;fi;fi; if test -n ${enable_uboot_overlays}; then setenv                                               fdt_buffer 0x60000;if test -n ${uboot_fdt_buffer}; then setenv fdt_buffer ${uboot_fdt_buffer};fi;echo uboot_ove                                              rlays: [fdt_buffer=${fdt_buffer}] ... ;if test -n ${uboot_silicon}; then setenv uboot_overlay ${uboot_silicon};                                               run virtualloadoverlay;fi;if test -n ${uboot_model}; then setenv uboot_overlay ${uboot_model}; run virtualloadov                                              erlay;fi;if test -n ${disable_uboot_overlay_adc}; then echo uboot_overlays: uboot loading of [/lib/firmware/BB-A                                              DC-00A0.dtbo] disabled by /boot/uEnv.txt [disable_uboot_overlay_adc=1]...;else setenv uboot_overlay /lib/firmwar                                              e/BB-ADC-00A0.dtbo; run virtualloadoverlay;fi;if test -n ${uboot_overlay_addr0}; then if test -n ${disable_uboot                                              _overlay_addr0}; then echo uboot_overlays: uboot loading of [${uboot_overlay_addr0}] disabled by /boot/uEnv.txt                                               [disable_uboot_overlay_addr0=1]...;else setenv uboot_overlay ${uboot_overlay_addr0}; run capeloadoverlay;fi;fi;i                                              f test -n ${uboot_overlay_addr1}; then if test -n ${disable_uboot_overlay_addr1}; then echo uboot_overlays: uboo                                              t loading of [${uboot_overlay_addr1}] disabled by /boot/uEnv.txt [disable_uboot_overlay_addr1=1]...;else setenv                                               uboot_overlay ${uboot_overlay_addr1}; run capeloadoverlay;fi;fi;if test -n ${uboot_overlay_addr2}; then if test                                               -n ${disable_uboot_overlay_addr2}; then echo uboot_overlays: uboot loading of [${uboot_overlay_addr2}] disabled                                               by /boot/uEnv.txt [disable_uboot_overlay_addr2=1]...;else setenv uboot_overlay ${uboot_overlay_addr2}; run capel                                              oadoverlay;fi;fi;if test -n ${uboot_overlay_addr3}; then if test -n ${disable_uboot_overlay_addr3}; then echo ub                                              oot_overlays: uboot loading of [${uboot_overlay_addr3}] disabled by /boot/uEnv.txt [disable_uboot_overlay_addr3=                                              1]...;else setenv uboot_overlay ${uboot_overlay_addr3}; run capeloadoverlay;fi;fi;if test -n ${uboot_overlay_add                                              r4}; then setenv uboot_overlay ${uboot_overlay_addr4}; run capeloadoverlay;fi;if test -n ${uboot_overlay_addr5};                                               then setenv uboot_overlay ${uboot_overlay_addr5}; run capeloadoverlay;fi;if test -n ${uboot_overlay_addr6}; the                                              n setenv uboot_overlay ${uboot_overlay_addr6}; run capeloadoverlay;fi;if test -n ${uboot_overlay_addr7}; then se                                              tenv uboot_overlay ${uboot_overlay_addr7}; run capeloadoverlay;fi;if test -n ${uboot_emmc}; then if test -n ${di                                              sable_uboot_overlay_emmc}; then echo uboot_overlays: uboot loading of [${uboot_emmc}] disabled by /boot/uEnv.txt                                               [disable_uboot_overlay_emmc=1]...;else setenv uboot_overlay ${uboot_emmc}; run virtualloadoverlay;fi;fi;if test                                               -n ${uboot_video}; then if test -n ${disable_uboot_overlay_video}; then echo uboot_overlays: uboot loading of [                                              ${uboot_video}] disabled by /boot/uEnv.txt [disable_uboot_overlay_video=1]...;else if test -n ${disable_uboot_ov                                              erlay_audio}; then echo uboot_overlays: uboot loading of [${uboot_video}] disabled by /boot/uEnv.txt [disable_ub                                              oot_overlay_audio=1]...;setenv uboot_overlay ${uboot_video_naudio}; run virtualloadoverlay;else setenv uboot_ove                                              rlay ${uboot_video}; run virtualloadoverlay;fi;fi;fi;if test -n ${uboot_wireless}; then if test -n ${disable_ubo                                              ot_overlay_wireless}; then echo uboot_overlays: uboot loading of [${uboot_wireless}] disabled by /boot/uEnv.txt                                               [disable_uboot_overlay_wireless=1]...;else setenv uboot_overlay ${uboot_wireless}; run virtualloadoverlay;fi;fi;                                              if test -n ${uboot_overlay_pru}; then setenv uboot_overlay ${uboot_overlay_pru}; run virtualloadoverlay;fi;if te                                              st -n ${uboot_overlay_pru_add}; then setenv uboot_overlay ${uboot_overlay_pru_add}; run virtualloadoverlay;fi;if                                               test -n ${dtb_overlay}; then setenv uboot_overlay ${dtb_overlay}; echo uboot_overlays: [dtb_overlay=${uboot_ove                                              rlay}] ... ;run capeloadoverlay;fi;if test -n ${uboot_detected_capes}; then echo uboot_overlays: [uboot_detected                                              _capes=${uboot_detected_capes_addr0}${uboot_detected_capes_addr1}${uboot_detected_capes_addr2}${uboot_detected_c                                              apes_addr3}] ... ;setenv uboot_detected_capes uboot_detected_capes=${uboot_detected_capes_addr0}${uboot_detected                                              _capes_addr1}${uboot_detected_capes_addr2}${uboot_detected_capes_addr3}; fi;else echo uboot_overlays: add [enabl                                              e_uboot_overlays=1] to /boot/uEnv.txt to enable...;fi;setenv rdfile initrd.img-${uname_r}; if test -e ${devtype}                                               ${bootpart} ${bootdir}/${rdfile}; then echo loading ${bootdir}/${rdfile} ...; run loadrd;if test -n ${netinstal                                              l_enable}; then run args_netinstall; run message;echo debug: [${bootargs}] ... ;echo debug: [bootz ${loadaddr} $                                              {rdaddr}:${rdsize} ${fdtaddr}] ... ;bootz ${loadaddr} ${rdaddr}:${rdsize} ${fdtaddr}; fi;if test -n ${uenv_root}                                              ; then run args_uenv_root;echo debug: [${bootargs}] ... ;echo debug: [bootz ${loadaddr} ${rdaddr}:${rdsize} ${fd                                              taddr}] ... ;bootz ${loadaddr} ${rdaddr}:${rdsize} ${fdtaddr}; fi;if test -n ${uuid}; then run args_mmc_uuid;ech                                              o debug: [${bootargs}] ... ;echo debug: [bootz ${loadaddr} ${rdaddr}:${rdsize} ${fdtaddr}] ... ;bootz ${loadaddr                                              } ${rdaddr}:${rdsize} ${fdtaddr}; fi;run args_mmc_old;echo debug: [${bootargs}] ... ;echo debug: [bootz ${loadad                                              dr} ${rdaddr}:${rdsize} ${fdtaddr}] ... ;bootz ${loadaddr} ${rdaddr}:${rdsize} ${fdtaddr}; else if test -n ${uen                                              v_root}; then run args_uenv_root;echo debug: [${bootargs}] ... ;echo debug: [bootz ${loadaddr} - ${fdtaddr}] ...                                               ;bootz ${loadaddr} - ${fdtaddr}; fi;run args_mmc_old;echo debug: [${bootargs}] ... ;echo debug: [bootz ${loadad                                              dr} - ${fdtaddr}] ... ;bootz ${loadaddr} - ${fdtaddr}; fi;fi;
+update_to_fit=setenv loadaddr ${fit_loadaddr}; setenv bootfile ${fit_bootfile}
+usb_boot=usb start; if usb dev ${devnum}; then devtype=usb; run scan_dev_for_boot_part; fi
+usbnet_devaddr=64:33:db:42:d7:0b
+vendor=ti
+ver=U-Boot 2019.04-00002-g31a8ae0206 (May 13 2020 - 09:26:17 -0500)
+virtualloadoverlay=if test -e ${devtype} ${bootpart} ${uboot_overlay}; then run loadoverlay;else echo uboot_over                                              lays: unable to find [${devtype} ${bootpart} ${uboot_overlay}]...;fi;
+
+Environment size: 26763/131068 bytes
+=> <INTERRUPT>
+=> ¦¦<INTERRUPT>
+=> ¦
+Unknown command '¦¦' - try 'help'
+=>
+Unknown command '¦¦' - try 'help'
+=>
+Unknown command '¦¦' - try 'help'
+=>printenv
+arch=arm
+args_mmc=run finduuid;setenv bootargs console=${console} ${cape_disable} ${cape_enable} ${cape_uboot} root=PARTU                                              UID=${uuid} ro rootfstype=${mmcrootfstype} ${uboot_detected_capes} ${cmdline}
+args_mmc_old=setenv bootargs console=${console} ${optargs} ${cape_disable} ${cape_enable} ${cape_uboot} root=${o                                              ldroot} ro rootfstype=${mmcrootfstype} ${uboot_detected_capes} ${cmdline}
+args_mmc_uuid=setenv bootargs console=${console} ${optargs} ${cape_disable} ${cape_enable} ${cape_uboot} root=UU                                              ID=${uuid} ro rootfstype=${mmcrootfstype} ${uboot_detected_capes} ${cmdline}
+args_netinstall=setenv bootargs ${netinstall_bootargs} ${optargs} ${cape_disable} ${cape_enable} ${cape_uboot} r                                              oot=/dev/ram rw ${uboot_detected_capes} ${cmdline}
+args_uenv_root=setenv bootargs console=${console} ${optargs} ${cape_disable} ${cape_enable} ${cape_uboot} root=$                                              {uenv_root} ro rootfstype=${mmcrootfstype} ${uboot_detected_capes} ${cmdline}
+autoconf=off
+baudrate=115200
+board=am335x
+board_eeprom_header=undefined
+board_name=A335BNLT
+board_rev=EIA0
+board_serial=2119SBB12320
+boot=${devtype} dev ${mmcdev}; if ${devtype} rescan; then gpio set 54;setenv bootpart ${mmcdev}:1; if test -e ${                                              devtype} ${bootpart} /etc/fstab; then setenv mmcpart 1;fi; echo Checking for: /uEnv.txt ...;if test -e ${devtype                                              } ${bootpart} /uEnv.txt; then if run loadbootenv; then gpio set 55;echo Loaded environment from /uEnv.txt;run im                                              portbootenv;fi;echo Checking if uenvcmd is set ...;if test -n ${uenvcmd}; then gpio set 56; echo Running uenvcmd                                               ...;run uenvcmd;fi;echo Checking if client_ip is set ...;if test -n ${client_ip}; then if test -n ${dtb}; then                                               setenv fdtfile ${dtb};echo using ${fdtfile} ...;fi;gpio set 56; if test -n ${uname_r}; then echo Running nfsboot                                              _uname_r ...;run nfsboot_uname_r;fi;echo Running nfsboot ...;run nfsboot;fi;fi; echo Checking for: /${script} ..                                              .;if test -e ${devtype} ${bootpart} /${script}; then gpio set 55;setenv scriptfile ${script};run loadbootscript;                                              echo Loaded script from ${scriptfile};gpio set 56; run bootscript;fi; echo Checking for: /boot/${script} ...;if                                               test -e ${devtype} ${bootpart} /boot/${script}; then gpio set 55;setenv scriptfile /boot/${script};run loadboots                                              cript;echo Loaded script from ${scriptfile};gpio set 56; run bootscript;fi; echo Checking for: /boot/uEnv.txt ..                                              .;for i in 1 2 3 4 5 6 7 ; do setenv mmcpart ${i};setenv bootpart ${mmcdev}:${mmcpart};if test -e ${devtype} ${b                                              ootpart} /boot/uEnv.txt; then gpio set 55;load ${devtype} ${bootpart} ${loadaddr} /boot/uEnv.txt;env import -t $                                              {loadaddr} ${filesize};echo Loaded environment from /boot/uEnv.txt;if test -n ${dtb}; then echo debug: [dtb=${dt                                              b}] ... ;setenv fdtfile ${dtb};echo Using: dtb=${fdtfile} ...;fi;echo Checking if uname_r is set in /boot/uEnv.t                                              xt...;if test -n ${uname_r}; then gpio set 56; setenv oldroot /dev/mmcblk${mmcdev}p${mmcpart};echo Running uname                                              _boot ...;run uname_boot;fi;fi;done;fi;
+boot_a_script=load ${devtype} ${devnum}:${distro_bootpart} ${scriptaddr} ${prefix}${script}; source ${scriptaddr                                              }
+boot_efi_binary=if fdt addr ${fdt_addr_r}; then bootefi bootmgr ${fdt_addr_r};else bootefi bootmgr ${fdtcontrola                                              ddr};fi;load ${devtype} ${devnum}:${distro_bootpart} ${kernel_addr_r} efi/boot/bootarm.efi; if fdt addr ${fdt_ad                                              dr_r}; then bootefi ${kernel_addr_r} ${fdt_addr_r};else bootefi ${kernel_addr_r} ${fdtcontroladdr};fi
+boot_extlinux=sysboot ${devtype} ${devnum}:${distro_bootpart} any ${scriptaddr} ${prefix}${boot_syslinux_conf}
+boot_fdt=try
+boot_fit=0
+boot_net_usb_start=usb start
+boot_prefixes=/ /boot/
+boot_script_dhcp=boot.scr.uimg
+boot_scripts=boot.scr.uimg boot.scr
+boot_syslinux_conf=extlinux/extlinux.conf
+boot_targets=mmc0 legacy_mmc0 mmc1 legacy_mmc1 pxe dhcp
+bootcmd=if test ${boot_fit} -eq 1; then run update_to_fit; fi; run findfdt; run init_console; run envboot; run d                                              istro_bootcmd
+bootcmd_dhcp=run boot_net_usb_start; if dhcp ${scriptaddr} ${boot_script_dhcp}; then source ${scriptaddr}; fi;se                                              tenv efi_fdtfile ${fdtfile}; if test -z "${fdtfile}" -a -n "${soc}"; then setenv efi_fdtfile ${soc}-${board}${bo                                              ardver}.dtb; fi; setenv efi_old_vci ${bootp_vci};setenv efi_old_arch ${bootp_arch};setenv bootp_vci PXEClient:Ar                                              ch:00010:UNDI:003000;setenv bootp_arch 0xa;if dhcp ${kernel_addr_r}; then tftpboot ${fdt_addr_r} dtb/${efi_fdtfi                                              le};if fdt addr ${fdt_addr_r}; then bootefi ${kernel_addr_r} ${fdt_addr_r}; else bootefi ${kernel_addr_r} ${fdtc                                              ontroladdr};fi;fi;setenv bootp_vci ${efi_old_vci};setenv bootp_arch ${efi_old_arch};setenv efi_fdtfile;setenv ef                                              i_old_arch;setenv efi_old_vci;
+bootcmd_legacy_mmc0=gpio clear 56; gpio clear 55; gpio clear 54; gpio set 53; setenv devtype mmc; setenv mmcdev                                               0; setenv bootpart 0:1 ; run boot
+bootcmd_legacy_mmc1=gpio clear 56; gpio clear 55; gpio clear 54; gpio set 53; setenv devtype mmc; setenv mmcdev                                               1; setenv bootpart 1:1 ; run boot
+bootcmd_mmc0=devnum=0; run mmc_boot
+bootcmd_mmc1=devnum=1; run mmc_boot
+bootcmd_pxe=run boot_net_usb_start; dhcp; if pxe get; then pxe boot; fi
+bootcount=2
+bootdelay=0
+bootdir=/boot
+bootenv=uEnv.txt
+bootenvfile=uEnv.txt
+bootfile=zImage
+bootm_size=0x10000000
+bootpart=0:2
+bootscript=echo Running bootscript from mmc${bootpart} ...; source ${loadaddr}
+capeloadoverlay=if test -e ${devtype} ${bootpart} ${uboot_overlay}; then run loadoverlay;setenv cape_uboot bone_                                              capemgr.uboot_capemgr_enabled=1; else echo uboot_overlays: unable to find [${devtype} ${bootpart} ${uboot_overla                                              y}]...;fi;
+console=ttyO0,115200n8
+cpu=armv7
+device=eth0
+dfu_alt_info_emmc=rawemmc raw 0 3751936;boot part 1 1;rootfs part 1 2;MLO fat 1 1;MLO.raw raw 0x100 0x100;u-boot                                              .img.raw raw 0x300 0x1000;u-env.raw raw 0x1300 0x200;spl-os-args.raw raw 0x1500 0x200;spl-os-image.raw raw 0x170                                              0 0x6900;spl-os-args fat 1 1;spl-os-image fat 1 1;u-boot.img fat 1 1;uEnv.txt fat 1 1
+dfu_alt_info_mmc=boot part 0 1;rootfs part 0 2;MLO fat 0 1;MLO.raw raw 0x100 0x100;u-boot.img.raw raw 0x300 0x10                                              00;u-env.raw raw 0x1300 0x200;spl-os-args.raw raw 0x1500 0x200;spl-os-image.raw raw 0x1700 0x6900;spl-os-args fa                                              t 0 1;spl-os-image fat 0 1;u-boot.img fat 0 1;uEnv.txt fat 0 1
+dfu_alt_info_ram=kernel ram 0x80200000 0x4000000;fdt ram 0x80f80000 0x80000;ramdisk ram 0x81000000 0x4000000
+distro_bootcmd=for target in ${boot_targets}; do run bootcmd_${target}; done
+eeprom_bbb_header=i2c dev 0; i2c mw 0x50 0x00.2 aa; i2c mw 0x50 0x01.2 55; i2c mw 0x50 0x02.2 33; i2c mw 0x50 0x                                              03.2 ee; i2c mw 0x50 0x04.2 41; i2c mw 0x50 0x05.2 33; i2c mw 0x50 0x06.2 33; i2c mw 0x50 0x07.2 35; i2c mw 0x50                                               0x08.2 42; i2c mw 0x50 0x09.2 4e; i2c mw 0x50 0x0a.2 4c; i2c mw 0x50 0x0b.2 54;
+eeprom_bbbl_footer= i2c mw 0x50 0x0c.2 42; i2c mw 0x50 0x0d.2 4c; i2c mw 0x50 0x0e.2 41; i2c mw 0x50 0x0f.2 32;
+eeprom_bbbw_footer= i2c mw 0x50 0x0c.2 42; i2c mw 0x50 0x0d.2 57; i2c mw 0x50 0x0e.2 41; i2c mw 0x50 0x0f.2 35;
+eeprom_bbgg_footer= i2c mw 0x50 0x0c.2 47; i2c mw 0x50 0x0d.2 47; i2c mw 0x50 0x0e.2 31; i2c mw 0x50 0x0f.2 41;
+eeprom_beaglelogic= i2c mw 0x50 0x00.2 aa; i2c mw 0x50 0x01.2 55; i2c mw 0x50 0x02.2 33; i2c mw 0x50 0x03.2 ee;                                               i2c mw 0x50 0x04.2 41; i2c mw 0x50 0x05.2 33; i2c mw 0x50 0x06.2 33; i2c mw 0x50 0x07.2 35; i2c mw 0x50 0x08.2 4                                              2; i2c mw 0x50 0x09.2 4c; i2c mw 0x50 0x0a.2 47; i2c mw 0x50 0x0b.2 43; i2c mw 0x50 0x0c.2 30; i2c mw 0x50 0x0d.                                              2 30; i2c mw 0x50 0x0e.2 30; i2c mw 0x50 0x0f.2 41;
+eeprom_blank=i2c dev 0; i2c mw 0x50 0x00.2 ff; i2c mw 0x50 0x01.2 ff; i2c mw 0x50 0x02.2 ff; i2c mw 0x50 0x03.2                                               ff; i2c mw 0x50 0x04.2 ff; i2c mw 0x50 0x05.2 ff; i2c mw 0x50 0x06.2 ff; i2c mw 0x50 0x07.2 ff; i2c mw 0x50 0x08                                              .2 ff; i2c mw 0x50 0x09.2 ff; i2c mw 0x50 0x0a.2 ff; i2c mw 0x50 0x0b.2 ff; i2c mw 0x50 0x0c.2 ff; i2c mw 0x50 0                                              x0d.2 ff; i2c mw 0x50 0x0e.2 ff; i2c mw 0x50 0x0f.2 ff; i2c mw 0x50 0x10.2 ff; i2c mw 0x50 0x11.2 ff; i2c mw 0x5                                              0 0x12.2 ff; i2c mw 0x50 0x13.2 ff; i2c mw 0x50 0x14.2 ff; i2c mw 0x50 0x15.2 ff; i2c mw 0x50 0x16.2 ff; i2c mw                                               0x50 0x17.2 ff; i2c mw 0x50 0x18.2 ff; i2c mw 0x50 0x19.2 ff; i2c mw 0x50 0x1a.2 ff; i2c mw 0x50 0x1b.2 ff; i2c                                               mw 0x50 0x1c.2 ff; i2c mw 0x50 0x1d.2 ff; i2c mw 0x50 0x1e.2 ff; i2c mw 0x50 0x1f.2 ff;
+eeprom_dump=i2c dev 0; i2c md 0x50 0x00.2 20;
+eeprom_pocketbeagle= i2c mw 0x50 0x00.2 aa; i2c mw 0x50 0x01.2 55; i2c mw 0x50 0x02.2 33; i2c mw 0x50 0x03.2 ee;                                               i2c mw 0x50 0x04.2 41; i2c mw 0x50 0x05.2 33; i2c mw 0x50 0x06.2 33; i2c mw 0x50 0x07.2 35; i2c mw 0x50 0x08.2                                               50; i2c mw 0x50 0x09.2 42; i2c mw 0x50 0x0a.2 47; i2c mw 0x50 0x0b.2 4c; i2c mw 0x50 0x0c.2 30; i2c mw 0x50 0x0d                                              .2 30; i2c mw 0x50 0x0e.2 41; i2c mw 0x50 0x0f.2 32;
+eeprom_program=if test $board_eeprom_header = bbb_blank; then run eeprom_dump; run eeprom_blank; run eeprom_bbb_                                              header; run eeprom_dump; reset; fi; if test $board_eeprom_header = bbbl_blank; then run eeprom_dump; run eeprom_                                              blank; run eeprom_bbb_header; run eeprom_bbbl_footer; run eeprom_dump; reset; fi; if test $board_eeprom_header =                                               bbbw_blank; then run eeprom_dump; run eeprom_blank; run eeprom_bbb_header; run eeprom_bbbw_footer; run eeprom_d                                              ump; reset; fi; if test $board_eeprom_header = pocketbeagle_blank; then run eeprom_dump; run eeprom_blank; run e                                              eprom_pocketbeagle; run eeprom_dump; reset; fi; if test $board_eeprom_header = bbgg_blank; then run eeprom_dump;                                               run eeprom_blank; run eeprom_bbb_header; run eeprom_bbgg_footer; run eeprom_dump; reset; fi; if test $board_eep                                              rom_header = beaglelogic_blank; then run eeprom_dump; run eeprom_blank; run eeprom_beaglelogic; run eeprom_dump;                                               reset; fi;
+efi_dtb_prefixes=/ /dtb/ /dtb/current/
+envboot=mmc dev ${mmcdev}; if mmc rescan; then echo SD/MMC found on device ${mmcdev};if run loadbootscript; then                                               run bootscript;else if run loadbootenv; then echo Loaded env from ${bootenvfile};run importbootenv;fi;if test -                                              n $uenvcmd; then echo Running uenvcmd ...;run uenvcmd;fi;fi;fi;
+eth1addr=64:33:db:42:d7:0d
+ethact=cpsw
+ethaddr=64:33:db:42:d7:0b
+failumsboot=echo; echo FAILSAFE: U-Boot UMS (USB Mass Storage) enabled, media now available over the usb slave p                                              ort ...; ums 0 ${devtype} 1;
+fdt_addr_r=0x88000000
+fdtaddr=0x88000000
+fdtfile=undefined
+findfdt=echo board_name=[$board_name] ...; if test $board_name = A335BLGC; then setenv fdtfile am335x-beaglelogi                                              c.dtb; fi; if test $board_name = A335BONE; then setenv fdtfile am335x-bone.dtb; fi; if test $board_name = A335BN                                              LT; then echo board_rev=[$board_rev] ...; if test $board_rev = GH01; then setenv fdtfile am335x-boneblack.dtb; e                                              lif test $board_rev = BBG1; then setenv fdtfile am335x-bonegreen.dtb; elif test $board_rev = BP00; then setenv f                                              dtfile am335x-pocketbone.dtb; elif test $board_rev = GW1A; then setenv fdtfile am335x-bonegreen-wireless.dtb; el                                              if test $board_rev = GG1A; then setenv fdtfile am335x-bonegreen-gateway.dtb; elif test $board_rev = AIA0; then s                                              etenv fdtfile am335x-abbbi.dtb; elif test $board_rev = EIA0; then setenv fdtfile am335x-boneblack.dtb; elif test                                               $board_rev = ME06; then setenv fdtfile am335x-bonegreen.dtb; elif test $board_rev = OS00; then setenv fdtfile a                                              m335x-osd3358-sm-red.dtb; else setenv fdtfile am335x-boneblack.dtb; fi; fi; if test $board_name = A335PBGL; then                                               setenv fdtfile am335x-pocketbeagle.dtb; fi; if test $board_name = BBBW; then setenv fdtfile am335x-boneblack-wi                                              reless.dtb; fi; if test $board_name = BBG1; then setenv fdtfile am335x-bonegreen.dtb; fi; if test $board_name =                                               BBGW; then setenv fdtfile am335x-bonegreen-wireless.dtb; fi; if test $board_name = BBGG; then setenv fdtfile am3                                              35x-bonegreen-gateway.dtb; fi; if test $board_name = BBBL; then setenv fdtfile am335x-boneblue.dtb; fi; if test                                               $board_name = BBEN; then setenv fdtfile am335x-sancloud-bbe.dtb; fi; if test $board_name = OS00; then setenv fdt                                              file am335x-osd3358-sm-red.dtb; fi; if test $board_name = A33515BB; then setenv fdtfile am335x-evm.dtb; fi; if t                                              est $board_name = A335X_SK; then setenv fdtfile am335x-evmsk.dtb; fi; if test $board_name = A335_ICE; then seten                                              v fdtfile am335x-icev2.dtb; fi; if test $fdtfile = undefined; then setenv board_name A335BNLT; setenv board_rev                                               EMMC; setenv fdtfile am335x-bonegreen.dtb; fi;
+finduuid=part uuid ${devtype} ${bootpart} uuid
+fit_bootfile=fitImage
+fit_loadaddr=0x90000000
+gw_ip=192.168.1.1
+if_netconsole=ping $serverip
+importbootenv=echo Importing environment from ${devtype} ...; env import -t ${loadaddr} ${filesize}
+init_console=if test $board_name = A335_ICE; then setenv console ttyO3,115200n8;elif test $board_name = A335BLGC                                              ; then setenv console ttyO4,115200n8;else setenv console ttyO0,115200n8;fi;
+ipaddr=192.168.1.2
+kernel_addr_r=0x82000000
+load_efi_dtb=load ${devtype} ${devnum}:${distro_bootpart} ${fdt_addr_r} ${prefix}${efi_fdtfile}
+loadaddr=0x82000000
+loadbootenv=load ${devtype} ${bootpart} ${loadaddr} ${bootenvfile}
+loadbootscript=load ${devtype} ${bootpart} ${loadaddr} ${scriptfile};
+loadfdt=echo loading ${fdtdir}/${fdtfile} ...; load ${devtype} ${bootpart} ${fdtaddr} ${fdtdir}/${fdtfile}
+loadfit=run args_mmc; bootm ${loadaddr}#${fdtfile};
+loadimage=load ${devtype} ${bootpart} ${loadaddr} ${bootdir}/${bootfile}
+loadoverlay=echo uboot_overlays: loading ${uboot_overlay} ...; load ${devtype} ${bootpart} ${rdaddr} ${uboot_ove                                              rlay}; fdt addr ${fdtaddr}; fdt resize ${fdt_buffer}; fdt apply ${rdaddr}; fdt resize ${fdt_buffer};
+loadramdisk=load mmc ${mmcdev} ${rdaddr} ramdisk.gz
+loadrd=load ${devtype} ${bootpart} ${rdaddr} ${bootdir}/${rdfile}; setenv rdsize ${filesize}
+mmc_boot=if mmc dev ${devnum}; then devtype=mmc; run scan_dev_for_boot_part; fi
+mmcboot=mmc dev ${mmcdev}; setenv devnum ${mmcdev}; setenv devtype mmc; if mmc rescan; then echo SD/MMC found on                                               device ${mmcdev};if run loadimage; then if test ${boot_fit} -eq 1; then run loadfit; else run mmcloados;fi;fi;f                                              i;
+mmcdev=0
+mmcloados=run args_mmc; if test ${boot_fdt} = yes || test ${boot_fdt} = try; then if run loadfdt; then if test -                                              n ${uname_r}; then bootz ${loadaddr} ${rdaddr}:${rdsize} ${fdtaddr}; else bootz ${loadaddr} - ${fdtaddr}; fi; el                                              se if test ${boot_fdt} = try; then bootz; else echo WARN: Cannot load the DT; fi; fi; else bootz; fi;
+mmcrootfstype=ext4 rootwait
+netargs=setenv bootargs console=${console} ${optargs} root=/dev/nfs nfsroot=${serverip}:${rootpath},${nfsopts} r                                              w ip=dhcp
+netboot=echo Booting from network ...; setenv autoload no; dhcp; run netloadimage; run netloadfdt; run netargs;                                               bootz ${loadaddr} - ${fdtaddr}
+netloadfdt=tftp ${fdtaddr} ${fdtfile}
+netloadimage=tftp ${loadaddr} ${bootfile}
+netmask=255.255.255.0
+nfs_options=,vers=3
+nfsargs=setenv bootargs console=${console} ${optargs} ${cape_disable} ${cape_enable} ${cape_uboot} root=/dev/nfs                                               rw rootfstype=${nfsrootfstype} nfsroot=${nfsroot} ip=${ip} ${cmdline}
+nfsboot=echo Booting from ${server_ip} ...; setenv nfsroot ${server_ip}:${root_dir}${nfs_options}; setenv ip ${c                                              lient_ip}:${server_ip}:${gw_ip}:${netmask}:${hostname}:${device}:${autoconf}; setenv autoload no; setenv serveri                                              p ${server_ip}; setenv ipaddr ${client_ip}; tftp ${loadaddr} ${tftp_dir}${bootfile}; tftp ${fdtaddr} ${tftp_dir}                                              dtbs/${fdtfile}; run nfsargs; bootz ${loadaddr} - ${fdtaddr}
+nfsboot_uname_r=echo Booting from ${server_ip} ...; setenv nfsroot ${server_ip}:${root_dir}${nfs_options}; seten                                              v ip ${client_ip}:${server_ip}:${gw_ip}:${netmask}:${hostname}:${device}:${autoconf}; setenv autoload no; setenv                                               serverip ${server_ip}; setenv ipaddr ${client_ip}; tftp ${loadaddr} ${tftp_dir}vmlinuz-${uname_r}; tftp ${fdtad                                              dr} ${tftp_dir}dtbs/${uname_r}/${fdtfile}; run nfsargs; bootz ${loadaddr} - ${fdtaddr}
+nfsopts=nolock
+nfsrootfstype=ext4 rootwait fixrtc
+partitions=uuid_disk=${uuid_gpt_disk};name=bootloader,start=384K,size=1792K,uuid=${uuid_gpt_bootloader};name=roo                                              tfs,start=2688K,size=-,uuid=${uuid_gpt_rootfs}
+pb_eeprom_hdr=mw 82001000 ee3355aa; mw 82001004 35333341; mw 82001008 4c474250
+preboot=run if_netconsole start_netconsole
+pxefile_addr_r=0x80100000
+ramargs=setenv bootargs console=${console} ${optargs} root=${ramroot} rootfstype=${ramrootfstype}
+ramboot=echo Booting from ramdisk ...; run ramargs; bootz ${loadaddr} ${rdaddr} ${fdtaddr}
+ramdisk_addr_r=0x88080000
+ramroot=/dev/ram0 rw
+ramrootfstype=ext2
+rdaddr=0x88080000
+root_dir=/home/userid/targetNFS
+rootpath=/export/rootfs
+scan_dev_for_boot=echo Scanning ${devtype} ${devnum}:${distro_bootpart}...; for prefix in ${boot_prefixes}; do r                                              un scan_dev_for_extlinux; run scan_dev_for_scripts; done;run scan_dev_for_efi;
+scan_dev_for_boot_part=part list ${devtype} ${devnum} -bootable devplist; env exists devplist || setenv devplist                                               1; for distro_bootpart in ${devplist}; do if fstype ${devtype} ${devnum}:${distro_bootpart} bootfstype; then ru                                              n scan_dev_for_boot; fi; done; setenv devplist
+scan_dev_for_efi=setenv efi_fdtfile ${fdtfile}; if test -z "${fdtfile}" -a -n "${soc}"; then setenv efi_fdtfile                                               ${soc}-${board}${boardver}.dtb; fi; for prefix in ${efi_dtb_prefixes}; do if test -e ${devtype} ${devnum}:${dist                                              ro_bootpart} ${prefix}${efi_fdtfile}; then run load_efi_dtb; fi;done;if test -e ${devtype} ${devnum}:${distro_bo                                              otpart} efi/boot/bootarm.efi; then echo Found EFI removable media binary efi/boot/bootarm.efi; run boot_efi_bina                                              ry; echo EFI LOAD FAILED: continuing...; fi; setenv efi_fdtfile
+scan_dev_for_extlinux=if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${boot_syslinux_conf}; then ec                                              ho Found ${prefix}${boot_syslinux_conf}; run boot_extlinux; echo SCRIPT FAILED: continuing...; fi
+scan_dev_for_scripts=for script in ${boot_scripts}; do if test -e ${devtype} ${devnum}:${distro_bootpart} ${pref                                              ix}${script}; then echo Found U-Boot script ${prefix}${script}; run boot_a_script; echo SCRIPT FAILED: continuin                                              g...; fi; done
+script=boot.scr
+scriptaddr=0x80000000
+scriptfile=${script}
+serial#=2119SBB12320
+server_ip=192.168.1.100
+serverip=192.168.1.1
+soc=am33xx
+spiargs=setenv bootargs console=${console} ${optargs} root=${spiroot} rootfstype=${spirootfstype}
+spiboot=echo Booting from spi ...; run spiargs; sf probe ${spibusno}:0; sf read ${loadaddr} ${spisrcaddr} ${spii                                              mgsize}; bootz ${loadaddr}
+spibusno=0
+spiimgsize=0x362000
+spiroot=/dev/mtdblock4 rw
+spirootfstype=jffs2
+spisrcaddr=0xe0000
+start_netconsole=setenv ncip $serverip; setenv bootdelay 10; setenv stdin serial,nc; setenv stdout serial,nc; se                                              tenv stderr serial,nc; version
+static_ip=${ipaddr}:${serverip}:${gatewayip}:${netmask}:${hostname}::off
+stderr=ns16550_serial
+stdin=ns16550_serial
+stdout=ns16550_serial
+uboot_base_dtb=am335x-boneblack-uboot.dtb
+uboot_base_dtb_univ=am335x-boneblack-uboot-univ.dtb
+uboot_emmc=/lib/firmware/BB-BONE-eMMC1-01-00A0.dtbo
+uboot_video=/lib/firmware/BB-HDMI-TDA998x-00A0.dtbo
+uboot_video_naudio=/lib/firmware/BB-NHDMI-TDA998x-00A0.dtbo
+uname_boot=setenv bootdir /boot; setenv bootfile vmlinuz-${uname_r}; if test -e ${devtype} ${bootpart} ${bootdir                                              }/${bootfile}; then echo loading ${bootdir}/${bootfile} ...; run loadimage;setenv fdtdir /boot/dtbs/${uname_r};                                               echo debug: [enable_uboot_overlays=${enable_uboot_overlays}] ... ;if test -n ${enable_uboot_overlays}; then echo                                               debug: [enable_uboot_cape_universal=${enable_uboot_cape_universal}] ... ;if test -n ${enable_uboot_cape_univers                                              al}; then echo debug: [uboot_base_dtb_univ=${uboot_base_dtb_univ}] ... ;if test -n ${uboot_base_dtb_univ}; then                                               echo uboot_overlays: [uboot_base_dtb=${uboot_base_dtb_univ}] ... ;if test -e ${devtype} ${bootpart} ${fdtdir}/${                                              uboot_base_dtb_univ}; then setenv fdtfile ${uboot_base_dtb_univ};echo uboot_overlays: Switching too: dtb=${fdtfi                                              le} ...;setenv cape_uboot bone_capemgr.uboot_capemgr_enabled=1; else echo debug: unable to find [${uboot_base_dt                                              b_univ}] using [${uboot_base_dtb}] instead ... ;echo debug: [uboot_base_dtb_univ=${uboot_base_dtb}] ... ;if test                                               -n ${uboot_base_dtb}; then echo uboot_overlays: [uboot_base_dtb=${uboot_base_dtb}] ... ;if test -e ${devtype} $                                              {bootpart} ${fdtdir}/${uboot_base_dtb}; then setenv fdtfile ${uboot_base_dtb};echo uboot_overlays: Switching too                                              : dtb=${fdtfile} ...;fi;fi;fi;fi;else echo debug: [uboot_base_dtb_univ=${uboot_base_dtb}] ... ;if test -n ${uboo                                              t_base_dtb}; then echo uboot_overlays: [uboot_base_dtb=${uboot_base_dtb}] ... ;if test -e ${devtype} ${bootpart}                                               ${fdtdir}/${uboot_base_dtb}; then setenv fdtfile ${uboot_base_dtb};echo uboot_overlays: Switching too: dtb=${fd                                              tfile} ...;fi;fi;fi;fi;if test -e ${devtype} ${bootpart} ${fdtdir}/${fdtfile}; then run loadfdt;else setenv fdtd                                              ir /usr/lib/linux-image-${uname_r}; if test -e ${devtype} ${bootpart} ${fdtdir}/${fdtfile}; then run loadfdt;els                                              e setenv fdtdir /lib/firmware/${uname_r}/device-tree; if test -e ${devtype} ${bootpart} ${fdtdir}/${fdtfile}; th                                              en run loadfdt;else setenv fdtdir /boot/dtb-${uname_r}; if test -e ${devtype} ${bootpart} ${fdtdir}/${fdtfile};                                               then run loadfdt;else setenv fdtdir /boot/dtbs; if test -e ${devtype} ${bootpart} ${fdtdir}/${fdtfile}; then run                                               loadfdt;else setenv fdtdir /boot/dtb; if test -e ${devtype} ${bootpart} ${fdtdir}/${fdtfile}; then run loadfdt;                                              else setenv fdtdir /boot; if test -e ${devtype} ${bootpart} ${fdtdir}/${fdtfile}; then run loadfdt;else if test                                               -e ${devtype} ${bootpart} ${fdtfile}; then run loadfdt;else echo; echo unable to find [dtb=${fdtfile}] did you n                                              ame it correctly? ...; run failumsboot;fi;fi;fi;fi;fi;fi;fi;fi; if test -n ${enable_uboot_overlays}; then setenv                                               fdt_buffer 0x60000;if test -n ${uboot_fdt_buffer}; then setenv fdt_buffer ${uboot_fdt_buffer};fi;echo uboot_ove                                              rlays: [fdt_buffer=${fdt_buffer}] ... ;if test -n ${uboot_silicon}; then setenv uboot_overlay ${uboot_silicon};                                               run virtualloadoverlay;fi;if test -n ${uboot_model}; then setenv uboot_overlay ${uboot_model}; run virtualloadov                                              erlay;fi;if test -n ${disable_uboot_overlay_adc}; then echo uboot_overlays: uboot loading of [/lib/firmware/BB-A                                              DC-00A0.dtbo] disabled by /boot/uEnv.txt [disable_uboot_overlay_adc=1]...;else setenv uboot_overlay /lib/firmwar                                              e/BB-ADC-00A0.dtbo; run virtualloadoverlay;fi;if test -n ${uboot_overlay_addr0}; then if test -n ${disable_uboot                                              _overlay_addr0}; then echo uboot_overlays: uboot loading of [${uboot_overlay_addr0}] disabled by /boot/uEnv.txt                                               [disable_uboot_overlay_addr0=1]...;else setenv uboot_overlay ${uboot_overlay_addr0}; run capeloadoverlay;fi;fi;i                                              f test -n ${uboot_overlay_addr1}; then if test -n ${disable_uboot_overlay_addr1}; then echo uboot_overlays: uboo                                              t loading of [${uboot_overlay_addr1}] disabled by /boot/uEnv.txt [disable_uboot_overlay_addr1=1]...;else setenv                                               uboot_overlay ${uboot_overlay_addr1}; run capeloadoverlay;fi;fi;if test -n ${uboot_overlay_addr2}; then if test                                               -n ${disable_uboot_overlay_addr2}; then echo uboot_overlays: uboot loading of [${uboot_overlay_addr2}] disabled                                               by /boot/uEnv.txt [disable_uboot_overlay_addr2=1]...;else setenv uboot_overlay ${uboot_overlay_addr2}; run capel                                              oadoverlay;fi;fi;if test -n ${uboot_overlay_addr3}; then if test -n ${disable_uboot_overlay_addr3}; then echo ub                                              oot_overlays: uboot loading of [${uboot_overlay_addr3}] disabled by /boot/uEnv.txt [disable_uboot_overlay_addr3=                                              1]...;else setenv uboot_overlay ${uboot_overlay_addr3}; run capeloadoverlay;fi;fi;if test -n ${uboot_overlay_add                                              r4}; then setenv uboot_overlay ${uboot_overlay_addr4}; run capeloadoverlay;fi;if test -n ${uboot_overlay_addr5};                                               then setenv uboot_overlay ${uboot_overlay_addr5}; run capeloadoverlay;fi;if test -n ${uboot_overlay_addr6}; the                                              n setenv uboot_overlay ${uboot_overlay_addr6}; run capeloadoverlay;fi;if test -n ${uboot_overlay_addr7}; then se                                              tenv uboot_overlay ${uboot_overlay_addr7}; run capeloadoverlay;fi;if test -n ${uboot_emmc}; then if test -n ${di                                              sable_uboot_overlay_emmc}; then echo uboot_overlays: uboot loading of [${uboot_emmc}] disabled by /boot/uEnv.txt                                               [disable_uboot_overlay_emmc=1]...;else setenv uboot_overlay ${uboot_emmc}; run virtualloadoverlay;fi;fi;if test                                               -n ${uboot_video}; then if test -n ${disable_uboot_overlay_video}; then echo uboot_overlays: uboot loading of [                                              ${uboot_video}] disabled by /boot/uEnv.txt [disable_uboot_overlay_video=1]...;else if test -n ${disable_uboot_ov                                              erlay_audio}; then echo uboot_overlays: uboot loading of [${uboot_video}] disabled by /boot/uEnv.txt [disable_ub                                              oot_overlay_audio=1]...;setenv uboot_overlay ${uboot_video_naudio}; run virtualloadoverlay;else setenv uboot_ove                                              rlay ${uboot_video}; run virtualloadoverlay;fi;fi;fi;if test -n ${uboot_wireless}; then if test -n ${disable_ubo                                              ot_overlay_wireless}; then echo uboot_overlays: uboot loading of [${uboot_wireless}] disabled by /boot/uEnv.txt                                               [disable_uboot_overlay_wireless=1]...;else setenv uboot_overlay ${uboot_wireless}; run virtualloadoverlay;fi;fi;                                              if test -n ${uboot_overlay_pru}; then setenv uboot_overlay ${uboot_overlay_pru}; run virtualloadoverlay;fi;if te                                              st -n ${uboot_overlay_pru_add}; then setenv uboot_overlay ${uboot_overlay_pru_add}; run virtualloadoverlay;fi;if                                               test -n ${dtb_overlay}; then setenv uboot_overlay ${dtb_overlay}; echo uboot_overlays: [dtb_overlay=${uboot_ove                                              rlay}] ... ;run capeloadoverlay;fi;if test -n ${uboot_detected_capes}; then echo uboot_overlays: [uboot_detected                                              _capes=${uboot_detected_capes_addr0}${uboot_detected_capes_addr1}${uboot_detected_capes_addr2}${uboot_detected_c                                              apes_addr3}] ... ;setenv uboot_detected_capes uboot_detected_capes=${uboot_detected_capes_addr0}${uboot_detected                                              _capes_addr1}${uboot_detected_capes_addr2}${uboot_detected_capes_addr3}; fi;else echo uboot_overlays: add [enabl                                              e_uboot_overlays=1] to /boot/uEnv.txt to enable...;fi;setenv rdfile initrd.img-${uname_r}; if test -e ${devtype}                                               ${bootpart} ${bootdir}/${rdfile}; then echo loading ${bootdir}/${rdfile} ...; run loadrd;if test -n ${netinstal                                              l_enable}; then run args_netinstall; run message;echo debug: [${bootargs}] ... ;echo debug: [bootz ${loadaddr} $                                              {rdaddr}:${rdsize} ${fdtaddr}] ... ;bootz ${loadaddr} ${rdaddr}:${rdsize} ${fdtaddr}; fi;if test -n ${uenv_root}                                              ; then run args_uenv_root;echo debug: [${bootargs}] ... ;echo debug: [bootz ${loadaddr} ${rdaddr}:${rdsize} ${fd                                              taddr}] ... ;bootz ${loadaddr} ${rdaddr}:${rdsize} ${fdtaddr}; fi;if test -n ${uuid}; then run args_mmc_uuid;ech                                              o debug: [${bootargs}] ... ;echo debug: [bootz ${loadaddr} ${rdaddr}:${rdsize} ${fdtaddr}] ... ;bootz ${loadaddr                                              } ${rdaddr}:${rdsize} ${fdtaddr}; fi;run args_mmc_old;echo debug: [${bootargs}] ... ;echo debug: [bootz ${loadad                                              dr} ${rdaddr}:${rdsize} ${fdtaddr}] ... ;bootz ${loadaddr} ${rdaddr}:${rdsize} ${fdtaddr}; else if test -n ${uen                                              v_root}; then run args_uenv_root;echo debug: [${bootargs}] ... ;echo debug: [bootz ${loadaddr} - ${fdtaddr}] ...                                               ;bootz ${loadaddr} - ${fdtaddr}; fi;run args_mmc_old;echo debug: [${bootargs}] ... ;echo debug: [bootz ${loadad                                              dr} - ${fdtaddr}] ... ;bootz ${loadaddr} - ${fdtaddr}; fi;fi;
+update_to_fit=setenv loadaddr ${fit_loadaddr}; setenv bootfile ${fit_bootfile}
+usb_boot=usb start; if usb dev ${devnum}; then devtype=usb; run scan_dev_for_boot_part; fi
+usbnet_devaddr=64:33:db:42:d7:0b
+vendor=ti
+ver=U-Boot 2019.04-00002-g31a8ae0206 (May 13 2020 - 09:26:17 -0500)
+virtualloadoverlay=if test -e ${devtype} ${bootpart} ${uboot_overlay}; then run loadoverlay;else echo uboot_over                                              lays: unable to find [${devtype} ${bootpart} ${uboot_overlay}]...;fi;
+
+Environment size: 26763/131068 bytes
+=> 6m
+Unknown command '6m' - try 'help'
+=> printenv
+arch=arm
+args_mmc=run finduuid;setenv bootargs console=${console} ${cape_disable} ${cape_enable} ${cape_uboot} root=PARTUUID=${uuid} ro rootfstype=${mmcrootfstype} ${uboot_detected_capes} ${cmdline}
+args_mmc_old=setenv bootargs console=${console} ${optargs} ${cape_disable} ${cape_enable} ${cape_uboot} root=${oldroot} ro rootfstype=${mmcrootfstype} ${uboot_detected_capes} ${cmdline}
+args_mmc_uuid=setenv bootargs console=${console} ${optargs} ${cape_disable} ${cape_enable} ${cape_uboot} root=UUID=${uuid} ro rootfstype=${mmcrootfstype} ${uboot_detected_capes} ${cmdline}
+args_netinstall=setenv bootargs ${netinstall_bootargs} ${optargs} ${cape_disable} ${cape_enable} ${cape_uboot} root=/dev/ram rw ${uboot_detected_capes} ${cmdline}
+args_uenv_root=setenv bootargs console=${console} ${optargs} ${cape_disable} ${cape_enable} ${cape_uboot} root=${uenv_root} ro rootfstype=${mmcrootfstype} ${uboot_detected_capes} ${cmdline}
+autoconf=off
+baudrate=115200
+board=am335x
+board_eeprom_header=undefined
+board_name=A335BNLT
+board_rev=EIA0
+board_serial=2119SBB12320
+boot=${devtype} dev ${mmcdev}; if ${devtype} rescan; then gpio set 54;setenv bootpart ${mmcdev}:1; if test -e ${devtype} ${bootpart} /etc/fstab; then setenv mmcpart 1;fi; echo Checking for: /uEnv.txt ...;if test -e ${devtype} ${bootpart} /uEnv.txt; then if run loadbootenv; then gpio set 55;echo Loaded environment from /uEnv.txt;run importbootenv;fi;echo Checking if uenvcmd is set ...;if test -n ${uenvcmd}; then gpio set 56; echo Running uenvcmd ...;run uenvcmd;fi;echo Checking if client_ip is set ...;if test -n ${client_ip}; then if test -n ${dtb}; then setenv fdtfile ${dtb};echo using ${fdtfile} ...;fi;gpio set 56; if test -n ${uname_r}; then echo Running nfsboot_uname_r ...;run nfsboot_uname_r;fi;echo Running nfsboot ...;run nfsboot;fi;fi; echo Checking for: /${script} ...;if test -e ${devtype} ${bootpart} /${script}; then gpio set 55;setenv scriptfile ${script};run loadbootscript;echo Loaded script from ${scriptfile};gpio set 56; run bootscript;fi; echo Checking for: /boot/${script} ...;if test -e ${devtype} ${bootpart} /boot/${script}; then gpio set 55;setenv scriptfile /boot/${script};run loadbootscript;echo Loaded script from ${scriptfile};gpio set 56; run bootscript;fi; echo Checking for: /boot/uEnv.txt ...;for i in 1 2 3 4 5 6 7 ; do setenv mmcpart ${i};setenv bootpart ${mmcdev}:${mmcpart};if test -e ${devtype} ${bootpart} /boot/uEnv.txt; then gpio set 55;load ${devtype} ${bootpart} ${loadaddr} /boot/uEnv.txt;env import -t ${loadaddr} ${filesize};echo Loaded environment from /boot/uEnv.txt;if test -n ${dtb}; then echo debug: [dtb=${dtb}] ... ;setenv fdtfile ${dtb};echo Using: dtb=${fdtfile} ...;fi;echo Checking if uname_r is set in /boot/uEnv.txt...;if test -n ${uname_r}; then gpio set 56; setenv oldroot /dev/mmcblk${mmcdev}p${mmcpart};echo Running uname_boot ...;run uname_boot;fi;fi;done;fi;
+boot_a_script=load ${devtype} ${devnum}:${distro_bootpart} ${scriptaddr} ${prefix}${script}; source ${scriptaddr}
+boot_efi_binary=if fdt addr ${fdt_addr_r}; then bootefi bootmgr ${fdt_addr_r};else bootefi bootmgr ${fdtcontroladdr};fi;load ${devtype} ${devnum}:${distro_bootpart} ${kernel_addr_r} efi/boot/bootarm.efi; if fdt addr ${fdt_addr_r}; then bootefi ${kernel_addr_r} ${fdt_addr_r};else bootefi ${kernel_addr_r} ${fdtcontroladdr};fi
+boot_extlinux=sysboot ${devtype} ${devnum}:${distro_bootpart} any ${scriptaddr} ${prefix}${boot_syslinux_conf}
+boot_fdt=try
+boot_fit=0
+boot_net_usb_start=usb start
+boot_prefixes=/ /boot/
+boot_script_dhcp=boot.scr.uimg
+boot_scripts=boot.scr.uimg boot.scr
+boot_syslinux_conf=extlinux/extlinux.conf
+boot_targets=mmc0 legacy_mmc0 mmc1 legacy_mmc1 pxe dhcp
+bootcmd=if test ${boot_fit} -eq 1; then run update_to_fit; fi; run findfdt; run init_console; run envboot; run distro_bootcmd
+bootcmd_dhcp=run boot_net_usb_start; if dhcp ${scriptaddr} ${boot_script_dhcp}; then source ${scriptaddr}; fi;setenv efi_fdtfile ${fdtfile}; if test -z "${fdtfile}" -a -n "${soc}"; then setenv efi_fdtfile ${soc}-${board}${boardver}.dtb; fi; setenv efi_old_vci ${bootp_vci};setenv efi_old_arch ${bootp_arch};setenv bootp_vci PXEClient:Arch:00010:UNDI:003000;setenv bootp_arch 0xa;if dhcp ${kernel_addr_r}; then tftpboot ${fdt_addr_r} dtb/${efi_fdtfile};if fdt addr ${fdt_addr_r}; then bootefi ${kernel_addr_r} ${fdt_addr_r}; else bootefi ${kernel_addr_r} ${fdtcontroladdr};fi;fi;setenv bootp_vci ${efi_old_vci};setenv bootp_arch ${efi_old_arch};setenv efi_fdtfile;setenv efi_old_arch;setenv efi_old_vci;
+bootcmd_legacy_mmc0=gpio clear 56; gpio clear 55; gpio clear 54; gpio set 53; setenv devtype mmc; setenv mmcdev 0; setenv bootpart 0:1 ; run boot
+bootcmd_legacy_mmc1=gpio clear 56; gpio clear 55; gpio clear 54; gpio set 53; setenv devtype mmc; setenv mmcdev 1; setenv bootpart 1:1 ; run boot
+bootcmd_mmc0=devnum=0; run mmc_boot
+bootcmd_mmc1=devnum=1; run mmc_boot
+bootcmd_pxe=run boot_net_usb_start; dhcp; if pxe get; then pxe boot; fi
+bootcount=2
+bootdelay=0
+bootdir=/boot
+bootenv=uEnv.txt
+bootenvfile=uEnv.txt
+bootfile=zImage
+bootm_size=0x10000000
+bootpart=0:2
+bootscript=echo Running bootscript from mmc${bootpart} ...; source ${loadaddr}
+capeloadoverlay=if test -e ${devtype} ${bootpart} ${uboot_overlay}; then run loadoverlay;setenv cape_uboot bone_capemgr.uboot_capemgr_enabled=1; else echo uboot_overlays: unable to find [${devtype} ${bootpart} ${uboot_overlay}]...;fi;
+console=ttyO0,115200n8
+cpu=armv7
+device=eth0
+dfu_alt_info_emmc=rawemmc raw 0 3751936;boot part 1 1;rootfs part 1 2;MLO fat 1 1;MLO.raw raw 0x100 0x100;u-boot.img.raw raw 0x300 0x1000;u-env.raw raw 0x1300 0x200;spl-os-args.raw raw 0x1500 0x200;spl-os-image.raw raw 0x1700 0x6900;spl-os-args fat 1 1;spl-os-image fat 1 1;u-boot.img fat 1 1;uEnv.txt fat 1 1
+dfu_alt_info_mmc=boot part 0 1;rootfs part 0 2;MLO fat 0 1;MLO.raw raw 0x100 0x100;u-boot.img.raw raw 0x300 0x1000;u-env.raw raw 0x1300 0x200;spl-os-args.raw raw 0x1500 0x200;spl-os-image.raw raw 0x1700 0x6900;spl-os-args fat 0 1;spl-os-image fat 0 1;u-boot.img fat 0 1;uEnv.txt fat 0 1
+dfu_alt_info_ram=kernel ram 0x80200000 0x4000000;fdt ram 0x80f80000 0x80000;ramdisk ram 0x81000000 0x4000000
+distro_bootcmd=for target in ${boot_targets}; do run bootcmd_${target}; done
+eeprom_bbb_header=i2c dev 0; i2c mw 0x50 0x00.2 aa; i2c mw 0x50 0x01.2 55; i2c mw 0x50 0x02.2 33; i2c mw 0x50 0x03.2 ee; i2c mw 0x50 0x04.2 41; i2c mw 0x50 0x05.2 33; i2c mw 0x50 0x06.2 33; i2c mw 0x50 0x07.2 35; i2c mw 0x50 0x08.2 42; i2c mw 0x50 0x09.2 4e; i2c mw 0x50 0x0a.2 4c; i2c mw 0x50 0x0b.2 54;
+eeprom_bbbl_footer= i2c mw 0x50 0x0c.2 42; i2c mw 0x50 0x0d.2 4c; i2c mw 0x50 0x0e.2 41; i2c mw 0x50 0x0f.2 32;
+eeprom_bbbw_footer= i2c mw 0x50 0x0c.2 42; i2c mw 0x50 0x0d.2 57; i2c mw 0x50 0x0e.2 41; i2c mw 0x50 0x0f.2 35;
+eeprom_bbgg_footer= i2c mw 0x50 0x0c.2 47; i2c mw 0x50 0x0d.2 47; i2c mw 0x50 0x0e.2 31; i2c mw 0x50 0x0f.2 41;
+eeprom_beaglelogic= i2c mw 0x50 0x00.2 aa; i2c mw 0x50 0x01.2 55; i2c mw 0x50 0x02.2 33; i2c mw 0x50 0x03.2 ee; i2c mw 0x50 0x04.2 41; i2c mw 0x50 0x05.2 33; i2c mw 0x50 0x06.2 33; i2c mw 0x50 0x07.2 35; i2c mw 0x50 0x08.2 42; i2c mw 0x50 0x09.2 4c; i2c mw 0x50 0x0a.2 47; i2c mw 0x50 0x0b.2 43; i2c mw 0x50 0x0c.2 30; i2c mw 0x50 0x0d.2 30; i2c mw 0x50 0x0e.2 30; i2c mw 0x50 0x0f.2 41;
+eeprom_blank=i2c dev 0; i2c mw 0x50 0x00.2 ff; i2c mw 0x50 0x01.2 ff; i2c mw 0x50 0x02.2 ff; i2c mw 0x50 0x03.2 ff; i2c mw 0x50 0x04.2 ff; i2c mw 0x50 0x05.2 ff; i2c mw 0x50 0x06.2 ff; i2c mw 0x50 0x07.2 ff; i2c mw 0x50 0x08.2 ff; i2c mw 0x50 0x09.2 ff; i2c mw 0x50 0x0a.2 ff; i2c mw 0x50 0x0b.2 ff; i2c mw 0x50 0x0c.2 ff; i2c mw 0x50 0x0d.2 ff; i2c mw 0x50 0x0e.2 ff; i2c mw 0x50 0x0f.2 ff; i2c mw 0x50 0x10.2 ff; i2c mw 0x50 0x11.2 ff; i2c mw 0x50 0x12.2 ff; i2c mw 0x50 0x13.2 ff; i2c mw 0x50 0x14.2 ff; i2c mw 0x50 0x15.2 ff; i2c mw 0x50 0x16.2 ff; i2c mw 0x50 0x17.2 ff; i2c mw 0x50 0x18.2 ff; i2c mw 0x50 0x19.2 ff; i2c mw 0x50 0x1a.2 ff; i2c mw 0x50 0x1b.2 ff; i2c mw 0x50 0x1c.2 ff; i2c mw 0x50 0x1d.2 ff; i2c mw 0x50 0x1e.2 ff; i2c mw 0x50 0x1f.2 ff;
+eeprom_dump=i2c dev 0; i2c md 0x50 0x00.2 20;
+eeprom_pocketbeagle= i2c mw 0x50 0x00.2 aa; i2c mw 0x50 0x01.2 55; i2c mw 0x50 0x02.2 33; i2c mw 0x50 0x03.2 ee; i2c mw 0x50 0x04.2 41; i2c mw 0x50 0x05.2 33; i2c mw 0x50 0x06.2 33; i2c mw 0x50 0x07.2 35; i2c mw 0x50 0x08.2 50; i2c mw 0x50 0x09.2 42; i2c mw 0x50 0x0a.2 47; i2c mw 0x50 0x0b.2 4c; i2c mw 0x50 0x0c.2 30; i2c mw 0x50 0x0d.2 30; i2c mw 0x50 0x0e.2 41; i2c mw 0x50 0x0f.2 32;
+eeprom_program=if test $board_eeprom_header = bbb_blank; then run eeprom_dump; run eeprom_blank; run eeprom_bbb_header; run eeprom_dump; reset; fi; if test $board_eeprom_header = bbbl_blank; then run eeprom_dump; run eeprom_blank; run eeprom_bbb_header; run eeprom_bbbl_footer; run eeprom_dump; reset; fi; if test $board_eeprom_header = bbbw_blank; then run eeprom_dump; run eeprom_blank; run eeprom_bbb_header; run eeprom_bbbw_footer; run eeprom_dump; reset; fi; if test $board_eeprom_header = pocketbeagle_blank; then run eeprom_dump; run eeprom_blank; run eeprom_pocketbeagle; run eeprom_dump; reset; fi; if test $board_eeprom_header = bbgg_blank; then run eeprom_dump; run eeprom_blank; run eeprom_bbb_header; run eeprom_bbgg_footer; run eeprom_dump; reset; fi; if test $board_eeprom_header = beaglelogic_blank; then run eeprom_dump; run eeprom_blank; run eeprom_beaglelogic; run eeprom_dump; reset; fi;
+efi_dtb_prefixes=/ /dtb/ /dtb/current/
+envboot=mmc dev ${mmcdev}; if mmc rescan; then echo SD/MMC found on device ${mmcdev};if run loadbootscript; then run bootscript;else if run loadbootenv; then echo Loaded env from ${bootenvfile};run importbootenv;fi;if test -n $uenvcmd; then echo Running uenvcmd ...;run uenvcmd;fi;fi;fi;
+eth1addr=64:33:db:42:d7:0d
+ethact=cpsw
+ethaddr=64:33:db:42:d7:0b
+failumsboot=echo; echo FAILSAFE: U-Boot UMS (USB Mass Storage) enabled, media now available over the usb slave port ...; ums 0 ${devtype} 1;
+fdt_addr_r=0x88000000
+fdtaddr=0x88000000
+fdtfile=undefined
+findfdt=echo board_name=[$board_name] ...; if test $board_name = A335BLGC; then setenv fdtfile am335x-beaglelogic.dtb; fi; if test $board_name = A335BONE; then setenv fdtfile am335x-bone.dtb; fi; if test $board_name = A335BNLT; then echo board_rev=[$board_rev] ...; if test $board_rev = GH01; then setenv fdtfile am335x-boneblack.dtb; elif test $board_rev = BBG1; then setenv fdtfile am335x-bonegreen.dtb; elif test $board_rev = BP00; then setenv fdtfile am335x-pocketbone.dtb; elif test $board_rev = GW1A; then setenv fdtfile am335x-bonegreen-wireless.dtb; elif test $board_rev = GG1A; then setenv fdtfile am335x-bonegreen-gateway.dtb; elif test $board_rev = AIA0; then setenv fdtfile am335x-abbbi.dtb; elif test $board_rev = EIA0; then setenv fdtfile am335x-boneblack.dtb; elif test $board_rev = ME06; then setenv fdtfile am335x-bonegreen.dtb; elif test $board_rev = OS00; then setenv fdtfile am335x-osd3358-sm-red.dtb; else setenv fdtfile am335x-boneblack.dtb; fi; fi; if test $board_name = A335PBGL; then setenv fdtfile am335x-pocketbeagle.dtb; fi; if test $board_name = BBBW; then setenv fdtfile am335x-boneblack-wireless.dtb; fi; if test $board_name = BBG1; then setenv fdtfile am335x-bonegreen.dtb; fi; if test $board_name = BBGW; then setenv fdtfile am335x-bonegreen-wireless.dtb; fi; if test $board_name = BBGG; then setenv fdtfile am335x-bonegreen-gateway.dtb; fi; if test $board_name = BBBL; then setenv fdtfile am335x-boneblue.dtb; fi; if test $board_name = BBEN; then setenv fdtfile am335x-sancloud-bbe.dtb; fi; if test $board_name = OS00; then setenv fdtfile am335x-osd3358-sm-red.dtb; fi; if test $board_name = A33515BB; then setenv fdtfile am335x-evm.dtb; fi; if test $board_name = A335X_SK; then setenv fdtfile am335x-evmsk.dtb; fi; if test $board_name = A335_ICE; then setenv fdtfile am335x-icev2.dtb; fi; if test $fdtfile = undefined; then setenv board_name A335BNLT; setenv board_rev EMMC; setenv fdtfile am335x-bonegreen.dtb; fi;
+finduuid=part uuid ${devtype} ${bootpart} uuid
+fit_bootfile=fitImage
+fit_loadaddr=0x90000000
+gw_ip=192.168.1.1
+if_netconsole=ping $serverip
+importbootenv=echo Importing environment from ${devtype} ...; env import -t ${loadaddr} ${filesize}
+init_console=if test $board_name = A335_ICE; then setenv console ttyO3,115200n8;elif test $board_name = A335BLGC; then setenv console ttyO4,115200n8;else setenv console ttyO0,115200n8;fi;
+ipaddr=192.168.1.2
+kernel_addr_r=0x82000000
+load_efi_dtb=load ${devtype} ${devnum}:${distro_bootpart} ${fdt_addr_r} ${prefix}${efi_fdtfile}
+loadaddr=0x82000000
+loadbootenv=load ${devtype} ${bootpart} ${loadaddr} ${bootenvfile}
+loadbootscript=load ${devtype} ${bootpart} ${loadaddr} ${scriptfile};
+loadfdt=echo loading ${fdtdir}/${fdtfile} ...; load ${devtype} ${bootpart} ${fdtaddr} ${fdtdir}/${fdtfile}
+loadfit=run args_mmc; bootm ${loadaddr}#${fdtfile};
+loadimage=load ${devtype} ${bootpart} ${loadaddr} ${bootdir}/${bootfile}
+loadoverlay=echo uboot_overlays: loading ${uboot_overlay} ...; load ${devtype} ${bootpart} ${rdaddr} ${uboot_overlay}; fdt addr ${fdtaddr}; fdt resize ${fdt_buffer}; fdt apply ${rdaddr}; fdt resize ${fdt_buffer};
+loadramdisk=load mmc ${mmcdev} ${rdaddr} ramdisk.gz
+loadrd=load ${devtype} ${bootpart} ${rdaddr} ${bootdir}/${rdfile}; setenv rdsize ${filesize}
+mmc_boot=if mmc dev ${devnum}; then devtype=mmc; run scan_dev_for_boot_part; fi
+mmcboot=mmc dev ${mmcdev}; setenv devnum ${mmcdev}; setenv devtype mmc; if mmc rescan; then echo SD/MMC found on device ${mmcdev};if run loadimage; then if test ${boot_fit} -eq 1; then run loadfit; else run mmcloados;fi;fi;fi;
+mmcdev=0
+mmcloados=run args_mmc; if test ${boot_fdt} = yes || test ${boot_fdt} = try; then if run loadfdt; then if test -n ${uname_r}; then bootz ${loadaddr} ${rdaddr}:${rdsize} ${fdtaddr}; else bootz ${loadaddr} - ${fdtaddr}; fi; else if test ${boot_fdt} = try; then bootz; else echo WARN: Cannot load the DT; fi; fi; else bootz; fi;
+mmcrootfstype=ext4 rootwait
+netargs=setenv bootargs console=${console} ${optargs} root=/dev/nfs nfsroot=${serverip}:${rootpath},${nfsopts} rw ip=dhcp
+netboot=echo Booting from network ...; setenv autoload no; dhcp; run netloadimage; run netloadfdt; run netargs; bootz ${loadaddr} - ${fdtaddr}
+netloadfdt=tftp ${fdtaddr} ${fdtfile}
+netloadimage=tftp ${loadaddr} ${bootfile}
+netmask=255.255.255.0
+nfs_options=,vers=3
+nfsargs=setenv bootargs console=${console} ${optargs} ${cape_disable} ${cape_enable} ${cape_uboot} root=/dev/nfs rw rootfstype=${nfsrootfstype} nfsroot=${nfsroot} ip=${ip} ${cmdline}
+nfsboot=echo Booting from ${server_ip} ...; setenv nfsroot ${server_ip}:${root_dir}${nfs_options}; setenv ip ${client_ip}:${server_ip}:${gw_ip}:${netmask}:${hostname}:${device}:${autoconf}; setenv autoload no; setenv serverip ${server_ip}; setenv ipaddr ${client_ip}; tftp ${loadaddr} ${tftp_dir}${bootfile}; tftp ${fdtaddr} ${tftp_dir}dtbs/${fdtfile}; run nfsargs; bootz ${loadaddr} - ${fdtaddr}
+nfsboot_uname_r=echo Booting from ${server_ip} ...; setenv nfsroot ${server_ip}:${root_dir}${nfs_options}; setenv ip ${client_ip}:${server_ip}:${gw_ip}:${netmask}:${hostname}:${device}:${autoconf}; setenv autoload no; setenv serverip ${server_ip}; setenv ipaddr ${client_ip}; tftp ${loadaddr} ${tftp_dir}vmlinuz-${uname_r}; tftp ${fdtaddr} ${tftp_dir}dtbs/${uname_r}/${fdtfile}; run nfsargs; bootz ${loadaddr} - ${fdtaddr}
+nfsopts=nolock
+nfsrootfstype=ext4 rootwait fixrtc
+partitions=uuid_disk=${uuid_gpt_disk};name=bootloader,start=384K,size=1792K,uuid=${uuid_gpt_bootloader};name=rootfs,start=2688K,size=-,uuid=${uuid_gpt_rootfs}
+pb_eeprom_hdr=mw 82001000 ee3355aa; mw 82001004 35333341; mw 82001008 4c474250
+preboot=run if_netconsole start_netconsole
+pxefile_addr_r=0x80100000
+ramargs=setenv bootargs console=${console} ${optargs} root=${ramroot} rootfstype=${ramrootfstype}
+ramboot=echo Booting from ramdisk ...; run ramargs; bootz ${loadaddr} ${rdaddr} ${fdtaddr}
+ramdisk_addr_r=0x88080000
+ramroot=/dev/ram0 rw
+ramrootfstype=ext2
+rdaddr=0x88080000
+root_dir=/home/userid/targetNFS
+rootpath=/export/rootfs
+scan_dev_for_boot=echo Scanning ${devtype} ${devnum}:${distro_bootpart}...; for prefix in ${boot_prefixes}; do run scan_dev_for_extlinux; run scan_dev_for_scripts; done;run scan_dev_for_efi;
+scan_dev_for_boot_part=part list ${devtype} ${devnum} -bootable devplist; env exists devplist || setenv devplist 1; for distro_bootpart in ${devplist}; do if fstype ${devtype} ${devnum}:${distro_bootpart} bootfstype; then run scan_dev_for_boot; fi; done; setenv devplist
+scan_dev_for_efi=setenv efi_fdtfile ${fdtfile}; if test -z "${fdtfile}" -a -n "${soc}"; then setenv efi_fdtfile ${soc}-${board}${boardver}.dtb; fi; for prefix in ${efi_dtb_prefixes}; do if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${efi_fdtfile}; then run load_efi_dtb; fi;done;if test -e ${devtype} ${devnum}:${distro_bootpart} efi/boot/bootarm.efi; then echo Found EFI removable media binary efi/boot/bootarm.efi; run boot_efi_binary; echo EFI LOAD FAILED: continuing...; fi; setenv efi_fdtfile
+scan_dev_for_extlinux=if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${boot_syslinux_conf}; then echo Found ${prefix}${boot_syslinux_conf}; run boot_extlinux; echo SCRIPT FAILED: continuing...; fi
+scan_dev_for_scripts=for script in ${boot_scripts}; do if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${script}; then echo Found U-Boot script ${prefix}${script}; run boot_a_script; echo SCRIPT FAILED: continuing...; fi; done
+script=boot.scr
+scriptaddr=0x80000000
+scriptfile=${script}
+serial#=2119SBB12320
+server_ip=192.168.1.100
+serverip=192.168.1.1
+soc=am33xx
+spiargs=setenv bootargs console=${console} ${optargs} root=${spiroot} rootfstype=${spirootfstype}
+spiboot=echo Booting from spi ...; run spiargs; sf probe ${spibusno}:0; sf read ${loadaddr} ${spisrcaddr} ${spiimgsize}; bootz ${loadaddr}
+spibusno=0
+spiimgsize=0x362000
+spiroot=/dev/mtdblock4 rw
+spirootfstype=jffs2
+spisrcaddr=0xe0000
+start_netconsole=setenv ncip $serverip; setenv bootdelay 10; setenv stdin serial,nc; setenv stdout serial,nc; setenv stderr serial,nc; version
+static_ip=${ipaddr}:${serverip}:${gatewayip}:${netmask}:${hostname}::off
+stderr=ns16550_serial
+stdin=ns16550_serial
+stdout=ns16550_serial
+uboot_base_dtb=am335x-boneblack-uboot.dtb
+uboot_base_dtb_univ=am335x-boneblack-uboot-univ.dtb
+uboot_emmc=/lib/firmware/BB-BONE-eMMC1-01-00A0.dtbo
+uboot_video=/lib/firmware/BB-HDMI-TDA998x-00A0.dtbo
+uboot_video_naudio=/lib/firmware/BB-NHDMI-TDA998x-00A0.dtbo
+uname_boot=setenv bootdir /boot; setenv bootfile vmlinuz-${uname_r}; if test -e ${devtype} ${bootpart} ${bootdir}/${bootfile}; then echo loading ${bootdir}/${bootfile} ...; run loadimage;setenv fdtdir /boot/dtbs/${uname_r}; echo debug: [enable_uboot_overlays=${enable_uboot_overlays}] ... ;if test -n ${enable_uboot_overlays}; then echo debug: [enable_uboot_cape_universal=${enable_uboot_cape_universal}] ... ;if test -n ${enable_uboot_cape_universal}; then echo debug: [uboot_base_dtb_univ=${uboot_base_dtb_univ}] ... ;if test -n ${uboot_base_dtb_univ}; then echo uboot_overlays: [uboot_base_dtb=${uboot_base_dtb_univ}] ... ;if test -e ${devtype} ${bootpart} ${fdtdir}/${uboot_base_dtb_univ}; then setenv fdtfile ${uboot_base_dtb_univ};echo uboot_overlays: Switching too: dtb=${fdtfile} ...;setenv cape_uboot bone_capemgr.uboot_capemgr_enabled=1; else echo debug: unable to find [${uboot_base_dtb_univ}] using [${uboot_base_dtb}] instead ... ;echo debug: [uboot_base_dtb_univ=${uboot_base_dtb}] ... ;if test -n ${uboot_base_dtb}; then echo uboot_overlays: [uboot_base_dtb=${uboot_base_dtb}] ... ;if test -e ${devtype} ${bootpart} ${fdtdir}/${uboot_base_dtb}; then setenv fdtfile ${uboot_base_dtb};echo uboot_overlays: Switching too: dtb=${fdtfile} ...;fi;fi;fi;fi;else echo debug: [uboot_base_dtb_univ=${uboot_base_dtb}] ... ;if test -n ${uboot_base_dtb}; then echo uboot_overlays: [uboot_base_dtb=${uboot_base_dtb}] ... ;if test -e ${devtype} ${bootpart} ${fdtdir}/${uboot_base_dtb}; then setenv fdtfile ${uboot_base_dtb};echo uboot_overlays: Switching too: dtb=${fdtfile} ...;fi;fi;fi;fi;if test -e ${devtype} ${bootpart} ${fdtdir}/${fdtfile}; then run loadfdt;else setenv fdtdir /usr/lib/linux-image-${uname_r}; if test -e ${devtype} ${bootpart} ${fdtdir}/${fdtfile}; then run loadfdt;else setenv fdtdir /lib/firmware/${uname_r}/device-tree; if test -e ${devtype} ${bootpart} ${fdtdir}/${fdtfile}; then run loadfdt;else setenv fdtdir /boot/dtb-${uname_r}; if test -e ${devtype} ${bootpart} ${fdtdir}/${fdtfile}; then run loadfdt;else setenv fdtdir /boot/dtbs; if test -e ${devtype} ${bootpart} ${fdtdir}/${fdtfile}; then run loadfdt;else setenv fdtdir /boot/dtb; if test -e ${devtype} ${bootpart} ${fdtdir}/${fdtfile}; then run loadfdt;else setenv fdtdir /boot; if test -e ${devtype} ${bootpart} ${fdtdir}/${fdtfile}; then run loadfdt;else if test -e ${devtype} ${bootpart} ${fdtfile}; then run loadfdt;else echo; echo unable to find [dtb=${fdtfile}] did you name it correctly? ...; run failumsboot;fi;fi;fi;fi;fi;fi;fi;fi; if test -n ${enable_uboot_overlays}; then setenv fdt_buffer 0x60000;if test -n ${uboot_fdt_buffer}; then setenv fdt_buffer ${uboot_fdt_buffer};fi;echo uboot_overlays: [fdt_buffer=${fdt_buffer}] ... ;if test -n ${uboot_silicon}; then setenv uboot_overlay ${uboot_silicon}; run virtualloadoverlay;fi;if test -n ${uboot_model}; then setenv uboot_overlay ${uboot_model}; run virtualloadoverlay;fi;if test -n ${disable_uboot_overlay_adc}; then echo uboot_overlays: uboot loading of [/lib/firmware/BB-ADC-00A0.dtbo] disabled by /boot/uEnv.txt [disable_uboot_overlay_adc=1]...;else setenv uboot_overlay /lib/firmware/BB-ADC-00A0.dtbo; run virtualloadoverlay;fi;if test -n ${uboot_overlay_addr0}; then if test -n ${disable_uboot_overlay_addr0}; then echo uboot_overlays: uboot loading of [${uboot_overlay_addr0}] disabled by /boot/uEnv.txt [disable_uboot_overlay_addr0=1]...;else setenv uboot_overlay ${uboot_overlay_addr0}; run capeloadoverlay;fi;fi;if test -n ${uboot_overlay_addr1}; then if test -n ${disable_uboot_overlay_addr1}; then echo uboot_overlays: uboot loading of [${uboot_overlay_addr1}] disabled by /boot/uEnv.txt [disable_uboot_overlay_addr1=1]...;else setenv uboot_overlay ${uboot_overlay_addr1}; run capeloadoverlay;fi;fi;if test -n ${uboot_overlay_addr2}; then if test -n ${disable_uboot_overlay_addr2}; then echo uboot_overlays: uboot loading of [${uboot_overlay_addr2}] disabled by /boot/uEnv.txt [disable_uboot_overlay_addr2=1]...;else setenv uboot_overlay ${uboot_overlay_addr2}; run capeloadoverlay;fi;fi;if test -n ${uboot_overlay_addr3}; then if test -n ${disable_uboot_overlay_addr3}; then echo uboot_overlays: uboot loading of [${uboot_overlay_addr3}] disabled by /boot/uEnv.txt [disable_uboot_overlay_addr3=1]...;else setenv uboot_overlay ${uboot_overlay_addr3}; run capeloadoverlay;fi;fi;if test -n ${uboot_overlay_addr4}; then setenv uboot_overlay ${uboot_overlay_addr4}; run capeloadoverlay;fi;if test -n ${uboot_overlay_addr5}; then setenv uboot_overlay ${uboot_overlay_addr5}; run capeloadoverlay;fi;if test -n ${uboot_overlay_addr6}; then setenv uboot_overlay ${uboot_overlay_addr6}; run capeloadoverlay;fi;if test -n ${uboot_overlay_addr7}; then setenv uboot_overlay ${uboot_overlay_addr7}; run capeloadoverlay;fi;if test -n ${uboot_emmc}; then if test -n ${disable_uboot_overlay_emmc}; then echo uboot_overlays: uboot loading of [${uboot_emmc}] disabled by /boot/uEnv.txt [disable_uboot_overlay_emmc=1]...;else setenv uboot_overlay ${uboot_emmc}; run virtualloadoverlay;fi;fi;if test -n ${uboot_video}; then if test -n ${disable_uboot_overlay_video}; then echo uboot_overlays: uboot loading of [${uboot_video}] disabled by /boot/uEnv.txt [disable_uboot_overlay_video=1]...;else if test -n ${disable_uboot_overlay_audio}; then echo uboot_overlays: uboot loading of [${uboot_video}] disabled by /boot/uEnv.txt [disable_uboot_overlay_audio=1]...;setenv uboot_overlay ${uboot_video_naudio}; run virtualloadoverlay;else setenv uboot_overlay ${uboot_video}; run virtualloadoverlay;fi;fi;fi;if test -n ${uboot_wireless}; then if test -n ${disable_uboot_overlay_wireless}; then echo uboot_overlays: uboot loading of [${uboot_wireless}] disabled by /boot/uEnv.txt [disable_uboot_overlay_wireless=1]...;else setenv uboot_overlay ${uboot_wireless}; run virtualloadoverlay;fi;fi;if test -n ${uboot_overlay_pru}; then setenv uboot_overlay ${uboot_overlay_pru}; run virtualloadoverlay;fi;if test -n ${uboot_overlay_pru_add}; then setenv uboot_overlay ${uboot_overlay_pru_add}; run virtualloadoverlay;fi;if test -n ${dtb_overlay}; then setenv uboot_overlay ${dtb_overlay}; echo uboot_overlays: [dtb_overlay=${uboot_overlay}] ... ;run capeloadoverlay;fi;if test -n ${uboot_detected_capes}; then echo uboot_overlays: [uboot_detected_capes=${uboot_detected_capes_addr0}${uboot_detected_capes_addr1}${uboot_detected_capes_addr2}${uboot_detected_capes_addr3}] ... ;setenv uboot_detected_capes uboot_detected_capes=${uboot_detected_capes_addr0}${uboot_detected_capes_addr1}${uboot_detected_capes_addr2}${uboot_detected_capes_addr3}; fi;else echo uboot_overlays: add [enable_uboot_overlays=1] to /boot/uEnv.txt to enable...;fi;setenv rdfile initrd.img-${uname_r}; if test -e ${devtype} ${bootpart} ${bootdir}/${rdfile}; then echo loading ${bootdir}/${rdfile} ...; run loadrd;if test -n ${netinstall_enable}; then run args_netinstall; run message;echo debug: [${bootargs}] ... ;echo debug: [bootz ${loadaddr} ${rdaddr}:${rdsize} ${fdtaddr}] ... ;bootz ${loadaddr} ${rdaddr}:${rdsize} ${fdtaddr}; fi;if test -n ${uenv_root}; then run args_uenv_root;echo debug: [${bootargs}] ... ;echo debug: [bootz ${loadaddr} ${rdaddr}:${rdsize} ${fdtaddr}] ... ;bootz ${loadaddr} ${rdaddr}:${rdsize} ${fdtaddr}; fi;if test -n ${uuid}; then run args_mmc_uuid;echo debug: [${bootargs}] ... ;echo debug: [bootz ${loadaddr} ${rdaddr}:${rdsize} ${fdtaddr}] ... ;bootz ${loadaddr} ${rdaddr}:${rdsize} ${fdtaddr}; fi;run args_mmc_old;echo debug: [${bootargs}] ... ;echo debug: [bootz ${loadaddr} ${rdaddr}:${rdsize} ${fdtaddr}] ... ;bootz ${loadaddr} ${rdaddr}:${rdsize} ${fdtaddr}; else if test -n ${uenv_root}; then run args_uenv_root;echo debug: [${bootargs}] ... ;echo debug: [bootz ${loadaddr} - ${fdtaddr}] ... ;bootz ${loadaddr} - ${fdtaddr}; fi;run args_mmc_old;echo debug: [${bootargs}] ... ;echo debug: [bootz ${loadaddr} - ${fdtaddr}] ... ;bootz ${loadaddr} - ${fdtaddr}; fi;fi;
+update_to_fit=setenv loadaddr ${fit_loadaddr}; setenv bootfile ${fit_bootfile}
+usb_boot=usb start; if usb dev ${devnum}; then devtype=usb; run scan_dev_for_boot_part; fi
+usbnet_devaddr=64:33:db:42:d7:0b
+vendor=ti
+ver=U-Boot 2019.04-00002-g31a8ae0206 (May 13 2020 - 09:26:17 -0500)
+virtualloadoverlay=if test -e ${devtype} ${bootpart} ${uboot_overlay}; then run loadoverlay;else echo uboot_overlays: unable to find [${devtype} ${bootpart} ${uboot_overlay}]...;fi;
+
+Environment size: 26763/131068 bytes
+=> clear
+Unknown command 'clear' - try 'help'
+=> printenv
+arch=arm
+args_mmc=run finduuid;setenv bootargs console=${console} ${cape_disable} ${cape_enable} ${cape_uboot} root=PARTUUID=${uuid} ro rootfstype=${mmcrootfstype} ${uboot_detected_capes} ${cmdline}
+args_mmc_old=setenv bootargs console=${console} ${optargs} ${cape_disable} ${cape_enable} ${cape_uboot} root=${oldroot} ro rootfstype=${mmcrootfstype} ${uboot_detected_capes} ${cmdline}
+args_mmc_uuid=setenv bootargs console=${console} ${optargs} ${cape_disable} ${cape_enable} ${cape_uboot} root=UUID=${uuid} ro rootfstype=${mmcrootfstype} ${uboot_detected_capes} ${cmdline}
+args_netinstall=setenv bootargs ${netinstall_bootargs} ${optargs} ${cape_disable} ${cape_enable} ${cape_uboot} root=/dev/ram rw ${uboot_detected_capes} ${cmdline}
+args_uenv_root=setenv bootargs console=${console} ${optargs} ${cape_disable} ${cape_enable} ${cape_uboot} root=${uenv_root} ro rootfstype=${mmcrootfstype} ${uboot_detected_capes} ${cmdline}
+autoconf=off
+baudrate=115200
+board=am335x
+board_eeprom_header=undefined
+board_name=A335BNLT
+board_rev=EIA0
+board_serial=2119SBB12320
+boot=${devtype} dev ${mmcdev}; if ${devtype} rescan; then gpio set 54;setenv bootpart ${mmcdev}:1; if test -e ${devtype} ${bootpart} /etc/fstab; then setenv mmcpart 1;fi; echo Checking for: /uEnv.txt ...;if test -e ${devtype} ${bootpart} /uEnv.txt; then if run loadbootenv; then gpio set 55;echo Loaded environment from /uEnv.txt;run importbootenv;fi;echo Checking if uenvcmd is set ...;if test -n ${uenvcmd}; then gpio set 56; echo Running uenvcmd ...;run uenvcmd;fi;echo Checking if client_ip is set ...;if test -n ${client_ip}; then if test -n ${dtb}; then setenv fdtfile ${dtb};echo using ${fdtfile} ...;fi;gpio set 56; if test -n ${uname_r}; then echo Running nfsboot_uname_r ...;run nfsboot_uname_r;fi;echo Running nfsboot ...;run nfsboot;fi;fi; echo Checking for: /${script} ...;if test -e ${devtype} ${bootpart} /${script}; then gpio set 55;setenv scriptfile ${script};run loadbootscript;echo Loaded script from ${scriptfile};gpio set 56; run bootscript;fi; echo Checking for: /boot/${script} ...;if test -e ${devtype} ${bootpart} /boot/${script}; then gpio set 55;setenv scriptfile /boot/${script};run loadbootscript;echo Loaded script from ${scriptfile};gpio set 56; run bootscript;fi; echo Checking for: /boot/uEnv.txt ...;for i in 1 2 3 4 5 6 7 ; do setenv mmcpart ${i};setenv bootpart ${mmcdev}:${mmcpart};if test -e ${devtype} ${bootpart} /boot/uEnv.txt; then gpio set 55;load ${devtype} ${bootpart} ${loadaddr} /boot/uEnv.txt;env import -t ${loadaddr} ${filesize};echo Loaded environment from /boot/uEnv.txt;if test -n ${dtb}; then echo debug: [dtb=${dtb}] ... ;setenv fdtfile ${dtb};echo Using: dtb=${fdtfile} ...;fi;echo Checking if uname_r is set in /boot/uEnv.txt...;if test -n ${uname_r}; then gpio set 56; setenv oldroot /dev/mmcblk${mmcdev}p${mmcpart};echo Running uname_boot ...;run uname_boot;fi;fi;done;fi;
+boot_a_script=load ${devtype} ${devnum}:${distro_bootpart} ${scriptaddr} ${prefix}${script}; source ${scriptaddr}
+boot_efi_binary=if fdt addr ${fdt_addr_r}; then bootefi bootmgr ${fdt_addr_r};else bootefi bootmgr ${fdtcontroladdr};fi;load ${devtype} ${devnum}:${distro_bootpart} ${kernel_addr_r} efi/boot/bootarm.efi; if fdt addr ${fdt_addr_r}; then bootefi ${kernel_addr_r} ${fdt_addr_r};else bootefi ${kernel_addr_r} ${fdtcontroladdr};fi
+boot_extlinux=sysboot ${devtype} ${devnum}:${distro_bootpart} any ${scriptaddr} ${prefix}${boot_syslinux_conf}
+boot_fdt=try
+boot_fit=0
+boot_net_usb_start=usb start
+boot_prefixes=/ /boot/
+boot_script_dhcp=boot.scr.uimg
+boot_scripts=boot.scr.uimg boot.scr
+boot_syslinux_conf=extlinux/extlinux.conf
+boot_targets=mmc0 legacy_mmc0 mmc1 legacy_mmc1 pxe dhcp
+bootcmd=if test ${boot_fit} -eq 1; then run update_to_fit; fi; run findfdt; run init_console; run envboot; run distro_bootcmd
+bootcmd_dhcp=run boot_net_usb_start; if dhcp ${scriptaddr} ${boot_script_dhcp}; then source ${scriptaddr}; fi;setenv efi_fdtfile ${fdtfile}; if test -z "${fdtfile}" -a -n "${soc}"; then setenv efi_fdtfile ${soc}-${board}${boardver}.dtb; fi; setenv efi_old_vci ${bootp_vci};setenv efi_old_arch ${bootp_arch};setenv bootp_vci PXEClient:Arch:00010:UNDI:003000;setenv bootp_arch 0xa;if dhcp ${kernel_addr_r}; then tftpboot ${fdt_addr_r} dtb/${efi_fdtfile};if fdt addr ${fdt_addr_r}; then bootefi ${kernel_addr_r} ${fdt_addr_r}; else bootefi ${kernel_addr_r} ${fdtcontroladdr};fi;fi;setenv bootp_vci ${efi_old_vci};setenv bootp_arch ${efi_old_arch};setenv efi_fdtfile;setenv efi_old_arch;setenv efi_old_vci;
+bootcmd_legacy_mmc0=gpio clear 56; gpio clear 55; gpio clear 54; gpio set 53; setenv devtype mmc; setenv mmcdev 0; setenv bootpart 0:1 ; run boot
+bootcmd_legacy_mmc1=gpio clear 56; gpio clear 55; gpio clear 54; gpio set 53; setenv devtype mmc; setenv mmcdev 1; setenv bootpart 1:1 ; run boot
+bootcmd_mmc0=devnum=0; run mmc_boot
+bootcmd_mmc1=devnum=1; run mmc_boot
+bootcmd_pxe=run boot_net_usb_start; dhcp; if pxe get; then pxe boot; fi
+bootcount=2
+bootdelay=0
+bootdir=/boot
+bootenv=uEnv.txt
+bootenvfile=uEnv.txt
+bootfile=zImage
+bootm_size=0x10000000
+bootpart=0:2
+bootscript=echo Running bootscript from mmc${bootpart} ...; source ${loadaddr}
+capeloadoverlay=if test -e ${devtype} ${bootpart} ${uboot_overlay}; then run loadoverlay;setenv cape_uboot bone_capemgr.uboot_capemgr_enabled=1; else echo uboot_overlays: unable to find [${devtype} ${bootpart} ${uboot_overlay}]...;fi;
+console=ttyO0,115200n8
+cpu=armv7
+device=eth0
+dfu_alt_info_emmc=rawemmc raw 0 3751936;boot part 1 1;rootfs part 1 2;MLO fat 1 1;MLO.raw raw 0x100 0x100;u-boot.img.raw raw 0x300 0x1000;u-env.raw raw 0x1300 0x200;spl-os-args.raw raw 0x1500 0x200;spl-os-image.raw raw 0x1700 0x6900;spl-os-args fat 1 1;spl-os-image fat 1 1;u-boot.img fat 1 1;uEnv.txt fat 1 1
+dfu_alt_info_mmc=boot part 0 1;rootfs part 0 2;MLO fat 0 1;MLO.raw raw 0x100 0x100;u-boot.img.raw raw 0x300 0x1000;u-env.raw raw 0x1300 0x200;spl-os-args.raw raw 0x1500 0x200;spl-os-image.raw raw 0x1700 0x6900;spl-os-args fat 0 1;spl-os-image fat 0 1;u-boot.img fat 0 1;uEnv.txt fat 0 1
+dfu_alt_info_ram=kernel ram 0x80200000 0x4000000;fdt ram 0x80f80000 0x80000;ramdisk ram 0x81000000 0x4000000
+distro_bootcmd=for target in ${boot_targets}; do run bootcmd_${target}; done
+eeprom_bbb_header=i2c dev 0; i2c mw 0x50 0x00.2 aa; i2c mw 0x50 0x01.2 55; i2c mw 0x50 0x02.2 33; i2c mw 0x50 0x03.2 ee; i2c mw 0x50 0x04.2 41; i2c mw 0x50 0x05.2 33; i2c mw 0x50 0x06.2 33; i2c mw 0x50 0x07.2 35; i2c mw 0x50 0x08.2 42; i2c mw 0x50 0x09.2 4e; i2c mw 0x50 0x0a.2 4c; i2c mw 0x50 0x0b.2 54;
+eeprom_bbbl_footer= i2c mw 0x50 0x0c.2 42; i2c mw 0x50 0x0d.2 4c; i2c mw 0x50 0x0e.2 41; i2c mw 0x50 0x0f.2 32;
+eeprom_bbbw_footer= i2c mw 0x50 0x0c.2 42; i2c mw 0x50 0x0d.2 57; i2c mw 0x50 0x0e.2 41; i2c mw 0x50 0x0f.2 35;
+eeprom_bbgg_footer= i2c mw 0x50 0x0c.2 47; i2c mw 0x50 0x0d.2 47; i2c mw 0x50 0x0e.2 31; i2c mw 0x50 0x0f.2 41;
+eeprom_beaglelogic= i2c mw 0x50 0x00.2 aa; i2c mw 0x50 0x01.2 55; i2c mw 0x50 0x02.2 33; i2c mw 0x50 0x03.2 ee; i2c mw 0x50 0x04.2 41; i2c mw 0x50 0x05.2 33; i2c mw 0x50 0x06.2 33; i2c mw 0x50 0x07.2 35; i2c mw 0x50 0x08.2 42; i2c mw 0x50 0x09.2 4c; i2c mw 0x50 0x0a.2 47; i2c mw 0x50 0x0b.2 43; i2c mw 0x50 0x0c.2 30; i2c mw 0x50 0x0d.2 30; i2c mw 0x50 0x0e.2 30; i2c mw 0x50 0x0f.2 41;
+eeprom_blank=i2c dev 0; i2c mw 0x50 0x00.2 ff; i2c mw 0x50 0x01.2 ff; i2c mw 0x50 0x02.2 ff; i2c mw 0x50 0x03.2 ff; i2c mw 0x50 0x04.2 ff; i2c mw 0x50 0x05.2 ff; i2c mw 0x50 0x06.2 ff; i2c mw 0x50 0x07.2 ff; i2c mw 0x50 0x08.2 ff; i2c mw 0x50 0x09.2 ff; i2c mw 0x50 0x0a.2 ff; i2c mw 0x50 0x0b.2 ff; i2c mw 0x50 0x0c.2 ff; i2c mw 0x50 0x0d.2 ff; i2c mw 0x50 0x0e.2 ff; i2c mw 0x50 0x0f.2 ff; i2c mw 0x50 0x10.2 ff; i2c mw 0x50 0x11.2 ff; i2c mw 0x50 0x12.2 ff; i2c mw 0x50 0x13.2 ff; i2c mw 0x50 0x14.2 ff; i2c mw 0x50 0x15.2 ff; i2c mw 0x50 0x16.2 ff; i2c mw 0x50 0x17.2 ff; i2c mw 0x50 0x18.2 ff; i2c mw 0x50 0x19.2 ff; i2c mw 0x50 0x1a.2 ff; i2c mw 0x50 0x1b.2 ff; i2c mw 0x50 0x1c.2 ff; i2c mw 0x50 0x1d.2 ff; i2c mw 0x50 0x1e.2 ff; i2c mw 0x50 0x1f.2 ff;
+eeprom_dump=i2c dev 0; i2c md 0x50 0x00.2 20;
+eeprom_pocketbeagle= i2c mw 0x50 0x00.2 aa; i2c mw 0x50 0x01.2 55; i2c mw 0x50 0x02.2 33; i2c mw 0x50 0x03.2 ee; i2c mw 0x50 0x04.2 41; i2c mw 0x50 0x05.2 33; i2c mw 0x50 0x06.2 33; i2c mw 0x50 0x07.2 35; i2c mw 0x50 0x08.2 50; i2c mw 0x50 0x09.2 42; i2c mw 0x50 0x0a.2 47; i2c mw 0x50 0x0b.2 4c; i2c mw 0x50 0x0c.2 30; i2c mw 0x50 0x0d.2 30; i2c mw 0x50 0x0e.2 41; i2c mw 0x50 0x0f.2 32;
+eeprom_program=if test $board_eeprom_header = bbb_blank; then run eeprom_dump; run eeprom_blank; run eeprom_bbb_header; run eeprom_dump; reset; fi; if test $board_eeprom_header = bbbl_blank; then run eeprom_dump; run eeprom_blank; run eeprom_bbb_header; run eeprom_bbbl_footer; run eeprom_dump; reset; fi; if test $board_eeprom_header = bbbw_blank; then run eeprom_dump; run eeprom_blank; run eeprom_bbb_header; run eeprom_bbbw_footer; run eeprom_dump; reset; fi; if test $board_eeprom_header = pocketbeagle_blank; then run eeprom_dump; run eeprom_blank; run eeprom_pocketbeagle; run eeprom_dump; reset; fi; if test $board_eeprom_header = bbgg_blank; then run eeprom_dump; run eeprom_blank; run eeprom_bbb_header; run eeprom_bbgg_footer; run eeprom_dump; reset; fi; if test $board_eeprom_header = beaglelogic_blank; then run eeprom_dump; run eeprom_blank; run eeprom_beaglelogic; run eeprom_dump; reset; fi;
+efi_dtb_prefixes=/ /dtb/ /dtb/current/
+envboot=mmc dev ${mmcdev}; if mmc rescan; then echo SD/MMC found on device ${mmcdev};if run loadbootscript; then run bootscript;else if run loadbootenv; then echo Loaded env from ${bootenvfile};run importbootenv;fi;if test -n $uenvcmd; then echo Running uenvcmd ...;run uenvcmd;fi;fi;fi;
+eth1addr=64:33:db:42:d7:0d
+ethact=cpsw
+ethaddr=64:33:db:42:d7:0b
+failumsboot=echo; echo FAILSAFE: U-Boot UMS (USB Mass Storage) enabled, media now available over the usb slave port ...; ums 0 ${devtype} 1;
+fdt_addr_r=0x88000000
+fdtaddr=0x88000000
+fdtfile=undefined
+findfdt=echo board_name=[$board_name] ...; if test $board_name = A335BLGC; then setenv fdtfile am335x-beaglelogic.dtb; fi; if test $board_name = A335BONE; then setenv fdtfile am335x-bone.dtb; fi; if test $board_name = A335BNLT; then echo board_rev=[$board_rev] ...; if test $board_rev = GH01; then setenv fdtfile am335x-boneblack.dtb; elif test $board_rev = BBG1; then setenv fdtfile am335x-bonegreen.dtb; elif test $board_rev = BP00; then setenv fdtfile am335x-pocketbone.dtb; elif test $board_rev = GW1A; then setenv fdtfile am335x-bonegreen-wireless.dtb; elif test $board_rev = GG1A; then setenv fdtfile am335x-bonegreen-gateway.dtb; elif test $board_rev = AIA0; then setenv fdtfile am335x-abbbi.dtb; elif test $board_rev = EIA0; then setenv fdtfile am335x-boneblack.dtb; elif test $board_rev = ME06; then setenv fdtfile am335x-bonegreen.dtb; elif test $board_rev = OS00; then setenv fdtfile am335x-osd3358-sm-red.dtb; else setenv fdtfile am335x-boneblack.dtb; fi; fi; if test $board_name = A335PBGL; then setenv fdtfile am335x-pocketbeagle.dtb; fi; if test $board_name = BBBW; then setenv fdtfile am335x-boneblack-wireless.dtb; fi; if test $board_name = BBG1; then setenv fdtfile am335x-bonegreen.dtb; fi; if test $board_name = BBGW; then setenv fdtfile am335x-bonegreen-wireless.dtb; fi; if test $board_name = BBGG; then setenv fdtfile am335x-bonegreen-gateway.dtb; fi; if test $board_name = BBBL; then setenv fdtfile am335x-boneblue.dtb; fi; if test $board_name = BBEN; then setenv fdtfile am335x-sancloud-bbe.dtb; fi; if test $board_name = OS00; then setenv fdtfile am335x-osd3358-sm-red.dtb; fi; if test $board_name = A33515BB; then setenv fdtfile am335x-evm.dtb; fi; if test $board_name = A335X_SK; then setenv fdtfile am335x-evmsk.dtb; fi; if test $board_name = A335_ICE; then setenv fdtfile am335x-icev2.dtb; fi; if test $fdtfile = undefined; then setenv board_name A335BNLT; setenv board_rev EMMC; setenv fdtfile am335x-bonegreen.dtb; fi;
+finduuid=part uuid ${devtype} ${bootpart} uuid
+fit_bootfile=fitImage
+fit_loadaddr=0x90000000
+gw_ip=192.168.1.1
+if_netconsole=ping $serverip
+importbootenv=echo Importing environment from ${devtype} ...; env import -t ${loadaddr} ${filesize}
+init_console=if test $board_name = A335_ICE; then setenv console ttyO3,115200n8;elif test $board_name = A335BLGC; then setenv console ttyO4,115200n8;else setenv console ttyO0,115200n8;fi;
+ipaddr=192.168.1.2
+kernel_addr_r=0x82000000
+load_efi_dtb=load ${devtype} ${devnum}:${distro_bootpart} ${fdt_addr_r} ${prefix}${efi_fdtfile}
+loadaddr=0x82000000
+loadbootenv=load ${devtype} ${bootpart} ${loadaddr} ${bootenvfile}
+loadbootscript=load ${devtype} ${bootpart} ${loadaddr} ${scriptfile};
+loadfdt=echo loading ${fdtdir}/${fdtfile} ...; load ${devtype} ${bootpart} ${fdtaddr} ${fdtdir}/${fdtfile}
+loadfit=run args_mmc; bootm ${loadaddr}#${fdtfile};
+loadimage=load ${devtype} ${bootpart} ${loadaddr} ${bootdir}/${bootfile}
+loadoverlay=echo uboot_overlays: loading ${uboot_overlay} ...; load ${devtype} ${bootpart} ${rdaddr} ${uboot_overlay}; fdt addr ${fdtaddr}; fdt resize ${fdt_buffer}; fdt apply ${rdaddr}; fdt resize ${fdt_buffer};
+loadramdisk=load mmc ${mmcdev} ${rdaddr} ramdisk.gz
+loadrd=load ${devtype} ${bootpart} ${rdaddr} ${bootdir}/${rdfile}; setenv rdsize ${filesize}
+mmc_boot=if mmc dev ${devnum}; then devtype=mmc; run scan_dev_for_boot_part; fi
+mmcboot=mmc dev ${mmcdev}; setenv devnum ${mmcdev}; setenv devtype mmc; if mmc rescan; then echo SD/MMC found on device ${mmcdev};if run loadimage; then if test ${boot_fit} -eq 1; then run loadfit; else run mmcloados;fi;fi;fi;
+mmcdev=0
+mmcloados=run args_mmc; if test ${boot_fdt} = yes || test ${boot_fdt} = try; then if run loadfdt; then if test -n ${uname_r}; then bootz ${loadaddr} ${rdaddr}:${rdsize} ${fdtaddr}; else bootz ${loadaddr} - ${fdtaddr}; fi; else if test ${boot_fdt} = try; then bootz; else echo WARN: Cannot load the DT; fi; fi; else bootz; fi;
+mmcrootfstype=ext4 rootwait
+netargs=setenv bootargs console=${console} ${optargs} root=/dev/nfs nfsroot=${serverip}:${rootpath},${nfsopts} rw ip=dhcp
+netboot=echo Booting from network ...; setenv autoload no; dhcp; run netloadimage; run netloadfdt; run netargs; bootz ${loadaddr} - ${fdtaddr}
+netloadfdt=tftp ${fdtaddr} ${fdtfile}
+netloadimage=tftp ${loadaddr} ${bootfile}
+netmask=255.255.255.0
+nfs_options=,vers=3
+nfsargs=setenv bootargs console=${console} ${optargs} ${cape_disable} ${cape_enable} ${cape_uboot} root=/dev/nfs rw rootfstype=${nfsrootfstype} nfsroot=${nfsroot} ip=${ip} ${cmdline}
+nfsboot=echo Booting from ${server_ip} ...; setenv nfsroot ${server_ip}:${root_dir}${nfs_options}; setenv ip ${client_ip}:${server_ip}:${gw_ip}:${netmask}:${hostname}:${device}:${autoconf}; setenv autoload no; setenv serverip ${server_ip}; setenv ipaddr ${client_ip}; tftp ${loadaddr} ${tftp_dir}${bootfile}; tftp ${fdtaddr} ${tftp_dir}dtbs/${fdtfile}; run nfsargs; bootz ${loadaddr} - ${fdtaddr}
+nfsboot_uname_r=echo Booting from ${server_ip} ...; setenv nfsroot ${server_ip}:${root_dir}${nfs_options}; setenv ip ${client_ip}:${server_ip}:${gw_ip}:${netmask}:${hostname}:${device}:${autoconf}; setenv autoload no; setenv serverip ${server_ip}; setenv ipaddr ${client_ip}; tftp ${loadaddr} ${tftp_dir}vmlinuz-${uname_r}; tftp ${fdtaddr} ${tftp_dir}dtbs/${uname_r}/${fdtfile}; run nfsargs; bootz ${loadaddr} - ${fdtaddr}
+nfsopts=nolock
+nfsrootfstype=ext4 rootwait fixrtc
+partitions=uuid_disk=${uuid_gpt_disk};name=bootloader,start=384K,size=1792K,uuid=${uuid_gpt_bootloader};name=rootfs,start=2688K,size=-,uuid=${uuid_gpt_rootfs}
+pb_eeprom_hdr=mw 82001000 ee3355aa; mw 82001004 35333341; mw 82001008 4c474250
+preboot=run if_netconsole start_netconsole
+pxefile_addr_r=0x80100000
+ramargs=setenv bootargs console=${console} ${optargs} root=${ramroot} rootfstype=${ramrootfstype}
+ramboot=echo Booting from ramdisk ...; run ramargs; bootz ${loadaddr} ${rdaddr} ${fdtaddr}
+ramdisk_addr_r=0x88080000
+ramroot=/dev/ram0 rw
+ramrootfstype=ext2
+rdaddr=0x88080000
+root_dir=/home/userid/targetNFS
+rootpath=/export/rootfs
+scan_dev_for_boot=echo Scanning ${devtype} ${devnum}:${distro_bootpart}...; for prefix in ${boot_prefixes}; do run scan_dev_for_extlinux; run scan_dev_for_scripts; done;run scan_dev_for_efi;
+scan_dev_for_boot_part=part list ${devtype} ${devnum} -bootable devplist; env exists devplist || setenv devplist 1; for distro_bootpart in ${devplist}; do if fstype ${devtype} ${devnum}:${distro_bootpart} bootfstype; then run scan_dev_for_boot; fi; done; setenv devplist
+scan_dev_for_efi=setenv efi_fdtfile ${fdtfile}; if test -z "${fdtfile}" -a -n "${soc}"; then setenv efi_fdtfile ${soc}-${board}${boardver}.dtb; fi; for prefix in ${efi_dtb_prefixes}; do if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${efi_fdtfile}; then run load_efi_dtb; fi;done;if test -e ${devtype} ${devnum}:${distro_bootpart} efi/boot/bootarm.efi; then echo Found EFI removable media binary efi/boot/bootarm.efi; run boot_efi_binary; echo EFI LOAD FAILED: continuing...; fi; setenv efi_fdtfile
+scan_dev_for_extlinux=if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${boot_syslinux_conf}; then echo Found ${prefix}${boot_syslinux_conf}; run boot_extlinux; echo SCRIPT FAILED: continuing...; fi
+scan_dev_for_scripts=for script in ${boot_scripts}; do if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${script}; then echo Found U-Boot script ${prefix}${script}; run boot_a_script; echo SCRIPT FAILED: continuing...; fi; done
+script=boot.scr
+scriptaddr=0x80000000
+scriptfile=${script}
+serial#=2119SBB12320
+server_ip=192.168.1.100
+serverip=192.168.1.1
+soc=am33xx
+spiargs=setenv bootargs console=${console} ${optargs} root=${spiroot} rootfstype=${spirootfstype}
+spiboot=echo Booting from spi ...; run spiargs; sf probe ${spibusno}:0; sf read ${loadaddr} ${spisrcaddr} ${spiimgsize}; bootz ${loadaddr}
+spibusno=0
+spiimgsize=0x362000
+spiroot=/dev/mtdblock4 rw
+spirootfstype=jffs2
+spisrcaddr=0xe0000
+start_netconsole=setenv ncip $serverip; setenv bootdelay 10; setenv stdin serial,nc; setenv stdout serial,nc; setenv stderr serial,nc; version
+static_ip=${ipaddr}:${serverip}:${gatewayip}:${netmask}:${hostname}::off
+stderr=ns16550_serial
+stdin=ns16550_serial
+stdout=ns16550_serial
+uboot_base_dtb=am335x-boneblack-uboot.dtb
+uboot_base_dtb_univ=am335x-boneblack-uboot-univ.dtb
+uboot_emmc=/lib/firmware/BB-BONE-eMMC1-01-00A0.dtbo
+uboot_video=/lib/firmware/BB-HDMI-TDA998x-00A0.dtbo
+uboot_video_naudio=/lib/firmware/BB-NHDMI-TDA998x-00A0.dtbo
+uname_boot=setenv bootdir /boot; setenv bootfile vmlinuz-${uname_r}; if test -e ${devtype} ${bootpart} ${bootdir}/${bootfile}; then echo loading ${bootdir}/${bootfile} ...; run loadimage;setenv fdtdir /boot/dtbs/${uname_r}; echo debug: [enable_uboot_overlays=${enable_uboot_overlays}] ... ;if test -n ${enable_uboot_overlays}; then echo debug: [enable_uboot_cape_universal=${enable_uboot_cape_universal}] ... ;if test -n ${enable_uboot_cape_universal}; then echo debug: [uboot_base_dtb_univ=${uboot_base_dtb_univ}] ... ;if test -n ${uboot_base_dtb_univ}; then echo uboot_overlays: [uboot_base_dtb=${uboot_base_dtb_univ}] ... ;if test -e ${devtype} ${bootpart} ${fdtdir}/${uboot_base_dtb_univ}; then setenv fdtfile ${uboot_base_dtb_univ};echo uboot_overlays: Switching too: dtb=${fdtfile} ...;setenv cape_uboot bone_capemgr.uboot_capemgr_enabled=1; else echo debug: unable to find [${uboot_base_dtb_univ}] using [${uboot_base_dtb}] instead ... ;echo debug: [uboot_base_dtb_univ=${uboot_base_dtb}] ... ;if test -n ${uboot_base_dtb}; then echo uboot_overlays: [uboot_base_dtb=${uboot_base_dtb}] ... ;if test -e ${devtype} ${bootpart} ${fdtdir}/${uboot_base_dtb}; then setenv fdtfile ${uboot_base_dtb};echo uboot_overlays: Switching too: dtb=${fdtfile} ...;fi;fi;fi;fi;else echo debug: [uboot_base_dtb_univ=${uboot_base_dtb}] ... ;if test -n ${uboot_base_dtb}; then echo uboot_overlays: [uboot_base_dtb=${uboot_base_dtb}] ... ;if test -e ${devtype} ${bootpart} ${fdtdir}/${uboot_base_dtb}; then setenv fdtfile ${uboot_base_dtb};echo uboot_overlays: Switching too: dtb=${fdtfile} ...;fi;fi;fi;fi;if test -e ${devtype} ${bootpart} ${fdtdir}/${fdtfile}; then run loadfdt;else setenv fdtdir /usr/lib/linux-image-${uname_r}; if test -e ${devtype} ${bootpart} ${fdtdir}/${fdtfile}; then run loadfdt;else setenv fdtdir /lib/firmware/${uname_r}/device-tree; if test -e ${devtype} ${bootpart} ${fdtdir}/${fdtfile}; then run loadfdt;else setenv fdtdir /boot/dtb-${uname_r}; if test -e ${devtype} ${bootpart} ${fdtdir}/${fdtfile}; then run loadfdt;else setenv fdtdir /boot/dtbs; if test -e ${devtype} ${bootpart} ${fdtdir}/${fdtfile}; then run loadfdt;else setenv fdtdir /boot/dtb; if test -e ${devtype} ${bootpart} ${fdtdir}/${fdtfile}; then run loadfdt;else setenv fdtdir /boot; if test -e ${devtype} ${bootpart} ${fdtdir}/${fdtfile}; then run loadfdt;else if test -e ${devtype} ${bootpart} ${fdtfile}; then run loadfdt;else echo; echo unable to find [dtb=${fdtfile}] did you name it correctly? ...; run failumsboot;fi;fi;fi;fi;fi;fi;fi;fi; if test -n ${enable_uboot_overlays}; then setenv fdt_buffer 0x60000;if test -n ${uboot_fdt_buffer}; then setenv fdt_buffer ${uboot_fdt_buffer};fi;echo uboot_overlays: [fdt_buffer=${fdt_buffer}] ... ;if test -n ${uboot_silicon}; then setenv uboot_overlay ${uboot_silicon}; run virtualloadoverlay;fi;if test -n ${uboot_model}; then setenv uboot_overlay ${uboot_model}; run virtualloadoverlay;fi;if test -n ${disable_uboot_overlay_adc}; then echo uboot_overlays: uboot loading of [/lib/firmware/BB-ADC-00A0.dtbo] disabled by /boot/uEnv.txt [disable_uboot_overlay_adc=1]...;else setenv uboot_overlay /lib/firmware/BB-ADC-00A0.dtbo; run virtualloadoverlay;fi;if test -n ${uboot_overlay_addr0}; then if test -n ${disable_uboot_overlay_addr0}; then echo uboot_overlays: uboot loading of [${uboot_overlay_addr0}] disabled by /boot/uEnv.txt [disable_uboot_overlay_addr0=1]...;else setenv uboot_overlay ${uboot_overlay_addr0}; run capeloadoverlay;fi;fi;if test -n ${uboot_overlay_addr1}; then if test -n ${disable_uboot_overlay_addr1}; then echo uboot_overlays: uboot loading of [${uboot_overlay_addr1}] disabled by /boot/uEnv.txt [disable_uboot_overlay_addr1=1]...;else setenv uboot_overlay ${uboot_overlay_addr1}; run capeloadoverlay;fi;fi;if test -n ${uboot_overlay_addr2}; then if test -n ${disable_uboot_overlay_addr2}; then echo uboot_overlays: uboot loading of [${uboot_overlay_addr2}] disabled by /boot/uEnv.txt [disable_uboot_overlay_addr2=1]...;else setenv uboot_overlay ${uboot_overlay_addr2}; run capeloadoverlay;fi;fi;if test -n ${uboot_overlay_addr3}; then if test -n ${disable_uboot_overlay_addr3}; then echo uboot_overlays: uboot loading of [${uboot_overlay_addr3}] disabled by /boot/uEnv.txt [disable_uboot_overlay_addr3=1]...;else setenv uboot_overlay ${uboot_overlay_addr3}; run capeloadoverlay;fi;fi;if test -n ${uboot_overlay_addr4}; then setenv uboot_overlay ${uboot_overlay_addr4}; run capeloadoverlay;fi;if test -n ${uboot_overlay_addr5}; then setenv uboot_overlay ${uboot_overlay_addr5}; run capeloadoverlay;fi;if test -n ${uboot_overlay_addr6}; then setenv uboot_overlay ${uboot_overlay_addr6}; run capeloadoverlay;fi;if test -n ${uboot_overlay_addr7}; then setenv uboot_overlay ${uboot_overlay_addr7}; run capeloadoverlay;fi;if test -n ${uboot_emmc}; then if test -n ${disable_uboot_overlay_emmc}; then echo uboot_overlays: uboot loading of [${uboot_emmc}] disabled by /boot/uEnv.txt [disable_uboot_overlay_emmc=1]...;else setenv uboot_overlay ${uboot_emmc}; run virtualloadoverlay;fi;fi;if test -n ${uboot_video}; then if test -n ${disable_uboot_overlay_video}; then echo uboot_overlays: uboot loading of [${uboot_video}] disabled by /boot/uEnv.txt [disable_uboot_overlay_video=1]...;else if test -n ${disable_uboot_overlay_audio}; then echo uboot_overlays: uboot loading of [${uboot_video}] disabled by /boot/uEnv.txt [disable_uboot_overlay_audio=1]...;setenv uboot_overlay ${uboot_video_naudio}; run virtualloadoverlay;else setenv uboot_overlay ${uboot_video}; run virtualloadoverlay;fi;fi;fi;if test -n ${uboot_wireless}; then if test -n ${disable_uboot_overlay_wireless}; then echo uboot_overlays: uboot loading of [${uboot_wireless}] disabled by /boot/uEnv.txt [disable_uboot_overlay_wireless=1]...;else setenv uboot_overlay ${uboot_wireless}; run virtualloadoverlay;fi;fi;if test -n ${uboot_overlay_pru}; then setenv uboot_overlay ${uboot_overlay_pru}; run virtualloadoverlay;fi;if test -n ${uboot_overlay_pru_add}; then setenv uboot_overlay ${uboot_overlay_pru_add}; run virtualloadoverlay;fi;if test -n ${dtb_overlay}; then setenv uboot_overlay ${dtb_overlay}; echo uboot_overlays: [dtb_overlay=${uboot_overlay}] ... ;run capeloadoverlay;fi;if test -n ${uboot_detected_capes}; then echo uboot_overlays: [uboot_detected_capes=${uboot_detected_capes_addr0}${uboot_detected_capes_addr1}${uboot_detected_capes_addr2}${uboot_detected_capes_addr3}] ... ;setenv uboot_detected_capes uboot_detected_capes=${uboot_detected_capes_addr0}${uboot_detected_capes_addr1}${uboot_detected_capes_addr2}${uboot_detected_capes_addr3}; fi;else echo uboot_overlays: add [enable_uboot_overlays=1] to /boot/uEnv.txt to enable...;fi;setenv rdfile initrd.img-${uname_r}; if test -e ${devtype} ${bootpart} ${bootdir}/${rdfile}; then echo loading ${bootdir}/${rdfile} ...; run loadrd;if test -n ${netinstall_enable}; then run args_netinstall; run message;echo debug: [${bootargs}] ... ;echo debug: [bootz ${loadaddr} ${rdaddr}:${rdsize} ${fdtaddr}] ... ;bootz ${loadaddr} ${rdaddr}:${rdsize} ${fdtaddr}; fi;if test -n ${uenv_root}; then run args_uenv_root;echo debug: [${bootargs}] ... ;echo debug: [bootz ${loadaddr} ${rdaddr}:${rdsize} ${fdtaddr}] ... ;bootz ${loadaddr} ${rdaddr}:${rdsize} ${fdtaddr}; fi;if test -n ${uuid}; then run args_mmc_uuid;echo debug: [${bootargs}] ... ;echo debug: [bootz ${loadaddr} ${rdaddr}:${rdsize} ${fdtaddr}] ... ;bootz ${loadaddr} ${rdaddr}:${rdsize} ${fdtaddr}; fi;run args_mmc_old;echo debug: [${bootargs}] ... ;echo debug: [bootz ${loadaddr} ${rdaddr}:${rdsize} ${fdtaddr}] ... ;bootz ${loadaddr} ${rdaddr}:${rdsize} ${fdtaddr}; else if test -n ${uenv_root}; then run args_uenv_root;echo debug: [${bootargs}] ... ;echo debug: [bootz ${loadaddr} - ${fdtaddr}] ... ;bootz ${loadaddr} - ${fdtaddr}; fi;run args_mmc_old;echo debug: [${bootargs}] ... ;echo debug: [bootz ${loadaddr} - ${fdtaddr}] ... ;bootz ${loadaddr} - ${fdtaddr}; fi;fi;
+update_to_fit=setenv loadaddr ${fit_loadaddr}; setenv bootfile ${fit_bootfile}
+usb_boot=usb start; if usb dev ${devnum}; then devtype=usb; run scan_dev_for_boot_part; fi
+usbnet_devaddr=64:33:db:42:d7:0b
+vendor=ti
+ver=U-Boot 2019.04-00002-g31a8ae0206 (May 13 2020 - 09:26:17 -0500)
+virtualloadoverlay=if test -e ${devtype} ${bootpart} ${uboot_overlay}; then run loadoverlay;else echo uboot_overlays: unable to find [${devtype} ${bootpart} ${uboot_overlay}]...;fi;
+
+Environment size: 26763/131068 bytes
+=>
