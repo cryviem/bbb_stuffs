@@ -35,7 +35,7 @@ $(WO_EXT):
 	@$(BUILD_CMD) $@.dtbo $@.tmp.dts
 
 
-clear:
+clean:
 	rm -rf $(wildcard *.tmp.*)
 	rm -rf $(wildcard *.dtbo)
 

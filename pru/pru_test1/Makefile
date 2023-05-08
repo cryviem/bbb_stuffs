@@ -17,8 +17,8 @@ main:
 	@echo "PRU_LD $(PRU_LD)"
 	@echo "PRU_CGT $(PRU_CGT)"
 	 
-clear:
+clean:
 	@echo "pru_test1 clearing ..."
 
-.PHONY: all clear print_start print_end main
+.PHONY: all clean print_start print_end main
 

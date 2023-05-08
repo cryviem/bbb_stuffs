@@ -1,10 +1,10 @@
 
 TARGET=am335x-pru0-fw
-PRU_LKCMD_FILE=$(PRU_LNKCMD)/AM335x_PRU_RSCTB.cmd
+PRU_LKCMD_FILE=$(PRU_LNKCMD)/AM335x_PRU_STD.cmd
 
 SRCS=$(wildcard *.c)
 OBJS=$(strip $(patsubst %.c, %.obj, $(SRCS)))
-INC=-I$(PRU_SP)/include -I$(PRU_SP)/include/am335x -I$(PRU_CGT)/include
+INC=-I$(PRU_SSP)/include -I$(PRU_SSP)/include/am335x -I$(PRU_CGT)/include
 LIB=-i$(PRU_CGT)/lib
 
 all: print_start main print_end
@@ -29,9 +29,9 @@ $(TARGET): $(OBJS)
 	@echo "building $@ ..."
 	$(PRU_CC) $(INC) -c $<
 
-clear:
+clean:
 	@echo "pru_test0 clearing ..."
 	rm *.obj
 	rm $(TARGET)
 
-.PHONY: all clear print_start print_end main
+.PHONY: all clean print_start print_end main

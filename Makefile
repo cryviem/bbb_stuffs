@@ -5,7 +5,7 @@ all: $(SUBDIRS)
 $(SUBDIRS):
 	$(MAKE) -C $@
 
-clear:
-	@for d in $(SUBDIRS); do (cd $$d; $(MAKE) clear ); done
+clean:
+	@for d in $(SUBDIRS); do (cd $$d; $(MAKE) clean ); done
 
-.PHONY: all clear $(SUBDIRS)
+.PHONY: all clean $(SUBDIRS)

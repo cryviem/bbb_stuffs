@@ -3,12 +3,12 @@ PRU_CC=$(shell find ~ -name clpru)
 PRU_LD=$(shell find ~ -name lnkpru)
 PRU_CGT=$(subst /bin/clpru,,$(PRU_CC))
 PRU_ROOT=$(shell pwd)
-PRU_SP=$(PRU_ROOT)/pru-software-support-package-6.1.0
+PRU_SSP=$(PRU_ROOT)/pru-software-support-package-6.1.0
 PRU_LNKCMD=$(PRU_ROOT)/linker_cmds
 
-export PRU_CC PRU_LD PRU_CGT PRU_SP PRU_LNKCMD
+export PRU_CC PRU_LD PRU_CGT PRU_SSP PRU_LNKCMD
 
-SUBDIRS=pru_test0 pru_test1
+SUBDIRS=pru-software-support-package-6.1.0 pru_test0 pru_test1
 
 all: chk_precond main
 
@@ -17,7 +17,7 @@ print_db:
 	@echo "PRU_LD $(PRU_LD)"
 	@echo "PRU_CGT $(PRU_CGT)"
 	@echo "PRU_ROOT $(PRU_ROOT)"
-	@echo "PRU_SP $(PRU_SP)"
+	@echo "PRU_SSP $(PRU_SSP)"
 	@echo "PRU_LNKCMD $(PRU_LNKCMD)"
 	@echo "SUBDIRS $(SUBDIRS)"
 
@@ -28,7 +28,7 @@ endif
 ifeq ($(strip $(PRU_LD)),)
 	$(error PRU linker not found)
 endif
-ifeq ($(wildcard $(PRU_SP)),)
+ifeq ($(wildcard $(PRU_SSP)),)
 	$(error PRU support package not found)
 endif
 	
@@ -38,8 +38,8 @@ main: $(SUBDIRS)
 $(SUBDIRS):
 	$(MAKE) -C $@
 
-clear:
-	@for d in $(SUBDIRS); do (cd $$d; $(MAKE) clear ); done
+clean:
+	@for d in $(SUBDIRS); do (cd $$d; $(MAKE) clean ); done
 
-.PHONY: all clear print_db chk_precond main $(SUBDIRS)
+.PHONY: all clean print_db chk_precond main $(SUBDIRS)
 
