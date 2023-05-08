@@ -53,6 +53,7 @@ dkms.conf
 # Device tree bin
 *.dtb
 *.dtbo
+*.tmp.dts
 
 #PRU bin
 am335x-pru[0:1]-fw
