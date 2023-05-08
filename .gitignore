@@ -55,5 +55,11 @@ dkms.conf
 *.dtbo
 *.tmp.dts
 
-#PRU bin
+# PRU bin
 am335x-pru[0:1]-fw
+
+# IDE
+.vscode
+
+# Exception
+!rpmsg_lib.lib
