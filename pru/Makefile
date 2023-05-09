@@ -1,10 +1,11 @@
 
-PRU_CC=$(shell find ~ -name clpru)
-PRU_LD=$(shell find ~ -name lnkpru)
-PRU_CGT=$(subst /bin/clpru,,$(PRU_CC))
-PRU_ROOT=$(shell pwd)
-PRU_SSP=$(PRU_ROOT)/pru-software-support-package-6.1.0
-PRU_LNKCMD=$(PRU_ROOT)/linker_cmds
+PRU_ROOT:= $(shell pwd)
+PRU_CC := $(shell find ~ -name clpru)
+PRU_CGT := $(subst /bin/clpru,,$(PRU_CC))
+PRU_LD := $(PRU_CGT)/bin/lnkpru
+
+PRU_SSP := $(PRU_ROOT)/pru-software-support-package-6.1.0
+PRU_LNKCMD := $(PRU_ROOT)/linker_cmds
 
 export PRU_CC PRU_LD PRU_CGT PRU_SSP PRU_LNKCMD
 
@@ -24,9 +25,6 @@ print_db:
 chk_precond:
 ifeq ($(strip $(PRU_CC)),)
 	$(error PRU Compiler not found)
-endif
-ifeq ($(strip $(PRU_LD)),)
-	$(error PRU linker not found)
 endif
 ifeq ($(wildcard $(PRU_SSP)),)
 	$(error PRU support package not found)
