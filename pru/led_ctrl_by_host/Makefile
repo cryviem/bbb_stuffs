@@ -5,7 +5,7 @@ PRU_LKCMD_FILE=$(PRU_LNKCMD)/AM335x_PRU_INTC_RSCTB.cmd
 SRCS=$(wildcard *.c)
 OBJS=$(strip $(patsubst %.c, %.obj, $(SRCS)))
 INC=-I$(PRU_SSP)/include -I$(PRU_SSP)/include/am335x -I$(PRU_CGT)/include
-LIB=-i$(PRU_CGT)/lib
+LIB=-i$(PRU_CGT)/lib -i$(PRU_SSP)/lib -lrpmsg_lib.lib
 
 all: print_start main print_end
 
@@ -23,7 +23,7 @@ main: $(TARGET)
 
 $(TARGET): $(OBJS)
 	@echo "linking $@ ..."
-	$(PRU_LD) $(LIB) $(PRU_LKCMD_FILE) $(OBJS) -o $@
+	$(PRU_LD) --reread_libs $(LIB) $(PRU_LKCMD_FILE) $(OBJS) -o $@
 
 %.obj: %.c
 	@echo "building $@ ..."

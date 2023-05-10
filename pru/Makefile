@@ -9,7 +9,7 @@ PRU_LNKCMD := $(PRU_ROOT)/linker_cmds
 
 export PRU_CC PRU_LD PRU_CGT PRU_SSP PRU_LNKCMD
 
-SUBDIRS=pru_test0 pru_test1
+SUBDIRS=pru_test0 pru_test1 led_ctrl_by_host
 
 all: chk_precond main
 
