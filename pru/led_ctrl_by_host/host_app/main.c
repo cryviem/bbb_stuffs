@@ -13,174 +13,140 @@
 #include <unistd.h>
 #include <errno.h>
 
+
+#define RPMESG_DEV					"/dev/rpmsg_pru30"
+#define PRU0_FIRMWARE				"/sys/class/remoteproc/remoteproc1/firmware"
+#define PRU0_STATE					"/sys/class/remoteproc/remoteproc1/state"
 #define RPMSG_MESSAGE_SIZE           496
 char payload[RPMSG_MESSAGE_SIZE];
 
+#define CMD_LED_ON          23
+#define CMD_LED_OFF         24
+#define STATUS_OK           1
+#define STATUS_NOK          0
 /* shared_struct is used to pass data between ARM and PRU */
 typedef struct shared_struct{
 	uint16_t cmd;
 	uint16_t data;
 } shared_struct;
 
-
-int main(int argc, char *argv[])
+static uint8_t is_rpmsg_dev(void)
 {
-	char opt;
-	char *charVoltage;
+	FILE *ofp;
+	ofp = fopen(RPMESG_DEV, "r");
 
-	/* Parse the command line options  */
-	opt = getopt(argc, argv, "c:");
-
-	int argIndex = 0;
-	if (opt == 'c') {
-		/* ADC channel number is stored in argv[2] */
-		if (*argv[2] == '5' || *argv[2] == '6' || *argv[2] == '7')
-			printf("Reading voltage at ADC Channel: %s\n", argv[2]);
-		else {
-			printf("(ADC Channel should = 5, 6, or 7)\n");
-			return EXIT_FAILURE;
-		}
+	if (ofp == NULL)
+	{
+		return 0;
 	}
-	else {
-		printf("ERROR: Command not recognized: %s", argv[0]);
-		for (argIndex = 1; argv[argIndex]; argIndex++) {
-			printf(" %s", argv[argIndex]);
-		}
-		printf("\n");
-		printf("usage: ./pru_adc_userspace -c <ChannelNum>\n");
-		printf("Where ChannelNum = 5 OR 6 OR 7\n");
-
-		return EXIT_FAILURE;
+	else
+	{
+		fclose(ofp);
+		return 1;
 	}
-
-	/* readADCchannel receives raw ADC voltage value from PRU */
-	/* convertVoltage converts voltage to a decimal value for display */
-	charVoltage = convertVoltage(readADCchannel(argv[2]));
-	printf("Voltage on ADC Channel %s is %sV\n",argv[2],charVoltage);
-	return EXIT_SUCCESS;
 }
 
+// static uint8_t set_pru0_state(const char* s)
+// {
+// 	FILE *ofp;
+// 	ofp = fopen(PRU0_STATE, "r+");
 
-/* 
- * readADCchannel sends ADC channel number to PRU0 by writing to rpmsg_pru30
- * and receives the voltage as a 12 bit binary value
- */
-static uint16_t readADCchannel(const char *adcChannel)
+// 	if (ofp != NULL)
+// 	{
+// 		fwrite(s, 1, sizeof(s), ofp);
+// 		fclose(ofp);
+// 		return 1;
+// 	}
+// 	return 0;
+// }
+
+// static uint8_t set_pru0_firmware(const char* fw)
+// {
+// 	FILE *ofp;
+// 	ofp = fopen(PRU0_FIRMWARE, "r+");
+
+// 	if (ofp != NULL)
+// 	{
+// 		fwrite(fw, 1, sizeof(s), ofp);
+// 		fclose(ofp);
+// 		return 1;
+// 	}
+// 	return 0;
+// }
+
+static uint16_t send_pru(struct shared_struct* pdata)
 {
-
-	struct shared_struct message;
-
-	/* use character device /dev/rpmsg_pru30 */
-	char outputFilename[] = "/dev/rpmsg_pru30";
-
-	/* test that /dev/rpmsg_pru30 exists */
-	FILE *ofp;
-	uint16_t returnedVoltage;
-	ofp = fopen(outputFilename, "r");
-
-	if (ofp == NULL) {
-
-		printf("/dev/rpmsg_pru30 could not be opened. \n");
-		printf("Trying to initialize PRU using sysfs interface.\n");
-
-		FILE *sysfs_node;
-		char firmware[] = "/sys/class/remoteproc/remoteproc1/firmware";
-		char firmwareName[] = "PRU_ADC_onChip.out";
-		sysfs_node = fopen(firmware, "r+");
-		if (sysfs_node == NULL) {
-			printf("cannot open firmware sysfs_node");
-			return EXIT_FAILURE;
-		}
-		fwrite(&firmwareName, sizeof(uint8_t), sizeof(firmwareName),
-			sysfs_node);
-		fclose(sysfs_node);
-
-		char pruState[] = "/sys/class/remoteproc/remoteproc1/state";
-		char start[] = "start";
-		sysfs_node = fopen(pruState, "r+");
-		if (sysfs_node == NULL) {
-			printf("cannot open state sysfs_node");
-			return EXIT_FAILURE;
-		}
-		fwrite(&start, sizeof(uint8_t), sizeof(start), sysfs_node);
-		fclose(sysfs_node);
-
-		/* give RPMSG time to initialize */
-		sleep(3);
-
-		ofp = fopen(outputFilename, "r");
-
-		if (ofp == NULL) {
-			printf("ERROR: Could not open /dev/rpmsg_pru30\n");
-			exit(EXIT_FAILURE);
-		}
+	if (!is_rpmsg_dev())
+	{
+		return 0;
 	}
 
-	/* now we know that the character device exists */
-	fclose(ofp);
-
-	/* open the character device for read/write */
 	struct pollfd pfds[1];
-	pfds[0].fd = open(outputFilename, O_RDWR);
+	pfds[0].fd = open(RPMESG_DEV, O_RDWR);
 	if (pfds[0].fd < 0) {
-		printf("failed to open /dev/rpmsg_pru30");
-		exit(EXIT_FAILURE);
+		printf("failed to open %s", RPMESG_DEV);
+		return 0;
 	}
-
-	/* Convert channel number from CHAR to uint16_t */
-	char *endptr;
-	uintmax_t val = strtoumax(&adcChannel[0],&endptr,10);
-	if (errno == ERANGE || val > UINT16_MAX || endptr == &adcChannel[0] ||
-			*endptr != '\0') {
-		printf("strtoumax had an error");
-		exit(EXIT_FAILURE);
-	}
-	message.channel = (uint16_t) val;
 
 	/* write data to the payload[] buffer in the PRU firmware. */
-	size_t result = write(pfds[0].fd, &message, sizeof(message));
+	size_t result = write(pfds[0].fd, pdata, sizeof(struct shared_struct));
 
 	/* poll for the received message */
 	pfds[0].events = POLLIN | POLLRDNORM;
 	int pollResult = 0;
 
-	uint32_t count = 0;
+	uint32_t count = 5;
 	/* loop while rpmsg_pru_poll says there are no kfifo messages. */
-	while (pollResult <= 0) {
-		pollResult = poll(pfds,1,0);
+	while (pollResult <= 0 && count--) {
+		pollResult = poll(pfds,1,1000);
 
-		/* 
-		 * users may prefer to write code that does not block the ARM
-		 * core from addressing other tasks, and that contains timeout
-		 * logic to avoid an infinite lockup.
-		 */
 	}
 
 	/* read voltage and channel back */
 	size_t freadResult = read(pfds[0].fd, payload, RPMSG_MESSAGE_SIZE);
-	returnedVoltage = ((shared_struct *)payload)->voltage;
+	pdata->cmd = ((shared_struct *)payload)->cmd;
+	pdata->data = ((shared_struct *)payload)->data;
 
 	close(pfds[0].fd);
-
-	return returnedVoltage;
+	return 1;
 }
 
-/*
- * Function converts 12 bit raw voltage value into base 10 fraction 
- */
-static char * convertVoltage(const uint16_t rawVoltage)
+int main(int argc, char *argv[])
 {
-	char * charVoltage = charVoltageVal;
-	double doubleVoltage = (double) rawVoltage;
+	struct shared_struct shared = {0,0};
 
-	/* Vin = (DigitalValue * Vref)/(2^(numOfBits) - 1) */
-	/* where numOfBits = 12 */
-	doubleVoltage = (doubleVoltage * 1.8 )/((double)(4096 -1));
-
-	int charNum = snprintf(charVoltage, 7, "%.4f", doubleVoltage);
-	if (charNum > 7) {
-		printf("charVoltage value larger than expected.\n");
+	if (argc != 2)
+	{
+		printf("wrong cmd format !!!\n");
+		return EXIT_FAILURE;
 	}
 
-	return charVoltage;
+	if (0 == strcmp(argv[1], "on"))
+	{
+		printf("turn led on ...\n");
+		shared.cmd = CMD_LED_ON;
+	}
+	else if (0 == strcmp(argv[1], "off"))
+	{
+		printf("turn led off ...\n");
+		shared.cmd = CMD_LED_OFF;
+	}
+	else
+	{
+		printf("cmd not found !!!\n");
+		return EXIT_FAILURE;
+	}
+
+	if(send_pru(&shared))
+	{
+		printf("pru response cmd %d - data %d\n", shared.cmd, shared.data);
+	}
+	else
+	{
+		return EXIT_FAILURE;
+	}
+	return EXIT_SUCCESS;
 }
+
+
+
