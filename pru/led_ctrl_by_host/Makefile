@@ -7,7 +7,9 @@ OBJS=$(strip $(patsubst %.c, %.obj, $(SRCS)))
 INC=-I$(PRU_SSP)/include -I$(PRU_SSP)/include/am335x -I$(PRU_CGT)/include
 LIB=-i$(PRU_CGT)/lib -i$(PRU_SSP)/lib -lrpmsg_lib.lib
 
-all: print_start main print_end
+SUBDIRS=host_app
+
+all: print_start main print_end $(SUBDIRS)
 
 print_start:
 	@echo ""
@@ -32,5 +34,9 @@ $(TARGET): $(OBJS)
 clean:
 	rm *.obj
 	rm $(TARGET)
+	@for d in $(SUBDIRS); do (cd $$d; $(MAKE) clean ); done
 
-.PHONY: all clean print_start print_end main
+$(SUBDIRS):
+	$(MAKE) -C $@
+
+.PHONY: all clean print_start print_end main $(SUBDIRS)

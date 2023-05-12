@@ -1,12 +1,13 @@
-ARM_CC=/home/an/tools/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-gcc
-ARM_LD=/home/an/tools/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-ld
+ARM_CC := $(shell find ~ -name arm-linux-gnueabihf-gcc)
+
 TARGET=led_ctrl
+
 SRCS=$(wildcard *.c)
 OBJS=$(strip $(patsubst %.c, %.o, $(SRCS)))
 INC=
-LIB=-lm -lpng
+LIB=
 
-all: print_start main print_end
+all: print_start chk_precond main print_end
 
 print_start:
 	@echo ""
@@ -18,20 +19,27 @@ print_end:
 	@echo "---- END BUILD $(TARGET) ----"
 	@echo ""
 
+chk_precond:
+ifeq ($(strip $(ARM_CC)),)
+	$(error ARM Compiler not found)
+endif
+	@echo "found ARM_CC: $(ARM_CC)"
+	@echo ""
+
 main: $(TARGET)
 
 $(TARGET): $(OBJS)
 	@echo "linking $@ ..."
-	$(ARM_LD) $(LIB) -o $@ $(OBJS)
+	$(ARM_CC) $(LIB) -o $@ $(OBJS)
 
 %.o: %.c
 	@echo "building $@ ..."
 	$(ARM_CC) $(INC) -c $<
 
 clean:
-	rm *.o
-	rm $(TARGET)
+	rm -f *.o
+	rm -f $(TARGET)
 
-.PHONY: all clean print_start print_end main
+.PHONY: all clean print_start print_end main chk_precond
 
 

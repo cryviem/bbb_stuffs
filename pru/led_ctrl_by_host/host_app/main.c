@@ -37,54 +37,29 @@ static uint8_t is_rpmsg_dev(void)
 
 	if (ofp == NULL)
 	{
+		printf("is_rpmsg_dev > %s not found !!!\n", RPMESG_DEV);
 		return 0;
 	}
 	else
 	{
+		printf("is_rpmsg_dev > %s ready !!!\n", RPMESG_DEV);
 		fclose(ofp);
 		return 1;
 	}
 }
 
-// static uint8_t set_pru0_state(const char* s)
-// {
-// 	FILE *ofp;
-// 	ofp = fopen(PRU0_STATE, "r+");
-
-// 	if (ofp != NULL)
-// 	{
-// 		fwrite(s, 1, sizeof(s), ofp);
-// 		fclose(ofp);
-// 		return 1;
-// 	}
-// 	return 0;
-// }
-
-// static uint8_t set_pru0_firmware(const char* fw)
-// {
-// 	FILE *ofp;
-// 	ofp = fopen(PRU0_FIRMWARE, "r+");
-
-// 	if (ofp != NULL)
-// 	{
-// 		fwrite(fw, 1, sizeof(s), ofp);
-// 		fclose(ofp);
-// 		return 1;
-// 	}
-// 	return 0;
-// }
-
 static uint16_t send_pru(struct shared_struct* pdata)
 {
 	if (!is_rpmsg_dev())
 	{
+		printf("send_pru > is_rpmsg_dev return error !!!\n");
 		return 0;
 	}
 
 	struct pollfd pfds[1];
 	pfds[0].fd = open(RPMESG_DEV, O_RDWR);
 	if (pfds[0].fd < 0) {
-		printf("failed to open %s", RPMESG_DEV);
+		printf("send_pru > failed to open %s\n", RPMESG_DEV);
 		return 0;
 	}
 
@@ -99,7 +74,6 @@ static uint16_t send_pru(struct shared_struct* pdata)
 	/* loop while rpmsg_pru_poll says there are no kfifo messages. */
 	while (pollResult <= 0 && count--) {
 		pollResult = poll(pfds,1,1000);
-
 	}
 
 	/* read voltage and channel back */
