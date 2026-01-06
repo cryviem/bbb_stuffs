@@ -14,12 +14,12 @@ all: print_start main print_end
 
 print_start:
 	@echo ""
-	@echo "---- START BUILD OVERLAY ----"
+	@echo "---- START BUILD DT ----"
 	@echo ""
 
 print_end:
 	@echo ""
-	@echo "---- END BUILD OVERLAY ----"
+	@echo "---- END BUILD DT ----"
 	@echo ""
 
 # main:

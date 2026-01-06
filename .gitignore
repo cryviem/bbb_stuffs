@@ -63,3 +63,6 @@ am335x-pru[0:1]-fw
 
 # Exception
 !rpmsg_lib.lib
+
+# U-Boot scripts
+uenv_scripts/*.scr.uimg
